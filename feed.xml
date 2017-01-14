@@ -5,7 +5,7 @@
   <link href="/feed.xml" rel="self"/>
   
   <link href="https://penglover.github.io/"/>
-  <updated>2017-01-13T07:26:12.000Z</updated>
+  <updated>2017-01-14T07:17:01.000Z</updated>
   <id>https://penglover.github.io/</id>
   
   <author>
@@ -14,6 +14,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>tensorflow 무료 한국어 강의</title>
+    <link href="https://penglover.github.io/2017/01/14/tensorflow-%E1%84%86%E1%85%AE%E1%84%85%E1%85%AD-%E1%84%92%E1%85%A1%E1%86%AB%E1%84%80%E1%85%AE%E1%86%A8%E1%84%8B%E1%85%A5-%E1%84%80%E1%85%A1%E1%86%BC%E1%84%8B%E1%85%B4/"/>
+    <id>https://penglover.github.io/2017/01/14/tensorflow-무료-한국어-강의/</id>
+    <published>2017-01-14T07:14:50.000Z</published>
+    <updated>2017-01-14T07:17:01.000Z</updated>
+    
+    <content type="html"><![CDATA[<div class="video-container"><iframe src="//www.youtube.com/embed/BS6O0zOGX4E" frameborder="0" allowfullscreen></iframe></div>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;div class=&quot;video-container&quot;&gt;&lt;iframe src=&quot;//www.youtube.com/embed/BS6O0zOGX4E&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;&lt;/div&gt;
+
+    
+    </summary>
+    
+      <category term="ml" scheme="https://penglover.github.io/categories/ml/"/>
+    
+      <category term="tensorflow" scheme="https://penglover.github.io/categories/ml/tensorflow/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>first posting on hexo!</title>
