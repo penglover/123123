@@ -5,7 +5,7 @@
   <link href="/feed.xml" rel="self"/>
   
   <link href="https://penglover.github.io/"/>
-  <updated>2017-01-14T09:44:31.000Z</updated>
+  <updated>2017-01-14T10:50:08.000Z</updated>
   <id>https://penglover.github.io/</id>
   
   <author>
@@ -16,11 +16,41 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>tensorflow lecture_korean</title>
+    <title>텐서플로우란 무엇일까? 추천 설치방법</title>
+    <link href="https://penglover.github.io/2017/01/14/What-is-tensorflow-How-to-install/"/>
+    <id>https://penglover.github.io/2017/01/14/What-is-tensorflow-How-to-install/</id>
+    <published>2017-01-14T10:21:32.000Z</published>
+    <updated>2017-01-14T10:50:08.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>텐서플로우란 무엇일까</p>
+<p>요새 굉장히 핫하죠! 머신러닝, 딥러닝!<br>(머신러닝과 딥러닝에 대한 설명은 다음에 포스팅을 따로 하겠습니다)<br>텐서플로우는 구글에서 발표한 머신러닝 오픈소스 라이브러리로 내부는 C++로 되어있고 여러 언어의 API를 제공합니다.<br>가장 문서화가 잘 되어있고 인기있는 API는 파이썬입니다.<br>때문에 주로 사람들이 파이썬으로 개발을 하는데요!<br>그렇다면 왜 텐서플로우가 핫할까요?<br>그것은 바로 텐서플로우를 이용하면 짧은 시간에 강력한 머신러닝, 딥러닝 코드를 짤 수 있기 때문입니다.<br>테스트할 때에 쓰기도 좋고 상용 시스템을 만들 때에도 좋은 라이브러리입니다.</p>
+<blockquote><p>아래의 링크에 설치 방법이 자세히 나와있습니다. 가장 추천하는 방법은 Virtualenv 설치입니다. 이유는 가상환경을 이용함으로써 파이썬의 버전을 독립적으로 지켜주기 때문입니다.</p>
+<footer><strong>@텐서플로우설치</strong><cite><a href="https://tensorflowkorea.gitbooks.io/tensorflow-kr/content/g3doc/get_started/os_setup.html" rel="external nofollow noopener noreferrer" target="_blank">tensorflowkorea.gitbooks.io/tensorflow-kr/content/g3doc/get_started/os_setup.html</a></cite></footer></blockquote>
+<p>혹시 설치방법에 문제가 생긴 경우에는 댓글로 문의를 주세요!</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;텐서플로우란 무엇일까&lt;/p&gt;
+&lt;p&gt;요새 굉장히 핫하죠! 머신러닝, 딥러닝!&lt;br&gt;(머신러닝과 딥러닝에 대한 설명은 다음에 포스팅을 따로 하겠습니다)&lt;br&gt;텐서플로우는 구글에서 발표한 머신러닝 오픈소스 라이브러리로 내부는 C++로 되어있고 여러 언
+    
+    </summary>
+    
+      <category term="ML" scheme="https://penglover.github.io/categories/ML/"/>
+    
+      <category term="TensorFlow" scheme="https://penglover.github.io/categories/ML/TensorFlow/"/>
+    
+    
+      <category term="machinelearning" scheme="https://penglover.github.io/tags/machinelearning/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>텐서플로우 무료강의 소개</title>
     <link href="https://penglover.github.io/2017/01/14/tensorflow-lecture-korean/"/>
     <id>https://penglover.github.io/2017/01/14/tensorflow-lecture-korean/</id>
     <published>2017-01-14T08:24:28.000Z</published>
-    <updated>2017-01-14T09:44:31.000Z</updated>
+    <updated>2017-01-14T10:23:31.000Z</updated>
     
     <content type="html"><![CDATA[<p>머신러닝에서 가장 핫한 라이브러리중 하나죠! tensorflow!<br>그런데 아직 한글로 된 강의가 많이 없는 것이 현실입니다.<br>홍콩 과학기술대학교의 김성훈 교수님이 tensorflow를 무료로 강의해주십니다.<br>대상은 비전공자나 전공자 중에서 머신러닝 입문자들입니다. ㅎㅎ<br>정말 기초부터 차근차근 잘 알려주십니다.<br><a href="https://hunkim.github.io/ml/" rel="external nofollow noopener noreferrer" target="_blank">https://hunkim.github.io/ml/</a><br>다음의 링크를 타고 가시면 강의를 볼 수 있습니다~^^</p>
 ]]></content>
