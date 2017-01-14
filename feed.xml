@@ -5,7 +5,7 @@
   <link href="/feed.xml" rel="self"/>
   
   <link href="https://penglover.github.io/"/>
-  <updated>2017-01-14T13:06:23.000Z</updated>
+  <updated>2017-01-14T15:13:40.000Z</updated>
   <id>https://penglover.github.io/</id>
   
   <author>
@@ -16,13 +16,41 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>텐서플로우로 linear regression 구현 및 설명</title>
+    <link href="https://penglover.github.io/2017/01/14/tf-LinearRegression/"/>
+    <id>https://penglover.github.io/2017/01/14/tf-LinearRegression/</id>
+    <published>2017-01-14T14:50:53.000Z</published>
+    <updated>2017-01-14T15:13:40.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Linear-Regression"><a href="#Linear-Regression" class="headerlink" title="Linear Regression"></a>Linear Regression</h1><p>Linear Regression에 대한 지식이 없으시다면 아래의 동영상을 보시는 것을 추천합니다.<br><a href="https://www.youtube.com/watch?v=GmtqOlPYB84" rel="external nofollow noopener noreferrer" target="_blank">https://www.youtube.com/watch?v=GmtqOlPYB84</a><br>이미 알고 계신다면 렛츠고!<br>아! 참고로 tensorflow 버전이나 python버전이 다르다면<br>initialize_all_variables, print, range 부분에 수정이 필요합니다.<br>오류나면 댓글남겨주세요 ㅎㅎ 바로 알려드릴게요.</p>
+<figure class="highlight plain"><figcaption><span>LinearRegression.py</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">import tensorflow as tf</div><div class="line"></div><div class="line">x_data = [1, 2, 3, 4]</div><div class="line">y_data = [2, 4, 6, 8]</div><div class="line"></div><div class="line">W = tf.Variable(tf.random_uniform([1], -10000, 10000))</div><div class="line">b = tf.Variable(tf.random_uniform([1], -10000, 10000))</div><div class="line"></div><div class="line">X = tf.placeholder(tf.float32)</div><div class="line">Y = tf.placeholder(tf.float32)</div><div class="line"></div><div class="line">hypothesis = W * X + b</div><div class="line"></div><div class="line">cost = tf.reduce_mean(tf.square(hypothesis - Y))</div><div class="line"></div><div class="line">a = tf.Variable(0.1)</div><div class="line">optimizer = tf.train.GradientDescentOptimizer(a)</div><div class="line">train = optimizer.minimize(cost)</div><div class="line"></div><div class="line">init = tf.initialize_all_variables()</div><div class="line"></div><div class="line">sess = tf.Session()</div><div class="line">sess.run(init)</div><div class="line"></div><div class="line">for step in range(2001):</div><div class="line">    sess.run(train, feed_dict=&#123;X: x_data, Y: y_data&#125;)</div><div class="line">    if step % 200 == 0:</div><div class="line">        print (step, sess.run(cost, feed_dict=&#123;X: x_data, Y: y_data&#125;), sess.run(W), sess.run(b))</div><div class="line"></div><div class="line">print (sess.run(hypothesis, feed_dict=&#123;X: [5, 10]&#125;))</div><div class="line">print (sess.run(hypothesis, feed_dict=&#123;X: [2.5, 1.5]&#125;))</div></pre></td></tr></table></figure>
+<p><strong>결과값</strong><br>0 1.17541e+07 [-3064.45288086] [ 7678.85205078]<br>200 53.5173 [-4.08845949] [ 17.90081406]<br>400 0.000280612 [ 1.98605835] [ 0.04099015]<br>600 1.46635e-09 [ 1.99996805] [  9.38054509e-05]<br>800 1.42109e-14 [ 1.99999988] [  4.28800519e-07]<br>1000 0.0 [ 2.] [  1.18856534e-07]<br>1200 0.0 [ 2.] [  1.18856534e-07]<br>1400 0.0 [ 2.] [  1.18856534e-07]<br>1600 0.0 [ 2.] [  1.18856534e-07]<br>1800 0.0 [ 2.] [  1.18856534e-07]<br>2000 0.0 [ 2.] [  1.18856534e-07]<br>[ 10.  20.]<br>[ 5.  3.]</p>
+<p>아주 쉽게 이해가 가실 것입니다.<br>W와 b를 -10000에서 10000사이의 랜덤한 값으로 두었습니다.<br>X와 Y는 32bit의 float형 데이터로 선언해 두었지요.<br>hypothesis는 input값이 될 X에게 w와 b를 더해서 나오는 결과에 대한 기대값입니다.<br>cost는 기대값과 실제값을 뺀것을 제곱을 한 것의 평균값을 갖게 될 것입니다.<br>reduce_mean은 참고로 평균값을 내게 해주는 매소드입니다.<br>(m개의 input이 있으면 그것들의 평균값을 매겨줌)<br>a는 learning rate입니다.<br>tf.train.GradientDescentOptimizer가 gradient descent 알고리즘을 처리해줍니다.<br>그리고 minimize가 cost를 인자로 받아서 train될때마다 W와 b를 업데이트합니다.<br>화면이 너무 꽉 찰 것 같아서 step은 200개당 1번 print 했습니다.<br>결과값을 보니 training이 아주 잘 되었네요!</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;Linear-Regression&quot;&gt;&lt;a href=&quot;#Linear-Regression&quot; class=&quot;headerlink&quot; title=&quot;Linear Regression&quot;&gt;&lt;/a&gt;Linear Regression&lt;/h1&gt;&lt;p&gt;Linear Reg
+    
+    </summary>
+    
+      <category term="ML" scheme="https://penglover.github.io/categories/ML/"/>
+    
+      <category term="TensorFlow" scheme="https://penglover.github.io/categories/ML/TensorFlow/"/>
+    
+    
+      <category term="machinelearning" scheme="https://penglover.github.io/tags/machinelearning/"/>
+    
+  </entry>
+  
+  <entry>
     <title>텐서플로우에서 placeholder란 무엇일까?</title>
     <link href="https://penglover.github.io/2017/01/14/tf-placeholder/"/>
     <id>https://penglover.github.io/2017/01/14/tf-placeholder/</id>
     <published>2017-01-14T13:01:16.000Z</published>
-    <updated>2017-01-14T13:06:23.000Z</updated>
+    <updated>2017-01-14T15:13:39.000Z</updated>
     
-    <content type="html"><![CDATA[<p>텐서플로우에서 참 재밌는 메서드가 있습니다.<br>바로 placeholder 인데요!<br>우리는 이것을 통해 값의 대입을 미룰 수 있습니다.<br>아래의 코드에서 자세히 확인해보겠습니다.</p>
+    <content type="html"><![CDATA[<p>텐서플로우에서 참 재밌는 메서드가 있습니다.<br>바로 placeholder 인데요!<br>우리는 이것을 통해 값의 대입을 미룰 수 있습니다.<br>아래의 코드에서 자세히 확인해보겠습니다.<br>아! 참고로 tensorflow 버전이나 python버전이 다르다면<br>initialize_all_variables, print, range 부분에 수정이 필요합니다.</p>
 <figure class="highlight plain"><figcaption><span>placeholder.py</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">import tensorflow as tf</div><div class="line"></div><div class="line">sess = tf.Session()</div><div class="line"></div><div class="line">a = tf.placeholder(tf.int16)</div><div class="line">b = tf.placeholder(tf.int16)</div><div class="line"></div><div class="line">add = tf.add(a, b)</div><div class="line">mul = tf.mul(a, b)</div><div class="line"></div><div class="line"></div><div class="line">print(&quot;더한 결과는 %i&quot; % sess.run(add,feed_dict=&#123;a: 2, b: 3&#125;))</div><div class="line">print(&quot;곱한 결과는 %i&quot; % sess.run(mul,feed_dict=&#123;a: 3, b: 4&#125;))</div></pre></td></tr></table></figure>
 <p><strong>결과값</strong><br>더한 결과는 5<br>곱한 결과는 12</p>
 <p>placeholder를 통해 먼저 16bit 크기의 int형 데이터의 공간을 만들어 놓았습니다.<br>그리고 나중에 연산을 할 때에 대입값을 지정해 주었지요.<br>나중에 아주 유용하게 많이 쓰이니 꼭 잘 숙지하고 넘어가야 하는 부분입니다.</p>
@@ -30,8 +58,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;텐서플로우에서 참 재밌는 메서드가 있습니다.&lt;br&gt;바로 placeholder 인데요!&lt;br&gt;우리는 이것을 통해 값의 대입을 미룰 수 있습니다.&lt;br&gt;아래의 코드에서 자세히 확인해보겠습니다.&lt;/p&gt;
-&lt;figure class=&quot;highlight pl
+      &lt;p&gt;텐서플로우에서 참 재밌는 메서드가 있습니다.&lt;br&gt;바로 placeholder 인데요!&lt;br&gt;우리는 이것을 통해 값의 대입을 미룰 수 있습니다.&lt;br&gt;아래의 코드에서 자세히 확인해보겠습니다.&lt;br&gt;아! 참고로 tensorflow 버전이나 pytho
     
     </summary>
     
@@ -49,7 +76,7 @@
     <link href="https://penglover.github.io/2017/01/14/tensorflow1/"/>
     <id>https://penglover.github.io/2017/01/14/tensorflow1/</id>
     <published>2017-01-14T12:33:46.000Z</published>
-    <updated>2017-01-14T14:44:49.000Z</updated>
+    <updated>2017-01-14T15:14:09.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="텐서플로우에서-상수란-존재하지-않는다"><a href="#텐서플로우에서-상수란-존재하지-않는다" class="headerlink" title="텐서플로우에서 상수란 존재하지 않는다"></a>텐서플로우에서 상수란 존재하지 않는다</h1><figure class="highlight plain"><figcaption><span>NoConstant.py</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">import tensorflow as tf</div><div class="line"></div><div class="line">sess = tf.Session()</div><div class="line"></div><div class="line">a = tf.constant(1)</div><div class="line">b = tf.constant(2)</div><div class="line"></div><div class="line">c = a+b</div><div class="line"></div><div class="line">print(a)</div><div class="line">print(b)</div><div class="line">print(c)</div><div class="line"></div><div class="line">print(sess.run(a))</div><div class="line">print(sess.run(b))</div><div class="line">print(sess.run(c))</div></pre></td></tr></table></figure>
 <p><strong>결과값</strong><br>Tensor(“Const:0”, shape=(), dtype=int32)<br>Tensor(“Const_1:0”, shape=(), dtype=int32)<br>Tensor(“add:0”, shape=(), dtype=int32)<br>1<br>2<br>3</p>
