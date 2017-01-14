@@ -5,7 +5,7 @@
   <link href="/feed.xml" rel="self"/>
   
   <link href="https://penglover.github.io/"/>
-  <updated>2017-01-14T12:52:58.000Z</updated>
+  <updated>2017-01-14T13:06:23.000Z</updated>
   <id>https://penglover.github.io/</id>
   
   <author>
@@ -16,14 +16,43 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>텐서플로우에서 placeholder란 무엇일까?</title>
+    <link href="https://penglover.github.io/2017/01/14/tf-placeholder/"/>
+    <id>https://penglover.github.io/2017/01/14/tf-placeholder/</id>
+    <published>2017-01-14T13:01:16.000Z</published>
+    <updated>2017-01-14T13:06:23.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>텐서플로우에서 참 재밌는 메서드가 있습니다.<br>바로 placeholder 인데요!<br>우리는 이것을 통해 값의 대입을 미룰 수 있습니다.<br>아래의 코드에서 자세히 확인해보겠습니다.</p>
+<figure class="highlight plain"><figcaption><span>placeholder.py</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">import tensorflow as tf</div><div class="line"></div><div class="line">sess = tf.Session()</div><div class="line"></div><div class="line">a = tf.placeholder(tf.int16)</div><div class="line">b = tf.placeholder(tf.int16)</div><div class="line"></div><div class="line">add = tf.add(a, b)</div><div class="line">mul = tf.mul(a, b)</div><div class="line"></div><div class="line"></div><div class="line">print(&quot;더한 결과는 %i&quot; % sess.run(add,feed_dict=&#123;a: 2, b: 3&#125;))</div><div class="line">print(&quot;곱한 결과는 %i&quot; % sess.run(mul,feed_dict=&#123;a: 3, b: 4&#125;))</div></pre></td></tr></table></figure>
+<p><strong>결과값</strong><br>더한 결과는 5<br>곱한 결과는 12</p>
+<p>placeholder를 통해 먼저 16bit 크기의 int형 데이터의 공간을 만들어 놓았습니다.<br>그리고 나중에 연산을 할 때에 대입값을 지정해 주었지요.<br>나중에 아주 유용하게 많이 쓰이니 꼭 잘 숙지하고 넘어가야 하는 부분입니다.</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;텐서플로우에서 참 재밌는 메서드가 있습니다.&lt;br&gt;바로 placeholder 인데요!&lt;br&gt;우리는 이것을 통해 값의 대입을 미룰 수 있습니다.&lt;br&gt;아래의 코드에서 자세히 확인해보겠습니다.&lt;/p&gt;
+&lt;figure class=&quot;highlight pl
+    
+    </summary>
+    
+      <category term="ML" scheme="https://penglover.github.io/categories/ML/"/>
+    
+      <category term="TensorFlow" scheme="https://penglover.github.io/categories/ML/TensorFlow/"/>
+    
+    
+      <category term="machinelearning" scheme="https://penglover.github.io/tags/machinelearning/"/>
+    
+  </entry>
+  
+  <entry>
     <title>텐서플로우에서 상수란 존재하지 않는다? 모든것은 연산!</title>
     <link href="https://penglover.github.io/2017/01/14/tensorflow1/"/>
     <id>https://penglover.github.io/2017/01/14/tensorflow1/</id>
     <published>2017-01-14T12:33:46.000Z</published>
-    <updated>2017-01-14T12:52:58.000Z</updated>
+    <updated>2017-01-14T13:06:21.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="텐서플로우에서-상수란-존재하지-않는다"><a href="#텐서플로우에서-상수란-존재하지-않는다" class="headerlink" title="텐서플로우에서 상수란 존재하지 않는다"></a>텐서플로우에서 상수란 존재하지 않는다</h1><figure class="highlight plain"><figcaption><span>NoConstant.py</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">import tensorflow as tf</div><div class="line"></div><div class="line">sess = tf.Session()</div><div class="line"></div><div class="line">a = tf.constant(1)</div><div class="line">b = tf.constant(2)</div><div class="line"></div><div class="line">c = a+b</div><div class="line"></div><div class="line">print(a)</div><div class="line">print(b)</div><div class="line">print(c)</div><div class="line"></div><div class="line">print(sess.run(a))</div><div class="line">print(sess.run(b))</div><div class="line">print(sess.run(c))</div></pre></td></tr></table></figure>
-<p>결과값은 과연 어떻게 될까요?<br>Tensor(“Const:0”, shape=(), dtype=int32)<br>Tensor(“Const_1:0”, shape=(), dtype=int32)<br>Tensor(“add:0”, shape=(), dtype=int32)<br>1<br>2<br>3</p>
+<p><strong>결과값</strong><br>Tensor(“Const:0”, shape=(), dtype=int32)<br>Tensor(“Const_1:0”, shape=(), dtype=int32)<br>Tensor(“add:0”, shape=(), dtype=int32)<br>1<br>2<br>3</p>
 <p>위에 보이듯이 모든 텐서플로우에서의 변수는 상수상태로 존재하지 않습니다.<br><strong>operation 상태로 존재하고 session에 run메소드를 주는 순간 연산이 이루어지지요.</strong><br>이로서 우리는 각 노드들을 병렬적으로 다룰 수 있게 되지요.</p>
 ]]></content>
     

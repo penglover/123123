@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="Wellcome to IT Blog">
 <meta property="og:description" content="텐서플로우에서 상수란 존재하지 않는다NoConstant.py12345678910111213141516import tensorflow as tfsess = tf.Session()a = tf.constant(1)b = tf.constant(2)c = a+bprint(a)print(b)print(c)print(sess.run(a))print(sess.run(b)">
 <meta property="og:image" content="https://penglover.github.io/css/images/logo.png">
-<meta property="og:updated_time" content="2017-01-14T12:52:58.000Z">
+<meta property="og:updated_time" content="2017-01-14T13:06:21.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="텐서플로우에서 상수란 존재하지 않는다? 모든것은 연산!">
 <meta name="twitter:description" content="텐서플로우에서 상수란 존재하지 않는다NoConstant.py12345678910111213141516import tensorflow as tfsess = tf.Session()a = tf.constant(1)b = tf.constant(2)c = a+bprint(a)print(b)print(c)print(sess.run(a))print(sess.run(b)">
@@ -171,7 +171,7 @@ ga('send', 'pageview');
         
         <div class="article-entry" itemprop="articleBody">
             <h1 id="텐서플로우에서-상수란-존재하지-않는다"><a href="#텐서플로우에서-상수란-존재하지-않는다" class="headerlink" title="텐서플로우에서 상수란 존재하지 않는다"></a>텐서플로우에서 상수란 존재하지 않는다</h1><figure class="highlight plain"><figcaption><span>NoConstant.py</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">import tensorflow as tf</div><div class="line"></div><div class="line">sess = tf.Session()</div><div class="line"></div><div class="line">a = tf.constant(1)</div><div class="line">b = tf.constant(2)</div><div class="line"></div><div class="line">c = a+b</div><div class="line"></div><div class="line">print(a)</div><div class="line">print(b)</div><div class="line">print(c)</div><div class="line"></div><div class="line">print(sess.run(a))</div><div class="line">print(sess.run(b))</div><div class="line">print(sess.run(c))</div></pre></td></tr></table></figure>
-<p>결과값은 과연 어떻게 될까요?<br>Tensor(“Const:0”, shape=(), dtype=int32)<br>Tensor(“Const_1:0”, shape=(), dtype=int32)<br>Tensor(“add:0”, shape=(), dtype=int32)<br>1<br>2<br>3</p>
+<p><strong>결과값</strong><br>Tensor(“Const:0”, shape=(), dtype=int32)<br>Tensor(“Const_1:0”, shape=(), dtype=int32)<br>Tensor(“add:0”, shape=(), dtype=int32)<br>1<br>2<br>3</p>
 <p>위에 보이듯이 모든 텐서플로우에서의 변수는 상수상태로 존재하지 않습니다.<br><strong>operation 상태로 존재하고 session에 run메소드를 주는 순간 연산이 이루어지지요.</strong><br>이로서 우리는 각 노드들을 병렬적으로 다룰 수 있게 되지요.</p>
 
         </div>
@@ -180,7 +180,7 @@ ga('send', 'pageview');
 
 
 
-    <a data-url="https://penglover.github.io/2017/01/14/tensorflow1/" data-id="cixx8an130005eabnodbfvmq2" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://penglover.github.io/2017/01/14/tensorflow1/" data-id="cixx8y96e0005klbnqnfhjab3" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -311,6 +311,16 @@ ga('send', 'pageview');
         
 <nav id="article-nav">
     
+        <a href="/2017/01/14/tf-placeholder/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">newer</strong>
+        <p class="article-nav-title">
+        
+            텐서플로우에서 placeholder란 무엇일까?
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
     
         <a href="/2017/01/14/What-is-tensorflow-How-to-install/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">older</strong>
@@ -329,6 +339,26 @@ ga('send', 'pageview');
         <h3 class="widget-title">recents</h3>
         <div class="widget">
             <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/01/14/tf-placeholder/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://penglover.github.io/css/images/tensorflow.png)" alt="텐서플로우에서 placeholder란 무엇일까?" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/ML/">ML</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/ML/TensorFlow/">TensorFlow</a></p>
+                            <p class="item-title"><a href="/2017/01/14/tf-placeholder/" class="title">텐서플로우에서 placeholder란 무엇일까?</a></p>
+                            <p class="item-date"><time datetime="2017-01-14T13:01:16.000Z" itemprop="datePublished">2017-01-14</time></p>
+                        </div>
+                    </li>
                 
                     <li>
                         
@@ -419,7 +449,7 @@ ga('send', 'pageview');
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">categories</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/ML/">ML</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/ML/TensorFlow/">TensorFlow</a><span class="category-list-count">3</span></li></ul></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/ML/">ML</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/ML/TensorFlow/">TensorFlow</a><span class="category-list-count">4</span></li></ul></li></ul>
         </div>
     </div>
 
@@ -429,7 +459,7 @@ ga('send', 'pageview');
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">archives</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a><span class="archive-list-count">4</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a><span class="archive-list-count">5</span></li></ul>
         </div>
     </div>
 
@@ -439,7 +469,7 @@ ga('send', 'pageview');
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">tags</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/machinelearning/">machinelearning</a><span class="tag-list-count">3</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/machinelearning/">machinelearning</a><span class="tag-list-count">4</span></li></ul>
         </div>
     </div>
 
