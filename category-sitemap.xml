@@ -8,14 +8,14 @@
 
     <url>
         <loc>https://penglover.github.io/categories/ML/</loc>
-        <lastmod>2017-01-14T08:27:51.000Z</lastmod>
+        <lastmod>2017-01-14T08:31:19.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>https://penglover.github.io/categories/ML/tensorflow/</loc>
-        <lastmod>2017-01-14T08:27:51.000Z</lastmod>
+        <loc>https://penglover.github.io/categories/ML/TensorFlow/</loc>
+        <lastmod>2017-01-14T08:31:19.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
