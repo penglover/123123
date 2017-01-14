@@ -3,22 +3,40 @@
 <head>
     <meta charset="utf-8">
     
-    <title>Category: ML | Wellcome to IT Blog</title>
+    <title>텐서플로우에서 상수란 존재하지 않는다? 모든것은 연산! | Wellcome to IT Blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-    <meta name="description" content="Talk about software">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Wellcome to IT Blog">
-<meta property="og:url" content="https://penglover.github.io/categories/ML/index.html">
+        <meta name="keywords" content="machinelearning">
+    
+    <meta name="description" content="텐서플로우에서 상수란 존재하지 않는다‘’’python no_constant.pyimport tensorflow as tf
+sess = tf.Session()
+a = tf.constant(1)b = tf.constant(2)
+c = a+b
+print(a)print(b)print(c)
+print(sess.run(a))print(sess.run(b))print(">
+<meta property="og:type" content="article">
+<meta property="og:title" content="텐서플로우에서 상수란 존재하지 않는다? 모든것은 연산!">
+<meta property="og:url" content="https://penglover.github.io/2017/01/14/tensorflow1/index.html">
 <meta property="og:site_name" content="Wellcome to IT Blog">
-<meta property="og:description" content="Talk about software">
+<meta property="og:description" content="텐서플로우에서 상수란 존재하지 않는다‘’’python no_constant.pyimport tensorflow as tf
+sess = tf.Session()
+a = tf.constant(1)b = tf.constant(2)
+c = a+b
+print(a)print(b)print(c)
+print(sess.run(a))print(sess.run(b))print(">
 <meta property="og:image" content="https://penglover.github.io/css/images/logo.png">
+<meta property="og:updated_time" content="2017-01-14T12:48:02.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Wellcome to IT Blog">
-<meta name="twitter:description" content="Talk about software">
+<meta name="twitter:title" content="텐서플로우에서 상수란 존재하지 않는다? 모든것은 연산!">
+<meta name="twitter:description" content="텐서플로우에서 상수란 존재하지 않는다‘’’python no_constant.pyimport tensorflow as tf
+sess = tf.Session()
+a = tf.constant(1)b = tf.constant(2)
+c = a+b
+print(a)print(b)print(c)
+print(sess.run(a))print(sess.run(b))print(">
 <meta name="twitter:image" content="https://penglover.github.io/css/images/logo.png">
     
-    <link rel="canonical" href="https://penglover.github.io/categories/ML/">
+    <link rel="canonical" href="https://penglover.github.io/2017/01/14/tensorflow1/">
     
         <link rel="alternate" href="http://blog.naver.com/penglover" title="Wellcome to IT Blog" type="application/atom+xml">
     
@@ -138,172 +156,123 @@ ga('send', 'pageview');
                         <div class="main-body-header">
     <h1 class="header">
     
-    <i class="icon fa fa-folder-open"></i>Category: <em class="page-title-link">ML</em>
+    <a class="page-title-link" href="/categories/ML/">ML</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/ML/TensorFlow/">TensorFlow</a>
     </h1>
 </div>
                         <div class="main-body-content">
-                            
+                            <article id="post-tensorflow1" class="article article-single article-type-post" itemscope="" itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        텐서플로우에서 상수란 존재하지 않는다? 모든것은 연산!
+        </h1>
+    
 
-    
-    
+            </header>
         
         
-        <section class="archives-wrap">
-            <div class="archive-year-wrap">
-                <a href="/archives/2017" class="archive-year"><i class="icon fa fa-calendar-o"></i>2017</a>
+            <div class="article-subtitle">
+                <a href="/2017/01/14/tensorflow1/" class="article-date">
+    <time datetime="2017-01-14T12:33:46.000Z" itemprop="datePublished">2017-01-14</time>
+</a>
+                
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/machinelearning/">machinelearning</a></li></ul>
+
             </div>
-            <div class="archives">
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
         
-        <a href="/2017/01/14/tensorflow1/" class="thumbnail">
-    
-    
-        <span style="background-image:url(https://penglover.github.io/css/images/tensorflow.png)" alt="텐서플로우에서 상수란 존재하지 않는다? 모든것은 연산!" class="thumbnail-image"></span>
-    
-    
         
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="https://penglover.github.io/2017/01/14/tensorflow1/">0</span>
-    
-</span>
+        <div class="article-entry" itemprop="articleBody">
+            <h1 id="텐서플로우에서-상수란-존재하지-않는다"><a href="#텐서플로우에서-상수란-존재하지-않는다" class="headerlink" title="텐서플로우에서 상수란 존재하지 않는다"></a>텐서플로우에서 상수란 존재하지 않는다</h1><p>‘’’python no_constant.py<br>import tensorflow as tf</p>
+<p>sess = tf.Session()</p>
+<p>a = tf.constant(1)<br>b = tf.constant(2)</p>
+<p>c = a+b</p>
+<p>print(a)<br>print(b)<br>print(c)</p>
+<p>print(sess.run(a))<br>print(sess.run(b))<br>print(sess.run(c))<br>‘’’</p>
+<p>결과값은 과연 어떻게 될까요?<br>Tensor(“Const:0”, shape=(), dtype=int32)<br>Tensor(“Const_1:0”, shape=(), dtype=int32)<br>Tensor(“add:0”, shape=(), dtype=int32)<br>1<br>2<br>3</p>
+<p>위에 보이듯이 모든 텐서플로우에서의 변수는 상수상태로 존재하지 않습니다.<br><strong>operation 상태로 존재하고 session에 run메소드를 주는 순간 연산이 이루어지지요.</strong><br>이로서 우리는 각 노드들을 병렬적으로 다룰 수 있게 되지요.</p>
 
-    
-</a>
-
-        
-        <div class="article-meta">
-            <p class="category">
-            <a class="article-category-link" href="/categories/ML/">ML</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/ML/TensorFlow/">TensorFlow</a>
-            </p>
-            <p class="date"><time datetime="2017-01-14T12:33:46.000Z" itemprop="datePublished">2017-01-14</time></p>
         </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2017/01/14/tensorflow1/">텐서플로우에서 상수란 존재하지 않는다? 모든것은 연산!</a>
-        </h1>
-    
+        <footer class="article-footer">
+            
 
-        <p class="article-excerpt">
-            텐서플로우에서 상수란 존재하지 않는다‘’’python no_constant.pyimport tensorflow as tf
-sess = tf.Session()
-a = tf.constant(1)b = tf.constant(2)
-c = a+b
-print(a)print(b)print(c)
-print(sess.run(a))print(sess.run(b))print(
-        </p>
+
+
+    <a data-url="https://penglover.github.io/2017/01/14/tensorflow1/" data-id="cixx8an130005eabnodbfvmq2" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
     </div>
 </article>
-    
 
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2017/01/14/What-is-tensorflow-How-to-install/" class="thumbnail">
-    
-    
-        <span style="background-image:url(https://penglover.github.io/css/images/tensorflow.png)" alt="텐서플로우란 무엇일까? 추천 설치방법" class="thumbnail-image"></span>
-    
+    <section id="comments">
     
         
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="https://penglover.github.io/2017/01/14/What-is-tensorflow-How-to-install/">0</span>
-    
-</span>
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <p class="category">
-            <a class="article-category-link" href="/categories/ML/">ML</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/ML/TensorFlow/">TensorFlow</a>
-            </p>
-            <p class="date"><time datetime="2017-01-14T10:21:32.000Z" itemprop="datePublished">2017-01-14</time></p>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2017/01/14/What-is-tensorflow-How-to-install/">텐서플로우란 무엇일까? 추천 설치방법</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            텐서플로우란 무엇일까요새 굉장히 핫하죠! 머신러닝, 딥러닝!(머신러닝과 딥러닝에 대한 설명은 다음에 포스팅을 따로 하겠습니다)텐서플로우는 구글에서 발표한 머신러닝 오픈소스 라이브러리로 내부는 C++로 되어있고 여러 언어의 API를 제공합니다.가장 문서화가 잘 되어있고 인기있는 API는 파이썬입니다.때문에 주로 사람들이 파이썬으로 개발을 하는데요!그렇다면 왜
-        </p>
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
     </div>
-</article>
-    
-        </div>
-    
 
     
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2017/01/14/tensorflow-lecture-korean/" class="thumbnail">
-    
-    
-        <span style="background-image:url(https://penglover.github.io/css/images/tensorflow.png)" alt="텐서플로우 무료강의 소개" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="https://penglover.github.io/2017/01/14/tensorflow-lecture-korean/">0</span>
-    
-</span>
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <p class="category">
-            <a class="article-category-link" href="/categories/ML/">ML</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/ML/TensorFlow/">TensorFlow</a>
-            </p>
-            <p class="date"><time datetime="2017-01-14T08:24:28.000Z" itemprop="datePublished">2017-01-14</time></p>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2017/01/14/tensorflow-lecture-korean/">텐서플로우 무료강의 소개</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            머신러닝에서 가장 핫한 라이브러리중 하나죠! tensorflow!그런데 아직 한글로 된 강의가 많이 없는 것이 현실입니다.홍콩 과학기술대학교의 김성훈 교수님이 tensorflow를 무료로 강의해주십니다.대상은 비전공자나 전공자 중에서 머신러닝 입문자들입니다. ㅎㅎ정말 기초부터 차근차근 잘 알려주십니다.https://hunkim.github.io/ml/다음의
-        </p>
-    </div>
-</article>
-    
-        </div>
-    
-
-
-    </div></section>
-
-
+    </section>
 
 
                         </div>
@@ -358,6 +327,19 @@ print(sess.run(a))print(sess.run(b))print(
     </div>
 <div class="github-card" data-github="penglover" data-width="100%" data-height="" data-theme="default"></div>
 <script src="//cdn.jsdelivr.net/github-cards/latest/widget.js"></script>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2017/01/14/What-is-tensorflow-How-to-install/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">텐서플로우란 무엇일까? 추천 설치방법</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
     
     <div class="widgets-container">
         
@@ -536,11 +518,13 @@ print(sess.run(a))print(sess.run(b))print(
     var disqus_shortname = 'miscellaneous';
     
     
+    var disqus_url = 'https://penglover.github.io/2017/01/14/tensorflow1/';
+    
     (function() {
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
     </script>
