@@ -17,7 +17,7 @@
 <meta property="og:description" content="ReLU많은 분들이 아시듯이 머신러닝에서는 sigmoid함수를 써서 작업했었습니다.그 이유는 아래의 글에서 이미 다루었습니다.https://penglover.github.io/2017/01/15/algorithm-sigmoid/
 그런데 이 sigmoid는 사실 전에 머신러닝 붐을 약화시킨 주범입니다.바로 hidden layer 즉 층이 깊어지면 깊어질수록">
 <meta property="og:image" content="https://penglover.github.io/css/images/logo.png">
-<meta property="og:updated_time" content="2017-01-15T13:01:06.000Z">
+<meta property="og:updated_time" content="2017-01-15T13:03:36.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="sigmoid함수가 버려진 이유 - ReLU">
 <meta name="twitter:description" content="ReLU많은 분들이 아시듯이 머신러닝에서는 sigmoid함수를 써서 작업했었습니다.그 이유는 아래의 글에서 이미 다루었습니다.https://penglover.github.io/2017/01/15/algorithm-sigmoid/
@@ -174,7 +174,7 @@ ga('send', 'pageview');
         
         <div class="article-entry" itemprop="articleBody">
             <h1 id="ReLU"><a href="#ReLU" class="headerlink" title="ReLU"></a>ReLU</h1><p>많은 분들이 아시듯이 머신러닝에서는 sigmoid함수를 써서 작업했었습니다.<br>그 이유는 아래의 글에서 이미 다루었습니다.<br><a href="https://penglover.github.io/2017/01/15/algorithm-sigmoid/">https://penglover.github.io/2017/01/15/algorithm-sigmoid/</a></p>
-<p>그런데 이 sigmoid는 사실 전에 머신러닝 붐을 약화시킨 주범입니다.<br>바로 hidden layer 즉 층이 깊어지면 깊어질수록 정확성을 오히려 떨어뜨린다는 것입니다.<br>sigmoid 특성상 마이너스 값을 0에 가깝게 만듭니다.<br>따라서 관계가 깊어지면 깊어질수록 미분의 체인룰에 의해 sigmoid된 값들이 곱해질때<br>모두다 0에 가까운 값에 수렴하게 되어 input 값이 최종값에 아무런 영향을 끼치지 못하는 사태가 벌어지게 됩니다.<br>이를 위해 탄생한게 ReLU입니다.<br>매우 심플한데요.<br>0이하의 값이 들어오면 0을 출력하고 0이상의 값이 오면 비례함수로 그냥 내보내는 겁니다.<br><img src="https://upload.wikimedia.org/wikipedia/en/thumb/6/6c/Rectifier_and_softplus_functions.svg/440px-Rectifier_and_softplus_functions.svg.png" alt="ReLU"><br>감이 오시죠?<br>실제로 이 방법으로 hidden layer를 늘렸을때 즉 딥러닝에서 엄청난 결과를 가져옵니다.<br>감이 안오시는 분들은 아래의 김성훈 교수님의 강의를 들어보세요 ㅎㅎ<br><div class="video-container"><iframe src="//www.youtube.com/embed/cKtg_fpw88c" frameborder="0" allowfullscreen></iframe></div></p>
+<p>그런데 이 sigmoid는 사실 전에 머신러닝 붐을 약화시킨 주범입니다.<br>바로 hidden layer 즉 층이 깊어지면 깊어질수록 정확성을 오히려 떨어뜨린다는 것입니다.<br>sigmoid 특성상 마이너스 값을 0에 가깝게 만듭니다.<br>따라서 관계가 깊어지면 깊어질수록 미분의 체인룰에 의해 sigmoid된 값들이 곱해질때<br>모두다 0에 가까운 값에 수렴하게 되어 input 값이 최종값에 아무런 영향을 끼치지 못하는 사태가 벌어지게 됩니다.<br>이를 위해 탄생한게 ReLU입니다.<br>매우 심플한데요.<br>0이하의 값이 들어오면 0을 출력하고 0이상의 값이 오면 비례함수로 그냥 내보내는 겁니다.<br><img src="https://upload.wikimedia.org/wikipedia/en/thumb/6/6c/Rectifier_and_softplus_functions.svg/440px-Rectifier_and_softplus_functions.svg.png" alt="ReLU"><br>감이 오시죠?<br>아! 물론 sigmoid는 여전히 마지막 layer에서 사용하고 있습니다.<br>마지막에는 0에서 1사이의 값으로 출력할 필요가 있거든요!<br>실제로 이 방법으로 hidden layer를 늘렸을때 즉 딥러닝에서 엄청난 결과를 가져옵니다.<br>감이 안오시는 분들은 아래의 김성훈 교수님의 강의를 들어보세요 ㅎㅎ<br><div class="video-container"><iframe src="//www.youtube.com/embed/cKtg_fpw88c" frameborder="0" allowfullscreen></iframe></div></p>
 
         </div>
         <footer class="article-footer">
