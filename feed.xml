@@ -5,7 +5,7 @@
   <link href="/feed.xml" rel="self"/>
   
   <link href="https://penglover.github.io/"/>
-  <updated>2017-01-15T10:30:03.000Z</updated>
+  <updated>2017-01-15T11:41:27.000Z</updated>
   <id>https://penglover.github.io/</id>
   
   <author>
@@ -14,6 +14,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>백프로퍼게이션(역전파)에 대한 친절한 강의</title>
+    <link href="https://penglover.github.io/2017/01/15/backpropagation/"/>
+    <id>https://penglover.github.io/2017/01/15/backpropagation/</id>
+    <published>2017-01-15T11:32:11.000Z</published>
+    <updated>2017-01-15T11:41:27.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="backpropagation"><a href="#backpropagation" class="headerlink" title="backpropagation"></a>backpropagation</h1><p>역전파 알고리즘, 즉 백프로퍼게이션 알고리즘은 머신러닝, 딥러닝의 핵심으로 많이 쓰입니다.<br>어떻게 뉴런들을 학습시킬 것이냐? 에 대한 해답을 던져준 것이기 때문이죠.<br>쉽게 말하면 feed forward를 통해 결과값을 우선 얻습니다.<br>그리곤 실제값과의 차이를 통해 backpropagation으로 값들을 update시키죠.<br>각 값들을 update시키는 기준은 무엇일까요?<br>바로 미분을 통해서입니다.<br>미분을 아는분들은 감이 오실겁니다.<br>미분은 해당 값에서의 변화량이지요.<br>쉽게 말해 전체 알고리즘을 f라고 두고 해당점을 a라고 둔다면?<br>f를 a에 대해 미분하면 순간변화량, 즉 a가 f에 미치는 영향을 알 수 있습니다.<br>이에 따라서 값을 매기가 update 자료로 삼지요.<br>아래는 김성훈 교수님의 아주 친절한 강의입니다.<br><div class="video-container"><iframe src="//www.youtube.com/embed/573EZkzfnZ0" frameborder="0" allowfullscreen></iframe></div></p>
+<p>미분을 잘 모르는 분들을 위해서도 강의를 찍으셨습니다.<br><div class="video-container"><iframe src="//www.youtube.com/embed/oZyvmtqLmLo" frameborder="0" allowfullscreen></iframe></div></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;backpropagation&quot;&gt;&lt;a href=&quot;#backpropagation&quot; class=&quot;headerlink&quot; title=&quot;backpropagation&quot;&gt;&lt;/a&gt;backpropagation&lt;/h1&gt;&lt;p&gt;역전파 알고리즘, 즉 백프로퍼게이
+    
+    </summary>
+    
+      <category term="ML" scheme="https://penglover.github.io/categories/ML/"/>
+    
+      <category term="algorithm" scheme="https://penglover.github.io/categories/ML/algorithm/"/>
+    
+    
+      <category term="machinelearning" scheme="https://penglover.github.io/tags/machinelearning/"/>
+    
+      <category term="algorithm" scheme="https://penglover.github.io/tags/algorithm/"/>
+    
+  </entry>
   
   <entry>
     <title>딥러닝이란 무엇일까? 김성훈 교수님의 말씀!</title>

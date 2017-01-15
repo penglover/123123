@@ -3,28 +3,25 @@
 <head>
     <meta charset="utf-8">
     
-    <title>텐서플로우에서 placeholder란 무엇일까? | IT&#39;s IT Blog</title>
+    <title>백프로퍼게이션(역전파)에 대한 친절한 강의 | IT&#39;s IT Blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="machinelearning,tensorflow">
+        <meta name="keywords" content="machinelearning,algorithm">
     
-    <meta name="description" content="텐서플로우에서 참 재밌는 메서드가 있습니다.바로 placeholder 인데요!우리는 이것을 통해 값의 대입을 미룰 수 있습니다.아래의 코드에서 자세히 확인해보겠습니다.아! 참고로 python버전이 다르다면print부분에 수정이 필요합니다.
-placeholder.py12345678910111213import tensorflow as tfsess = tf.Se">
+    <meta name="description" content="backpropagation역전파 알고리즘, 즉 백프로퍼게이션 알고리즘은 머신러닝, 딥러닝의 핵심으로 많이 쓰입니다.어떻게 뉴런들을 학습시킬 것이냐? 에 대한 해답을 던져준 것이기 때문이죠.쉽게 말하면 feed forward를 통해 결과값을 우선 얻습니다.그리곤 실제값과의 차이를 통해 backpropagation으로 값들을 update시키죠.각 값들을 up">
 <meta property="og:type" content="article">
-<meta property="og:title" content="텐서플로우에서 placeholder란 무엇일까?">
-<meta property="og:url" content="https://penglover.github.io/2017/01/14/tf-placeholder/index.html">
+<meta property="og:title" content="백프로퍼게이션(역전파)에 대한 친절한 강의">
+<meta property="og:url" content="https://penglover.github.io/2017/01/15/backpropagation/index.html">
 <meta property="og:site_name" content="IT's IT Blog">
-<meta property="og:description" content="텐서플로우에서 참 재밌는 메서드가 있습니다.바로 placeholder 인데요!우리는 이것을 통해 값의 대입을 미룰 수 있습니다.아래의 코드에서 자세히 확인해보겠습니다.아! 참고로 python버전이 다르다면print부분에 수정이 필요합니다.
-placeholder.py12345678910111213import tensorflow as tfsess = tf.Se">
+<meta property="og:description" content="backpropagation역전파 알고리즘, 즉 백프로퍼게이션 알고리즘은 머신러닝, 딥러닝의 핵심으로 많이 쓰입니다.어떻게 뉴런들을 학습시킬 것이냐? 에 대한 해답을 던져준 것이기 때문이죠.쉽게 말하면 feed forward를 통해 결과값을 우선 얻습니다.그리곤 실제값과의 차이를 통해 backpropagation으로 값들을 update시키죠.각 값들을 up">
 <meta property="og:image" content="https://penglover.github.io/css/images/logo.png">
-<meta property="og:updated_time" content="2017-01-15T04:00:19.000Z">
+<meta property="og:updated_time" content="2017-01-15T11:41:27.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="텐서플로우에서 placeholder란 무엇일까?">
-<meta name="twitter:description" content="텐서플로우에서 참 재밌는 메서드가 있습니다.바로 placeholder 인데요!우리는 이것을 통해 값의 대입을 미룰 수 있습니다.아래의 코드에서 자세히 확인해보겠습니다.아! 참고로 python버전이 다르다면print부분에 수정이 필요합니다.
-placeholder.py12345678910111213import tensorflow as tfsess = tf.Se">
+<meta name="twitter:title" content="백프로퍼게이션(역전파)에 대한 친절한 강의">
+<meta name="twitter:description" content="backpropagation역전파 알고리즘, 즉 백프로퍼게이션 알고리즘은 머신러닝, 딥러닝의 핵심으로 많이 쓰입니다.어떻게 뉴런들을 학습시킬 것이냐? 에 대한 해답을 던져준 것이기 때문이죠.쉽게 말하면 feed forward를 통해 결과값을 우선 얻습니다.그리곤 실제값과의 차이를 통해 backpropagation으로 값들을 update시키죠.각 값들을 up">
 <meta name="twitter:image" content="https://penglover.github.io/css/images/logo.png">
     
-    <link rel="canonical" href="https://penglover.github.io/2017/01/14/tf-placeholder/">
+    <link rel="canonical" href="https://penglover.github.io/2017/01/15/backpropagation/">
     
         <link rel="alternate" href="http://blog.naver.com/penglover" title="IT&#39;s IT Blog" type="application/atom+xml">
     
@@ -144,18 +141,18 @@ ga('send', 'pageview');
                         <div class="main-body-header">
     <h1 class="header">
     
-    <a class="page-title-link" href="/categories/ML/">ML</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/ML/TensorFlow/">TensorFlow</a>
+    <a class="page-title-link" href="/categories/ML/">ML</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/ML/algorithm/">algorithm</a>
     </h1>
 </div>
                         <div class="main-body-content">
-                            <article id="post-tf-placeholder" class="article article-single article-type-post" itemscope="" itemprop="blogPost">
+                            <article id="post-backpropagation" class="article article-single article-type-post" itemscope="" itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-        텐서플로우에서 placeholder란 무엇일까?
+        백프로퍼게이션(역전파)에 대한 친절한 강의
         </h1>
     
 
@@ -163,20 +160,18 @@ ga('send', 'pageview');
         
         
             <div class="article-subtitle">
-                <a href="/2017/01/14/tf-placeholder/" class="article-date">
-    <time datetime="2017-01-14T13:01:16.000Z" itemprop="datePublished">2017-01-14</time>
+                <a href="/2017/01/15/backpropagation/" class="article-date">
+    <time datetime="2017-01-15T11:32:11.000Z" itemprop="datePublished">2017-01-15</time>
 </a>
                 
-    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/machinelearning/">machinelearning</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tensorflow/">tensorflow</a></li></ul>
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithm/">algorithm</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/machinelearning/">machinelearning</a></li></ul>
 
             </div>
         
         
         <div class="article-entry" itemprop="articleBody">
-            <p>텐서플로우에서 참 재밌는 메서드가 있습니다.<br>바로 placeholder 인데요!<br>우리는 이것을 통해 값의 대입을 미룰 수 있습니다.<br>아래의 코드에서 자세히 확인해보겠습니다.<br>아! 참고로 python버전이 다르다면<br>print부분에 수정이 필요합니다.</p>
-<figure class="highlight plain"><figcaption><span>placeholder.py</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">import tensorflow as tf</div><div class="line"></div><div class="line">sess = tf.Session()</div><div class="line"></div><div class="line">a = tf.placeholder(tf.int16)</div><div class="line">b = tf.placeholder(tf.int16)</div><div class="line"></div><div class="line">add = tf.add(a, b)</div><div class="line">mul = tf.mul(a, b)</div><div class="line"></div><div class="line"></div><div class="line">print(&quot;더한 결과는 %i&quot; % sess.run(add,feed_dict=&#123;a: 2, b: 3&#125;))</div><div class="line">print(&quot;곱한 결과는 %i&quot; % sess.run(mul,feed_dict=&#123;a: 3, b: 4&#125;))</div></pre></td></tr></table></figure>
-<p><strong>결과값</strong><br>더한 결과는 5<br>곱한 결과는 12</p>
-<p>placeholder를 통해 먼저 16bit 크기의 int형 데이터의 공간을 만들어 놓았습니다.<br>그리고 나중에 연산을 할 때에 대입값을 지정해 주었지요.<br>나중에 아주 유용하게 많이 쓰이니 꼭 잘 숙지하고 넘어가야 하는 부분입니다.</p>
+            <h1 id="backpropagation"><a href="#backpropagation" class="headerlink" title="backpropagation"></a>backpropagation</h1><p>역전파 알고리즘, 즉 백프로퍼게이션 알고리즘은 머신러닝, 딥러닝의 핵심으로 많이 쓰입니다.<br>어떻게 뉴런들을 학습시킬 것이냐? 에 대한 해답을 던져준 것이기 때문이죠.<br>쉽게 말하면 feed forward를 통해 결과값을 우선 얻습니다.<br>그리곤 실제값과의 차이를 통해 backpropagation으로 값들을 update시키죠.<br>각 값들을 update시키는 기준은 무엇일까요?<br>바로 미분을 통해서입니다.<br>미분을 아는분들은 감이 오실겁니다.<br>미분은 해당 값에서의 변화량이지요.<br>쉽게 말해 전체 알고리즘을 f라고 두고 해당점을 a라고 둔다면?<br>f를 a에 대해 미분하면 순간변화량, 즉 a가 f에 미치는 영향을 알 수 있습니다.<br>이에 따라서 값을 매기가 update 자료로 삼지요.<br>아래는 김성훈 교수님의 아주 친절한 강의입니다.<br><div class="video-container"><iframe src="//www.youtube.com/embed/573EZkzfnZ0" frameborder="0" allowfullscreen></iframe></div></p>
+<p>미분을 잘 모르는 분들을 위해서도 강의를 찍으셨습니다.<br><div class="video-container"><iframe src="//www.youtube.com/embed/oZyvmtqLmLo" frameborder="0" allowfullscreen></iframe></div></p>
 
         </div>
         <footer class="article-footer">
@@ -184,7 +179,7 @@ ga('send', 'pageview');
 
 
 
-    <a data-url="https://penglover.github.io/2017/01/14/tf-placeholder/" data-id="cixylcvoz000sp0bntlu1knhm" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://penglover.github.io/2017/01/15/backpropagation/" data-id="cixylcvob0001p0bn3csvfb7n" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -315,20 +310,10 @@ ga('send', 'pageview');
         
 <nav id="article-nav">
     
-        <a href="/2017/01/14/tf-LinearRegression/" id="article-nav-newer" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">newer</strong>
-        <p class="article-nav-title">
-        
-            텐서플로우로 linear regression 구현 및 설명
-        
-        </p>
-        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
-    </a>
     
-    
-        <a href="/2017/01/14/tensorflow1/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2017/01/15/what-is-deep-learning/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">older</strong>
-        <p class="article-nav-title">텐서플로우에서 상수란 존재하지 않는다? 모든것은 연산!</p>
+        <p class="article-nav-title">딥러닝이란 무엇일까? 김성훈 교수님의 말씀!</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
@@ -532,7 +517,7 @@ ga('send', 'pageview');
     var disqus_shortname = 'miscellaneous';
     
     
-    var disqus_url = 'https://penglover.github.io/2017/01/14/tf-placeholder/';
+    var disqus_url = 'https://penglover.github.io/2017/01/15/backpropagation/';
     
     (function() {
     var dsq = document.createElement('script');
