@@ -111,7 +111,7 @@
     <link href="https://penglover.github.io/2017/01/15/algorithm-sigmoid/"/>
     <id>https://penglover.github.io/2017/01/15/algorithm-sigmoid/</id>
     <published>2017-01-15T03:27:36.000Z</published>
-    <updated>2017-01-15T04:00:14.000Z</updated>
+    <updated>2017-01-15T08:34:48.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="why-sigmoid"><a href="#why-sigmoid" class="headerlink" title="why sigmoid"></a>why sigmoid</h1><p>머신러닝 알고리즘을 공부하다가보면 시그모이드 함수를 마주쳤을 것입니다.<br>그런데 이게 진짜 과연 써야하는 것인가?<br>그냥 linear한 함수를 쓰면 안되나?<br>이런 의문을 바로 해결해준 유투브 강의가 있어서 소개합니다.<br>김성훈님의 강의입니다.<br><div class="video-container"><iframe src="//www.youtube.com/embed/PIjno6paszY" frameborder="0" allowfullscreen></iframe></div></p>
 <p>Logistic classification을 설명해 주시면서 등장합니다.<br>이런 이유라면 충분히 시그모이드 함수의 등장이 이해가 가네요!</p>
@@ -125,7 +125,7 @@
     
       <category term="ML" scheme="https://penglover.github.io/categories/ML/"/>
     
-      <category term="algorithm" scheme="https://penglover.github.io/categories/ML/algorithm/"/>
+      <category term="Algorithm" scheme="https://penglover.github.io/categories/ML/Algorithm/"/>
     
     
       <category term="machinelearning" scheme="https://penglover.github.io/tags/machinelearning/"/>
