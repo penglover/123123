@@ -3,28 +3,25 @@
 <head>
     <meta charset="utf-8">
     
-    <title>텐서플로우에서 placeholder란 무엇일까? | Wellcome to IT Blog</title>
+    <title>tensorflow에서 언제 LinearRegression을 적용시킬지 알아보는 법 | Wellcome to IT Blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
         <meta name="keywords" content="machinelearning">
     
-    <meta name="description" content="텐서플로우에서 참 재밌는 메서드가 있습니다.바로 placeholder 인데요!우리는 이것을 통해 값의 대입을 미룰 수 있습니다.아래의 코드에서 자세히 확인해보겠습니다.아! 참고로 python버전이 다르다면print부분에 수정이 필요합니다.
-placeholder.py12345678910111213import tensorflow as tfsess = tf.Se">
+    <meta name="description" content="LinearRegression은 언제 적용시킬까요?이것을 알기 위해서는 그래프를 그려 보는 것이 좋습니다.파이썬에서는 그래프를 쉽게 그리게 해주는 라이브러리가 존재하는데요~바로 matplotlib를 이용하면 아주 쉽습니다.pip이 설치되어 있다면 그냥 pip install matplotlib 하시면 됩니다.python3버전이신 경우에는 pip3 instal">
 <meta property="og:type" content="article">
-<meta property="og:title" content="텐서플로우에서 placeholder란 무엇일까?">
-<meta property="og:url" content="https://penglover.github.io/2017/01/14/tf-placeholder/index.html">
+<meta property="og:title" content="tensorflow에서 언제 LinearRegression을 적용시킬지 알아보는 법">
+<meta property="og:url" content="https://penglover.github.io/2017/01/15/tensorflow-graph/index.html">
 <meta property="og:site_name" content="Wellcome to IT Blog">
-<meta property="og:description" content="텐서플로우에서 참 재밌는 메서드가 있습니다.바로 placeholder 인데요!우리는 이것을 통해 값의 대입을 미룰 수 있습니다.아래의 코드에서 자세히 확인해보겠습니다.아! 참고로 python버전이 다르다면print부분에 수정이 필요합니다.
-placeholder.py12345678910111213import tensorflow as tfsess = tf.Se">
+<meta property="og:description" content="LinearRegression은 언제 적용시킬까요?이것을 알기 위해서는 그래프를 그려 보는 것이 좋습니다.파이썬에서는 그래프를 쉽게 그리게 해주는 라이브러리가 존재하는데요~바로 matplotlib를 이용하면 아주 쉽습니다.pip이 설치되어 있다면 그냥 pip install matplotlib 하시면 됩니다.python3버전이신 경우에는 pip3 instal">
 <meta property="og:image" content="https://penglover.github.io/css/images/logo.png">
-<meta property="og:updated_time" content="2017-01-15T00:11:14.000Z">
+<meta property="og:updated_time" content="2017-01-15T01:41:57.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="텐서플로우에서 placeholder란 무엇일까?">
-<meta name="twitter:description" content="텐서플로우에서 참 재밌는 메서드가 있습니다.바로 placeholder 인데요!우리는 이것을 통해 값의 대입을 미룰 수 있습니다.아래의 코드에서 자세히 확인해보겠습니다.아! 참고로 python버전이 다르다면print부분에 수정이 필요합니다.
-placeholder.py12345678910111213import tensorflow as tfsess = tf.Se">
+<meta name="twitter:title" content="tensorflow에서 언제 LinearRegression을 적용시킬지 알아보는 법">
+<meta name="twitter:description" content="LinearRegression은 언제 적용시킬까요?이것을 알기 위해서는 그래프를 그려 보는 것이 좋습니다.파이썬에서는 그래프를 쉽게 그리게 해주는 라이브러리가 존재하는데요~바로 matplotlib를 이용하면 아주 쉽습니다.pip이 설치되어 있다면 그냥 pip install matplotlib 하시면 됩니다.python3버전이신 경우에는 pip3 instal">
 <meta name="twitter:image" content="https://penglover.github.io/css/images/logo.png">
     
-    <link rel="canonical" href="https://penglover.github.io/2017/01/14/tf-placeholder/">
+    <link rel="canonical" href="https://penglover.github.io/2017/01/15/tensorflow-graph/">
     
         <link rel="alternate" href="http://blog.naver.com/penglover" title="Wellcome to IT Blog" type="application/atom+xml">
     
@@ -148,14 +145,14 @@ ga('send', 'pageview');
     </h1>
 </div>
                         <div class="main-body-content">
-                            <article id="post-tf-placeholder" class="article article-single article-type-post" itemscope="" itemprop="blogPost">
+                            <article id="post-tensorflow-graph" class="article article-single article-type-post" itemscope="" itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-        텐서플로우에서 placeholder란 무엇일까?
+        tensorflow에서 언제 LinearRegression을 적용시킬지 알아보는 법
         </h1>
     
 
@@ -163,8 +160,8 @@ ga('send', 'pageview');
         
         
             <div class="article-subtitle">
-                <a href="/2017/01/14/tf-placeholder/" class="article-date">
-    <time datetime="2017-01-14T13:01:16.000Z" itemprop="datePublished">2017-01-14</time>
+                <a href="/2017/01/15/tensorflow-graph/" class="article-date">
+    <time datetime="2017-01-15T01:22:39.000Z" itemprop="datePublished">2017-01-15</time>
 </a>
                 
     <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/machinelearning/">machinelearning</a></li></ul>
@@ -173,10 +170,11 @@ ga('send', 'pageview');
         
         
         <div class="article-entry" itemprop="articleBody">
-            <p>텐서플로우에서 참 재밌는 메서드가 있습니다.<br>바로 placeholder 인데요!<br>우리는 이것을 통해 값의 대입을 미룰 수 있습니다.<br>아래의 코드에서 자세히 확인해보겠습니다.<br>아! 참고로 python버전이 다르다면<br>print부분에 수정이 필요합니다.</p>
-<figure class="highlight plain"><figcaption><span>placeholder.py</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">import tensorflow as tf</div><div class="line"></div><div class="line">sess = tf.Session()</div><div class="line"></div><div class="line">a = tf.placeholder(tf.int16)</div><div class="line">b = tf.placeholder(tf.int16)</div><div class="line"></div><div class="line">add = tf.add(a, b)</div><div class="line">mul = tf.mul(a, b)</div><div class="line"></div><div class="line"></div><div class="line">print(&quot;더한 결과는 %i&quot; % sess.run(add,feed_dict=&#123;a: 2, b: 3&#125;))</div><div class="line">print(&quot;곱한 결과는 %i&quot; % sess.run(mul,feed_dict=&#123;a: 3, b: 4&#125;))</div></pre></td></tr></table></figure>
-<p><strong>결과값</strong><br>더한 결과는 5<br>곱한 결과는 12</p>
-<p>placeholder를 통해 먼저 16bit 크기의 int형 데이터의 공간을 만들어 놓았습니다.<br>그리고 나중에 연산을 할 때에 대입값을 지정해 주었지요.<br>나중에 아주 유용하게 많이 쓰이니 꼭 잘 숙지하고 넘어가야 하는 부분입니다.</p>
+            <h1 id="LinearRegression은-언제-적용시킬까요"><a href="#LinearRegression은-언제-적용시킬까요" class="headerlink" title="LinearRegression은 언제 적용시킬까요?"></a>LinearRegression은 언제 적용시킬까요?</h1><p>이것을 알기 위해서는 그래프를 그려 보는 것이 좋습니다.<br>파이썬에서는 그래프를 쉽게 그리게 해주는 라이브러리가 존재하는데요~<br>바로 matplotlib를 이용하면 아주 쉽습니다.<br>pip이 설치되어 있다면 그냥 pip install matplotlib 하시면 됩니다.<br>python3버전이신 경우에는 pip3 install matplotlib를 하시구요.<br><a href="http://matplotlib.org/users/installing.html" rel="external nofollow noopener noreferrer" target="_blank">http://matplotlib.org/users/installing.html</a> 에서 다른 설치법들도 알려줍니다~<br>설치 안되시면 댓글남겨주세요.</p>
+<p>그럼 코드를 보면서 설명드리도록 하겠습니다.<br><figure class="highlight plain"><figcaption><span>matplotlib.py</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">import tensorflow as tf</div><div class="line">import matplotlib.pyplot as plt</div><div class="line"></div><div class="line">X = [1., 2., 3.]</div><div class="line">Y = [1., 2., 3.]</div><div class="line">m = samples = len(X)</div><div class="line"></div><div class="line">W = tf.placeholder(tf.float32)</div><div class="line"></div><div class="line">hypothesis = tf.mul(X, W)</div><div class="line"></div><div class="line">cost = tf.reduce_sum(tf.pow(hypothesis-Y,2))/m</div><div class="line"></div><div class="line">init = tf.global_variables_initializer()</div><div class="line"></div><div class="line"></div><div class="line">W_val = []</div><div class="line">cost_val = []</div><div class="line"></div><div class="line">sess = tf.Session()</div><div class="line">sess.run(init)</div><div class="line">for i in range(-30,50):</div><div class="line">    print (i*0.1, sess.run(cost, feed_dict=&#123;W: i*0.1&#125;))</div><div class="line">    W_val.append(i*0.1)</div><div class="line">    cost_val.append(sess.run(cost, feed_dict=&#123;W: i*0.1&#125;))</div><div class="line"></div><div class="line">plt.plot(W_val, cost_val, &apos;ro&apos;)</div><div class="line">plt.ylabel(&apos;cost&apos;)</div><div class="line">plt.xlabel(&apos;W&apos;)</div><div class="line">plt.show()</div></pre></td></tr></table></figure><br>결과값은 그래프가 포함되다보니 스크린샷으로 보여드리겠습니다.<br><img src="https://penglover.github.io/css/images/matplotlib_sample.png" alt="matplotlib_sample"></p>
+<p>자 그럼 본격적인 이야기를 해보겠습니다.<br>코드는 참 평범합니다. 그냥 hypothesis-Y에 제곱을 한 값을 평균을 내어 준 것인데요.<br>우리는 이미 X와 Y의 관계가 X * 1 = Y라는 것을 알고 있습니다.<br>X = [1, 2, 3]이고 Y = [1, 2, 3]이니 당연한 일이지요.<br>컴퓨터를 통해서 그래프를 그려보도록 하겠습니다.<br>사용법은 코드를 조금만 보시면 이해가 쉽게 가실겁니다.</p>
+<p>그림처럼 저렇게 순탄한 아래쪽이 둥근모형이면 손쉽게 LinearRegression을 적용할 수 있습니다.<br>기울기 값이 줄어들거나 늘어나는 패턴이 일정하기 때문이지요.<br>수식으로 순간미분값(해당 점의 기울기값)이 0에 가까워 지도록 찾아주기만 하면 되닌까요.</p>
+<p>아주 간단하죠?<br>요약하자면 연속하고 아래쪽 둥근부분이 저렇게 그림처럼 한부분만 있으면 됩니다.<br>3차원의 경우에도 마찬가지에요!</p>
 
         </div>
         <footer class="article-footer">
@@ -184,7 +182,7 @@ ga('send', 'pageview');
 
 
 
-    <a data-url="https://penglover.github.io/2017/01/14/tf-placeholder/" data-id="cixxzy0bq000cp8bn891rtxcs" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://penglover.github.io/2017/01/15/tensorflow-graph/" data-id="cixxzy0b80001p8bnk3h8n48t" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -315,20 +313,10 @@ ga('send', 'pageview');
         
 <nav id="article-nav">
     
-        <a href="/2017/01/14/tf-LinearRegression/" id="article-nav-newer" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">newer</strong>
-        <p class="article-nav-title">
-        
-            텐서플로우로 linear regression 구현 및 설명
-        
-        </p>
-        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
-    </a>
     
-    
-        <a href="/2017/01/14/tensorflow1/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2017/01/14/tf-LinearRegression/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">older</strong>
-        <p class="article-nav-title">텐서플로우에서 상수란 존재하지 않는다? 모든것은 연산!</p>
+        <p class="article-nav-title">텐서플로우로 linear regression 구현 및 설명</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
@@ -532,7 +520,7 @@ ga('send', 'pageview');
     var disqus_shortname = 'miscellaneous';
     
     
-    var disqus_url = 'https://penglover.github.io/2017/01/14/tf-placeholder/';
+    var disqus_url = 'https://penglover.github.io/2017/01/15/tensorflow-graph/';
     
     (function() {
     var dsq = document.createElement('script');
