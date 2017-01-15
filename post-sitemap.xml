@@ -8,39 +8,7 @@
 
     <url>
         <loc>https://penglover.github.io/2017/01/15/tensorflow-graph/</loc>
-        <lastmod>2017-01-15T01:41:57.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://penglover.github.io/2017/01/14/What-is-tensorflow-How-to-install/</loc>
-        <lastmod>2017-01-15T00:11:15.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://penglover.github.io/2017/01/14/tf-placeholder/</loc>
-        <lastmod>2017-01-15T00:11:14.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://penglover.github.io/2017/01/14/tf-LinearRegression/</loc>
-        <lastmod>2017-01-15T00:11:13.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://penglover.github.io/2017/01/14/tensorflow1/</loc>
-        <lastmod>2017-01-15T00:11:12.000Z</lastmod>
+        <lastmod>2017-01-15T01:54:43.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -48,7 +16,39 @@
 
     <url>
         <loc>https://penglover.github.io/2017/01/14/tensorflow-lecture-korean/</loc>
-        <lastmod>2017-01-15T00:11:10.000Z</lastmod>
+        <lastmod>2017-01-15T01:54:37.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://penglover.github.io/2017/01/14/tensorflow1/</loc>
+        <lastmod>2017-01-15T01:54:34.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://penglover.github.io/2017/01/14/tf-LinearRegression/</loc>
+        <lastmod>2017-01-15T01:54:31.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://penglover.github.io/2017/01/14/tf-placeholder/</loc>
+        <lastmod>2017-01-15T01:54:27.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://penglover.github.io/2017/01/14/What-is-tensorflow-How-to-install/</loc>
+        <lastmod>2017-01-15T01:54:24.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 

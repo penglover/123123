@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="Wellcome to IT Blog">
 <meta property="og:description" content="LinearRegression은 언제 적용시킬까요?이것을 알기 위해서는 그래프를 그려 보는 것이 좋습니다.파이썬에서는 그래프를 쉽게 그리게 해주는 라이브러리가 존재하는데요~바로 matplotlib를 이용하면 아주 쉽습니다.pip이 설치되어 있다면 그냥 pip install matplotlib 하시면 됩니다.python3버전이신 경우에는 pip3 instal">
 <meta property="og:image" content="https://penglover.github.io/css/images/logo.png">
-<meta property="og:updated_time" content="2017-01-15T01:41:57.000Z">
+<meta property="og:updated_time" content="2017-01-15T01:54:43.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="tensorflow에서 언제 LinearRegression을 적용시킬지 알아보는 법">
 <meta name="twitter:description" content="LinearRegression은 언제 적용시킬까요?이것을 알기 위해서는 그래프를 그려 보는 것이 좋습니다.파이썬에서는 그래프를 쉽게 그리게 해주는 라이브러리가 존재하는데요~바로 matplotlib를 이용하면 아주 쉽습니다.pip이 설치되어 있다면 그냥 pip install matplotlib 하시면 됩니다.python3버전이신 경우에는 pip3 instal">
@@ -27,7 +27,7 @@
     
 
     
-        <link rel="icon" href="/css/images/favicon.png">
+        <link rel="icon" href="/images/favicon.png">
     
 
     <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
@@ -171,7 +171,7 @@ ga('send', 'pageview');
         
         <div class="article-entry" itemprop="articleBody">
             <h1 id="LinearRegression은-언제-적용시킬까요"><a href="#LinearRegression은-언제-적용시킬까요" class="headerlink" title="LinearRegression은 언제 적용시킬까요?"></a>LinearRegression은 언제 적용시킬까요?</h1><p>이것을 알기 위해서는 그래프를 그려 보는 것이 좋습니다.<br>파이썬에서는 그래프를 쉽게 그리게 해주는 라이브러리가 존재하는데요~<br>바로 matplotlib를 이용하면 아주 쉽습니다.<br>pip이 설치되어 있다면 그냥 pip install matplotlib 하시면 됩니다.<br>python3버전이신 경우에는 pip3 install matplotlib를 하시구요.<br><a href="http://matplotlib.org/users/installing.html" rel="external nofollow noopener noreferrer" target="_blank">http://matplotlib.org/users/installing.html</a> 에서 다른 설치법들도 알려줍니다~<br>설치 안되시면 댓글남겨주세요.</p>
-<p>그럼 코드를 보면서 설명드리도록 하겠습니다.<br><figure class="highlight plain"><figcaption><span>matplotlib.py</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">import tensorflow as tf</div><div class="line">import matplotlib.pyplot as plt</div><div class="line"></div><div class="line">X = [1., 2., 3.]</div><div class="line">Y = [1., 2., 3.]</div><div class="line">m = samples = len(X)</div><div class="line"></div><div class="line">W = tf.placeholder(tf.float32)</div><div class="line"></div><div class="line">hypothesis = tf.mul(X, W)</div><div class="line"></div><div class="line">cost = tf.reduce_sum(tf.pow(hypothesis-Y,2))/m</div><div class="line"></div><div class="line">init = tf.global_variables_initializer()</div><div class="line"></div><div class="line"></div><div class="line">W_val = []</div><div class="line">cost_val = []</div><div class="line"></div><div class="line">sess = tf.Session()</div><div class="line">sess.run(init)</div><div class="line">for i in range(-30,50):</div><div class="line">    print (i*0.1, sess.run(cost, feed_dict=&#123;W: i*0.1&#125;))</div><div class="line">    W_val.append(i*0.1)</div><div class="line">    cost_val.append(sess.run(cost, feed_dict=&#123;W: i*0.1&#125;))</div><div class="line"></div><div class="line">plt.plot(W_val, cost_val, &apos;ro&apos;)</div><div class="line">plt.ylabel(&apos;cost&apos;)</div><div class="line">plt.xlabel(&apos;W&apos;)</div><div class="line">plt.show()</div></pre></td></tr></table></figure><br>결과값은 그래프가 포함되다보니 스크린샷으로 보여드리겠습니다.<br><img src="https://penglover.github.io/css/images/matplotlib_sample.png" alt="matplotlib_sample"></p>
+<p>그럼 코드를 보면서 설명드리도록 하겠습니다.<br><figure class="highlight plain"><figcaption><span>matplotlib.py</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">import tensorflow as tf</div><div class="line">import matplotlib.pyplot as plt</div><div class="line"></div><div class="line">X = [1., 2., 3.]</div><div class="line">Y = [1., 2., 3.]</div><div class="line">m = samples = len(X)</div><div class="line"></div><div class="line">W = tf.placeholder(tf.float32)</div><div class="line"></div><div class="line">hypothesis = tf.mul(X, W)</div><div class="line"></div><div class="line">cost = tf.reduce_sum(tf.pow(hypothesis-Y,2))/m</div><div class="line"></div><div class="line">init = tf.global_variables_initializer()</div><div class="line"></div><div class="line"></div><div class="line">W_val = []</div><div class="line">cost_val = []</div><div class="line"></div><div class="line">sess = tf.Session()</div><div class="line">sess.run(init)</div><div class="line">for i in range(-30,50):</div><div class="line">    print (i*0.1, sess.run(cost, feed_dict=&#123;W: i*0.1&#125;))</div><div class="line">    W_val.append(i*0.1)</div><div class="line">    cost_val.append(sess.run(cost, feed_dict=&#123;W: i*0.1&#125;))</div><div class="line"></div><div class="line">plt.plot(W_val, cost_val, &apos;ro&apos;)</div><div class="line">plt.ylabel(&apos;cost&apos;)</div><div class="line">plt.xlabel(&apos;W&apos;)</div><div class="line">plt.show()</div></pre></td></tr></table></figure><br>결과값은 그래프가 포함되다보니 스크린샷으로 보여드리겠습니다.<br><img src="https://penglover.github.io/images/matplotlib_sample.png" alt="matplotlib_sample"></p>
 <p>자 그럼 본격적인 이야기를 해보겠습니다.<br>코드는 참 평범합니다. 그냥 hypothesis-Y에 제곱을 한 값을 평균을 내어 준 것인데요.<br>우리는 이미 X와 Y의 관계가 X * 1 = Y라는 것을 알고 있습니다.<br>X = [1, 2, 3]이고 Y = [1, 2, 3]이니 당연한 일이지요.<br>컴퓨터를 통해서 그래프를 그려보도록 하겠습니다.<br>사용법은 코드를 조금만 보시면 이해가 쉽게 가실겁니다.</p>
 <p>그림처럼 저렇게 순탄한 아래쪽이 둥근모형이면 손쉽게 LinearRegression을 적용할 수 있습니다.<br>기울기 값이 줄어들거나 늘어나는 패턴이 일정하기 때문이지요.<br>수식으로 순간미분값(해당 점의 기울기값)이 0에 가까워 지도록 찾아주기만 하면 되닌까요.</p>
 <p>아주 간단하죠?<br>요약하자면 연속하고 아래쪽 둥근부분이 저렇게 그림처럼 한부분만 있으면 됩니다.<br>3차원의 경우에도 마찬가지에요!</p>
@@ -338,7 +338,7 @@ ga('send', 'pageview');
                             <a href="/2017/01/15/tensorflow-graph/" class="thumbnail">
     
     
-        <span style="background-image:url(https://penglover.github.io/css/images/matplotlib.png)" alt="tensorflow에서 언제 LinearRegression을 적용시킬지 알아보는 법" class="thumbnail-image"></span>
+        <span style="background-image:url(https://penglover.github.io/images/matplotlib.png)" alt="tensorflow에서 언제 LinearRegression을 적용시킬지 알아보는 법" class="thumbnail-image"></span>
     
     
 </a>
@@ -358,7 +358,7 @@ ga('send', 'pageview');
                             <a href="/2017/01/14/tf-LinearRegression/" class="thumbnail">
     
     
-        <span style="background-image:url(https://penglover.github.io/css/images/tensorflow.png)" alt="텐서플로우로 linear regression 구현 및 설명" class="thumbnail-image"></span>
+        <span style="background-image:url(https://penglover.github.io/images/tensorflow.png)" alt="텐서플로우로 linear regression 구현 및 설명" class="thumbnail-image"></span>
     
     
 </a>
@@ -378,7 +378,7 @@ ga('send', 'pageview');
                             <a href="/2017/01/14/tf-placeholder/" class="thumbnail">
     
     
-        <span style="background-image:url(https://penglover.github.io/css/images/tensorflow.png)" alt="텐서플로우에서 placeholder란 무엇일까?" class="thumbnail-image"></span>
+        <span style="background-image:url(https://penglover.github.io/images/tensorflow.png)" alt="텐서플로우에서 placeholder란 무엇일까?" class="thumbnail-image"></span>
     
     
 </a>
@@ -398,7 +398,7 @@ ga('send', 'pageview');
                             <a href="/2017/01/14/tensorflow1/" class="thumbnail">
     
     
-        <span style="background-image:url(https://penglover.github.io/css/images/tensorflow.png)" alt="텐서플로우에서 상수란 존재하지 않는다? 모든것은 연산!" class="thumbnail-image"></span>
+        <span style="background-image:url(https://penglover.github.io/images/tensorflow.png)" alt="텐서플로우에서 상수란 존재하지 않는다? 모든것은 연산!" class="thumbnail-image"></span>
     
     
 </a>
@@ -418,7 +418,7 @@ ga('send', 'pageview');
                             <a href="/2017/01/14/What-is-tensorflow-How-to-install/" class="thumbnail">
     
     
-        <span style="background-image:url(https://penglover.github.io/css/images/tensorflow.png)" alt="텐서플로우란 무엇일까? 추천 설치방법" class="thumbnail-image"></span>
+        <span style="background-image:url(https://penglover.github.io/images/tensorflow.png)" alt="텐서플로우란 무엇일까? 추천 설치방법" class="thumbnail-image"></span>
     
     
 </a>
