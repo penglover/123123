@@ -8,20 +8,20 @@
     
         <meta name="keywords" content="machinelearning">
     
-    <meta name="description" content="텐서플로우에서 참 재밌는 메서드가 있습니다.바로 placeholder 인데요!우리는 이것을 통해 값의 대입을 미룰 수 있습니다.아래의 코드에서 자세히 확인해보겠습니다.아! 참고로 tensorflow 버전이나 python버전이 다르다면initialize_all_variables, print, range 부분에 수정이 필요합니다.
-placeholder.py12">
+    <meta name="description" content="텐서플로우에서 참 재밌는 메서드가 있습니다.바로 placeholder 인데요!우리는 이것을 통해 값의 대입을 미룰 수 있습니다.아래의 코드에서 자세히 확인해보겠습니다.아! 참고로 python버전이 다르다면print부분에 수정이 필요합니다.
+placeholder.py12345678910111213import tensorflow as tfsess = tf.Se">
 <meta property="og:type" content="article">
 <meta property="og:title" content="텐서플로우에서 placeholder란 무엇일까?">
 <meta property="og:url" content="https://penglover.github.io/2017/01/14/tf-placeholder/index.html">
 <meta property="og:site_name" content="Wellcome to IT Blog">
-<meta property="og:description" content="텐서플로우에서 참 재밌는 메서드가 있습니다.바로 placeholder 인데요!우리는 이것을 통해 값의 대입을 미룰 수 있습니다.아래의 코드에서 자세히 확인해보겠습니다.아! 참고로 tensorflow 버전이나 python버전이 다르다면initialize_all_variables, print, range 부분에 수정이 필요합니다.
-placeholder.py12">
+<meta property="og:description" content="텐서플로우에서 참 재밌는 메서드가 있습니다.바로 placeholder 인데요!우리는 이것을 통해 값의 대입을 미룰 수 있습니다.아래의 코드에서 자세히 확인해보겠습니다.아! 참고로 python버전이 다르다면print부분에 수정이 필요합니다.
+placeholder.py12345678910111213import tensorflow as tfsess = tf.Se">
 <meta property="og:image" content="https://penglover.github.io/css/images/logo.png">
-<meta property="og:updated_time" content="2017-01-14T15:13:39.000Z">
+<meta property="og:updated_time" content="2017-01-15T00:11:14.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="텐서플로우에서 placeholder란 무엇일까?">
-<meta name="twitter:description" content="텐서플로우에서 참 재밌는 메서드가 있습니다.바로 placeholder 인데요!우리는 이것을 통해 값의 대입을 미룰 수 있습니다.아래의 코드에서 자세히 확인해보겠습니다.아! 참고로 tensorflow 버전이나 python버전이 다르다면initialize_all_variables, print, range 부분에 수정이 필요합니다.
-placeholder.py12">
+<meta name="twitter:description" content="텐서플로우에서 참 재밌는 메서드가 있습니다.바로 placeholder 인데요!우리는 이것을 통해 값의 대입을 미룰 수 있습니다.아래의 코드에서 자세히 확인해보겠습니다.아! 참고로 python버전이 다르다면print부분에 수정이 필요합니다.
+placeholder.py12345678910111213import tensorflow as tfsess = tf.Se">
 <meta name="twitter:image" content="https://penglover.github.io/css/images/logo.png">
     
     <link rel="canonical" href="https://penglover.github.io/2017/01/14/tf-placeholder/">
@@ -173,7 +173,7 @@ ga('send', 'pageview');
         
         
         <div class="article-entry" itemprop="articleBody">
-            <p>텐서플로우에서 참 재밌는 메서드가 있습니다.<br>바로 placeholder 인데요!<br>우리는 이것을 통해 값의 대입을 미룰 수 있습니다.<br>아래의 코드에서 자세히 확인해보겠습니다.<br>아! 참고로 tensorflow 버전이나 python버전이 다르다면<br>initialize_all_variables, print, range 부분에 수정이 필요합니다.</p>
+            <p>텐서플로우에서 참 재밌는 메서드가 있습니다.<br>바로 placeholder 인데요!<br>우리는 이것을 통해 값의 대입을 미룰 수 있습니다.<br>아래의 코드에서 자세히 확인해보겠습니다.<br>아! 참고로 python버전이 다르다면<br>print부분에 수정이 필요합니다.</p>
 <figure class="highlight plain"><figcaption><span>placeholder.py</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">import tensorflow as tf</div><div class="line"></div><div class="line">sess = tf.Session()</div><div class="line"></div><div class="line">a = tf.placeholder(tf.int16)</div><div class="line">b = tf.placeholder(tf.int16)</div><div class="line"></div><div class="line">add = tf.add(a, b)</div><div class="line">mul = tf.mul(a, b)</div><div class="line"></div><div class="line"></div><div class="line">print(&quot;더한 결과는 %i&quot; % sess.run(add,feed_dict=&#123;a: 2, b: 3&#125;))</div><div class="line">print(&quot;곱한 결과는 %i&quot; % sess.run(mul,feed_dict=&#123;a: 3, b: 4&#125;))</div></pre></td></tr></table></figure>
 <p><strong>결과값</strong><br>더한 결과는 5<br>곱한 결과는 12</p>
 <p>placeholder를 통해 먼저 16bit 크기의 int형 데이터의 공간을 만들어 놓았습니다.<br>그리고 나중에 연산을 할 때에 대입값을 지정해 주었지요.<br>나중에 아주 유용하게 많이 쓰이니 꼭 잘 숙지하고 넘어가야 하는 부분입니다.</p>
