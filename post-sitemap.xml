@@ -7,6 +7,14 @@
     </url>
 
     <url>
+        <loc>https://penglover.github.io/2017/01/15/how-to-handle-multiple-variables-in-tensorflow/</loc>
+        <lastmod>2017-01-15T02:49:07.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://penglover.github.io/2017/01/15/tensorflow-graph/</loc>
         <lastmod>2017-01-15T01:54:43.000Z</lastmod>
         <changefreq>weekly</changefreq>

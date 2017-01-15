@@ -5,7 +5,7 @@
   <link href="/feed.xml" rel="self"/>
   
   <link href="https://penglover.github.io/"/>
-  <updated>2017-01-15T01:54:43.000Z</updated>
+  <updated>2017-01-15T02:49:07.000Z</updated>
   <id>https://penglover.github.io/</id>
   
   <author>
@@ -14,6 +14,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>텐서플로우 LinearRegression 변수가 여러가지인경우 대처법</title>
+    <link href="https://penglover.github.io/2017/01/15/how-to-handle-multiple-variables-in-tensorflow/"/>
+    <id>https://penglover.github.io/2017/01/15/how-to-handle-multiple-variables-in-tensorflow/</id>
+    <published>2017-01-15T02:28:27.000Z</published>
+    <updated>2017-01-15T02:49:07.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="텐서플로우에서-선형회귀함수-적용중-변수가-여러개라면"><a href="#텐서플로우에서-선형회귀함수-적용중-변수가-여러개라면" class="headerlink" title="텐서플로우에서 선형회귀함수 적용중 변수가 여러개라면?"></a>텐서플로우에서 선형회귀함수 적용중 변수가 여러개라면?</h1><p>보통 우리는 hypothesis = a <em> w </em> x + b<br>이 모델을 기본으로 삼았습니다.<br>x가 input이고 hypothesis는 기대값이죠.<br>a는 learning rate이고 w는 weight b는 bias 입니다.</p>
+<p>그런데 사실 어떤 요인에게 영향을 주는 요소가 한개일 경우가 잘 없죠?<br>두개 이상인 경우에는 어떻게 모델링을 할까요?<br>아주 간단하게 이런 경우를 모델링 할 수 있습니다.<br>hypothesis = a<em> (w1</em>x1 + w2*x2) + b<br>위 처럼 적용하면 되는데요. 코드를 살피겠습니다.<br>코드는 위의 hypothesis를 배열 형태로 구현하였습니다.<br>input 데이터는<br>#x0 x1 x2 y<br>1   1   0   1<br>1   0   2   2<br>1   3   0   3<br>1   0   4   4<br>1   5   0   5<br>입니다.</p>
+<figure class="highlight plain"><figcaption><span>multiple_variables.py</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">import tensorflow as tf</div><div class="line">import numpy as np</div><div class="line"></div><div class="line">xy = np.loadtxt(&apos;input.txt&apos;, unpack=True, dtype=&apos;float32&apos;)</div><div class="line">x_data = xy[0:-1]</div><div class="line">y_data = xy[-1]</div><div class="line"></div><div class="line">W = tf.Variable(tf.random_uniform([1, len(x_data)], -1, 1))</div><div class="line">b = tf.Variable(tf.random_uniform([1], -1, 1))</div><div class="line"></div><div class="line">hypothesis = tf.matmul(W, x_data)</div><div class="line"></div><div class="line">cost = tf.reduce_mean(tf.square(hypothesis - y_data))</div><div class="line"></div><div class="line">a = tf.Variable(0.1)  # learning rate, alpha</div><div class="line">optimizer = tf.train.GradientDescentOptimizer(a)</div><div class="line">train = optimizer.minimize(cost)  # goal is minimize cost</div><div class="line"></div><div class="line">init = tf.global_variables_initializer()</div><div class="line"></div><div class="line">sess = tf.Session()</div><div class="line">sess.run(init)</div><div class="line">print(x_data)</div><div class="line">for step in range(2001):</div><div class="line">    sess.run(train)</div><div class="line">    if step % 200 == 0:</div><div class="line">        print (step, sess.run(cost), sess.run(W))</div><div class="line"></div></pre></td></tr></table></figure>
+<p><strong>결과값</strong><br>[[ 1.  1.  1.  1.  1.]<br> [ 1.  0.  3.  0.  5.]<br> [ 0.  2.  0.  4.  0.]]<br>0 0.43461 [[-0.20677651  1.29921687  1.09060895]]<br>200 5.33032e-08 [[ -5.47317148e-04   1.00014389e+00   1.00017071e+00]]<br>400 2.52953e-13 [[ -1.20747086e-06   1.00000036e+00   1.00000048e+00]]<br>600 1.77636e-14 [[ -2.96712130e-07   1.00000012e+00   1.00000012e+00]]<br>800 1.77636e-14 [[ -2.96712130e-07   1.00000012e+00   1.00000012e+00]]<br>1000 1.77636e-14 [[ -2.96712130e-07   1.00000012e+00   1.00000012e+00]]<br>1200 1.77636e-14 [[ -2.96712130e-07   1.00000012e+00   1.00000012e+00]]<br>1400 1.77636e-14 [[ -2.96712130e-07   1.00000012e+00   1.00000012e+00]]<br>1600 1.77636e-14 [[ -2.96712130e-07   1.00000012e+00   1.00000012e+00]]<br>1800 1.77636e-14 [[ -2.96712130e-07   1.00000012e+00   1.00000012e+00]]<br>2000 1.77636e-14 [[ -2.96712130e-07   1.00000012e+00   1.00000012e+00]]</p>
+<p>간단하죠?<br>배열값은 순서대로 b, w1, w2입니다.<br>cost도 1.77636e-14로 거의 0에 가깝게 되었네요.<br>print(x_data)는 numpy 라이브러리가 어떤식으로 데이터를 가져와 주는지 알려주기 위해 넣어봤어요.<br>#부분은 무시를 한 채로 아래의 데이터를 행렬 형식으로 가져와줍니다.<br>numpy가 더 궁금하다면 다음 포스트를 봐주세요.</p>
+<p>아주 쉽게 우리는 배열을 이용해서 weight를 추가시켰습니다.<br>질문이 있으면 댓글로 달아주세요!</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;텐서플로우에서-선형회귀함수-적용중-변수가-여러개라면&quot;&gt;&lt;a href=&quot;#텐서플로우에서-선형회귀함수-적용중-변수가-여러개라면&quot; class=&quot;headerlink&quot; title=&quot;텐서플로우에서 선형회귀함수 적용중 변수가 여러개라면?&quot;&gt;&lt;/a&gt;텐
+    
+    </summary>
+    
+      <category term="ML" scheme="https://penglover.github.io/categories/ML/"/>
+    
+      <category term="TensorFlow" scheme="https://penglover.github.io/categories/ML/TensorFlow/"/>
+    
+    
+      <category term="machinelearning" scheme="https://penglover.github.io/tags/machinelearning/"/>
+    
+  </entry>
   
   <entry>
     <title>tensorflow에서 언제 LinearRegression을 적용시킬지 알아보는 법</title>
