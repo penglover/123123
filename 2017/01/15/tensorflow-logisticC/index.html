@@ -3,28 +3,25 @@
 <head>
     <meta charset="utf-8">
     
-    <title>텐서플로우에서 placeholder란 무엇일까? | Wellcome to IT Blog</title>
+    <title>텐서플로우로 logistic classification 구현해보자 | Wellcome to IT Blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="machinelearning,tensorflow">
+        <meta name="keywords" content="machinelearning">
     
-    <meta name="description" content="텐서플로우에서 참 재밌는 메서드가 있습니다.바로 placeholder 인데요!우리는 이것을 통해 값의 대입을 미룰 수 있습니다.아래의 코드에서 자세히 확인해보겠습니다.아! 참고로 python버전이 다르다면print부분에 수정이 필요합니다.
-placeholder.py12345678910111213import tensorflow as tfsess = tf.Se">
+    <meta name="description" content="logistic classification은 다들알고 계시죠?true인지 false인지를 판가름해봅시다.실제로 양자택일의 상황이 올 경우가 굉장히 많지요.자, 코드부터 보겠습니다.input.txt는 다음과 같습니다.input.txt1234567#x0 x1 x2 y1   2   1   01   3   2   01   3   5   01   5   5   11">
 <meta property="og:type" content="article">
-<meta property="og:title" content="텐서플로우에서 placeholder란 무엇일까?">
-<meta property="og:url" content="https://penglover.github.io/2017/01/14/tf-placeholder/index.html">
+<meta property="og:title" content="텐서플로우로 logistic classification 구현해보자">
+<meta property="og:url" content="https://penglover.github.io/2017/01/15/tensorflow-logisticC/index.html">
 <meta property="og:site_name" content="Wellcome to IT Blog">
-<meta property="og:description" content="텐서플로우에서 참 재밌는 메서드가 있습니다.바로 placeholder 인데요!우리는 이것을 통해 값의 대입을 미룰 수 있습니다.아래의 코드에서 자세히 확인해보겠습니다.아! 참고로 python버전이 다르다면print부분에 수정이 필요합니다.
-placeholder.py12345678910111213import tensorflow as tfsess = tf.Se">
+<meta property="og:description" content="logistic classification은 다들알고 계시죠?true인지 false인지를 판가름해봅시다.실제로 양자택일의 상황이 올 경우가 굉장히 많지요.자, 코드부터 보겠습니다.input.txt는 다음과 같습니다.input.txt1234567#x0 x1 x2 y1   2   1   01   3   2   01   3   5   01   5   5   11">
 <meta property="og:image" content="https://penglover.github.io/css/images/logo.png">
-<meta property="og:updated_time" content="2017-01-15T04:00:19.000Z">
+<meta property="og:updated_time" content="2017-01-15T04:39:07.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="텐서플로우에서 placeholder란 무엇일까?">
-<meta name="twitter:description" content="텐서플로우에서 참 재밌는 메서드가 있습니다.바로 placeholder 인데요!우리는 이것을 통해 값의 대입을 미룰 수 있습니다.아래의 코드에서 자세히 확인해보겠습니다.아! 참고로 python버전이 다르다면print부분에 수정이 필요합니다.
-placeholder.py12345678910111213import tensorflow as tfsess = tf.Se">
+<meta name="twitter:title" content="텐서플로우로 logistic classification 구현해보자">
+<meta name="twitter:description" content="logistic classification은 다들알고 계시죠?true인지 false인지를 판가름해봅시다.실제로 양자택일의 상황이 올 경우가 굉장히 많지요.자, 코드부터 보겠습니다.input.txt는 다음과 같습니다.input.txt1234567#x0 x1 x2 y1   2   1   01   3   2   01   3   5   01   5   5   11">
 <meta name="twitter:image" content="https://penglover.github.io/css/images/logo.png">
     
-    <link rel="canonical" href="https://penglover.github.io/2017/01/14/tf-placeholder/">
+    <link rel="canonical" href="https://penglover.github.io/2017/01/15/tensorflow-logisticC/">
     
         <link rel="alternate" href="http://blog.naver.com/penglover" title="Wellcome to IT Blog" type="application/atom+xml">
     
@@ -148,14 +145,14 @@ ga('send', 'pageview');
     </h1>
 </div>
                         <div class="main-body-content">
-                            <article id="post-tf-placeholder" class="article article-single article-type-post" itemscope="" itemprop="blogPost">
+                            <article id="post-tensorflow-logisticC" class="article article-single article-type-post" itemscope="" itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-        텐서플로우에서 placeholder란 무엇일까?
+        텐서플로우로 logistic classification 구현해보자
         </h1>
     
 
@@ -163,20 +160,22 @@ ga('send', 'pageview');
         
         
             <div class="article-subtitle">
-                <a href="/2017/01/14/tf-placeholder/" class="article-date">
-    <time datetime="2017-01-14T13:01:16.000Z" itemprop="datePublished">2017-01-14</time>
+                <a href="/2017/01/15/tensorflow-logisticC/" class="article-date">
+    <time datetime="2017-01-15T04:19:22.000Z" itemprop="datePublished">2017-01-15</time>
 </a>
                 
-    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/machinelearning/">machinelearning</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tensorflow/">tensorflow</a></li></ul>
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/machinelearning/">machinelearning</a></li></ul>
 
             </div>
         
         
         <div class="article-entry" itemprop="articleBody">
-            <p>텐서플로우에서 참 재밌는 메서드가 있습니다.<br>바로 placeholder 인데요!<br>우리는 이것을 통해 값의 대입을 미룰 수 있습니다.<br>아래의 코드에서 자세히 확인해보겠습니다.<br>아! 참고로 python버전이 다르다면<br>print부분에 수정이 필요합니다.</p>
-<figure class="highlight plain"><figcaption><span>placeholder.py</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">import tensorflow as tf</div><div class="line"></div><div class="line">sess = tf.Session()</div><div class="line"></div><div class="line">a = tf.placeholder(tf.int16)</div><div class="line">b = tf.placeholder(tf.int16)</div><div class="line"></div><div class="line">add = tf.add(a, b)</div><div class="line">mul = tf.mul(a, b)</div><div class="line"></div><div class="line"></div><div class="line">print(&quot;더한 결과는 %i&quot; % sess.run(add,feed_dict=&#123;a: 2, b: 3&#125;))</div><div class="line">print(&quot;곱한 결과는 %i&quot; % sess.run(mul,feed_dict=&#123;a: 3, b: 4&#125;))</div></pre></td></tr></table></figure>
-<p><strong>결과값</strong><br>더한 결과는 5<br>곱한 결과는 12</p>
-<p>placeholder를 통해 먼저 16bit 크기의 int형 데이터의 공간을 만들어 놓았습니다.<br>그리고 나중에 연산을 할 때에 대입값을 지정해 주었지요.<br>나중에 아주 유용하게 많이 쓰이니 꼭 잘 숙지하고 넘어가야 하는 부분입니다.</p>
+            <p>logistic classification은 다들알고 계시죠?<br>true인지 false인지를 판가름해봅시다.<br>실제로 양자택일의 상황이 올 경우가 굉장히 많지요.<br>자, 코드부터 보겠습니다.<br>input.txt는 다음과 같습니다.<br><figure class="highlight plain"><figcaption><span>input.txt</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">#x0 x1 x2 y</div><div class="line">1   2   1   0</div><div class="line">1   3   2   0</div><div class="line">1   3   5   0</div><div class="line">1   5   5   1</div><div class="line">1   7   5   1</div><div class="line">1   2   5   1</div></pre></td></tr></table></figure><br>코드부분 입니다.<br><figure class="highlight plain"><figcaption><span>logisticC.py</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line">import tensorflow as tf</div><div class="line">import numpy as np</div><div class="line"></div><div class="line">xy = np.loadtxt(&apos;input.txt&apos;, unpack=True, dtype=&apos;float32&apos;)</div><div class="line">x_data = xy[0:-1]</div><div class="line">y_data = xy[-1]</div><div class="line"></div><div class="line">X = tf.placeholder(tf.float32)</div><div class="line">Y = tf.placeholder(tf.float32)</div><div class="line"></div><div class="line">W = tf.Variable(tf.random_uniform([1, len(x_data)], -1.0, 1.0))</div><div class="line"></div><div class="line">h = tf.matmul(W, X)</div><div class="line">hypothesis = tf.div(1., 1. + tf.exp(-h))</div><div class="line"></div><div class="line">cost = -tf.reduce_mean(Y * tf.log(hypothesis) + (1 - Y) * tf.log(1 - hypothesis))</div><div class="line"></div><div class="line">a = tf.Variable(0.1)  # learning rate, alpha</div><div class="line">optimizer = tf.train.GradientDescentOptimizer(a)</div><div class="line">train = optimizer.minimize(cost)  # goal is minimize cost</div><div class="line"></div><div class="line">init = tf.global_variables_initializer()</div><div class="line"></div><div class="line">sess = tf.Session()</div><div class="line">sess.run(init)</div><div class="line"></div><div class="line">for step in range(2001):</div><div class="line">    sess.run(train, feed_dict=&#123;X: x_data, Y: y_data&#125;)</div><div class="line">    if step % 200 == 0:</div><div class="line">        print (step, sess.run(cost, feed_dict=&#123;X: x_data, Y: y_data&#125;), sess.run(W))</div><div class="line"></div><div class="line">print (&apos;-----------------------------------------&apos;)</div><div class="line">print (sess.run(hypothesis, feed_dict=&#123;X: [[1], [2], [2]]&#125;) &gt; 0.5)</div><div class="line">print (sess.run(hypothesis, feed_dict=&#123;X: [[1], [5], [5]]&#125;) &gt; 0.5)</div><div class="line">print (sess.run(hypothesis, feed_dict=&#123;X: [[1, 1], [4, 0], [2, 10]]&#125;) &gt; 0.5)</div></pre></td></tr></table></figure></p>
+<p><strong>결과값</strong><br>0 0.919001 [[ 0.8754766  -0.10433824  0.33632374]]<br>200 0.509501 [[-1.38300133  0.11766662  0.33868256]]<br>400 0.42692 [[-2.6384747   0.24237575  0.51069313]]<br>600 0.391719 [[-3.46154785  0.31578434  0.6304763 ]]<br>800 0.373097 [[-4.06127024  0.36348528  0.72200185]]<br>1000 0.361825 [[-4.52822399  0.39683989  0.79584837]]<br>1200 0.354366 [[-4.90821457  0.42141104  0.85761738]]<br>1400 0.34911 [[-5.22723818  0.44022152  0.91062367]]<br>1600 0.345229 [[-5.5013628   0.45505521  0.95699048]]<br>1800 0.342259 [[-5.74115181  0.46703169  0.99815571]]</p>
+<h2 id="2000-0-339921-5-95390177-0-47688928-1-03513932"><a href="#2000-0-339921-5-95390177-0-47688928-1-03513932" class="headerlink" title="2000 0.339921 [[-5.95390177  0.47688928  1.03513932]]"></a>2000 0.339921 [[-5.95390177  0.47688928  1.03513932]]</h2><p>[[False]]<br>[[ True]]<br>[[False  True]]</p>
+<p>주목해야할 부분은 cost함수 입니다.<br>왜 시그모이드 함수를 씌우고 log를 취했을까요?<br>0, 1의 값만을 갖는 true or false의 문제이기 때문인데요.<br>기존의 LinearRegression을 그대로 적용하면 최적화에 어려움이 있습니다.<br>어떤 어려움인지는 맨 아래 링크에 나와있구요.<br>그래서 sigmoid를 씌운 것입니다.</p>
+<p>log를 취한 이유는 gradient descent 알고리즘의 최적화와 연관이 있는데요.<br>그냥 sigmoid 만 취하면 함수가 울퉁불퉁해져서 최적화가 힘듭니다.<br>때문에 log를 취해서 적용시키려고 하는 것이지요.<br>cost에 대해 모르시겠는 분들은 다음 동영상으로 학습해주세요.<br>김성훈 교수님의 강의입니다.<br><div class="video-container"><iframe src="//www.youtube.com/embed/6vzchGYEJBc" frameborder="0" allowfullscreen></iframe></div></p>
+<p>기존의 LinearRegression 함수에 시그모이드 함수를 취했다는 것 이외에는 별 다른게 없죠?<br>하지만 sigmoid 함수의 필요성과 cost함수의 변화를 이해했다면 큰 발전입니다.<br>시그모이드 함수를 왜 취했는가를 모르신다면 아래의 url로 이동해주세요.<br><a href="https://penglover.github.io/2017/01/15/algorithm-sigmoid/">https://penglover.github.io/2017/01/15/algorithm-sigmoid/</a></p>
 
         </div>
         <footer class="article-footer">
@@ -184,7 +183,7 @@ ga('send', 'pageview');
 
 
 
-    <a data-url="https://penglover.github.io/2017/01/14/tf-placeholder/" data-id="cixy69q7o000kaebnnolc4ogz" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://penglover.github.io/2017/01/15/tensorflow-logisticC/" data-id="cixy69q7h0009aebn7yztyjqu" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -315,20 +314,10 @@ ga('send', 'pageview');
         
 <nav id="article-nav">
     
-        <a href="/2017/01/14/tf-LinearRegression/" id="article-nav-newer" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">newer</strong>
-        <p class="article-nav-title">
-        
-            텐서플로우로 linear regression 구현 및 설명
-        
-        </p>
-        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
-    </a>
     
-    
-        <a href="/2017/01/14/tensorflow1/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2017/01/15/algorithm-sigmoid/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">older</strong>
-        <p class="article-nav-title">텐서플로우에서 상수란 존재하지 않는다? 모든것은 연산!</p>
+        <p class="article-nav-title">algorithm-sigmoid</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
@@ -532,7 +521,7 @@ ga('send', 'pageview');
     var disqus_shortname = 'miscellaneous';
     
     
-    var disqus_url = 'https://penglover.github.io/2017/01/14/tf-placeholder/';
+    var disqus_url = 'https://penglover.github.io/2017/01/15/tensorflow-logisticC/';
     
     (function() {
     var dsq = document.createElement('script');

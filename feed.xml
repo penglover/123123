@@ -5,7 +5,7 @@
   <link href="/feed.xml" rel="self"/>
   
   <link href="https://penglover.github.io/"/>
-  <updated>2017-01-15T03:32:24.000Z</updated>
+  <updated>2017-01-15T04:39:07.000Z</updated>
   <id>https://penglover.github.io/</id>
   
   <author>
@@ -16,11 +16,41 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>텐서플로우로 logistic classification 구현해보자</title>
+    <link href="https://penglover.github.io/2017/01/15/tensorflow-logisticC/"/>
+    <id>https://penglover.github.io/2017/01/15/tensorflow-logisticC/</id>
+    <published>2017-01-15T04:19:22.000Z</published>
+    <updated>2017-01-15T04:39:07.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>logistic classification은 다들알고 계시죠?<br>true인지 false인지를 판가름해봅시다.<br>실제로 양자택일의 상황이 올 경우가 굉장히 많지요.<br>자, 코드부터 보겠습니다.<br>input.txt는 다음과 같습니다.<br><figure class="highlight plain"><figcaption><span>input.txt</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">#x0 x1 x2 y</div><div class="line">1   2   1   0</div><div class="line">1   3   2   0</div><div class="line">1   3   5   0</div><div class="line">1   5   5   1</div><div class="line">1   7   5   1</div><div class="line">1   2   5   1</div></pre></td></tr></table></figure><br>코드부분 입니다.<br><figure class="highlight plain"><figcaption><span>logisticC.py</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line">import tensorflow as tf</div><div class="line">import numpy as np</div><div class="line"></div><div class="line">xy = np.loadtxt(&apos;input.txt&apos;, unpack=True, dtype=&apos;float32&apos;)</div><div class="line">x_data = xy[0:-1]</div><div class="line">y_data = xy[-1]</div><div class="line"></div><div class="line">X = tf.placeholder(tf.float32)</div><div class="line">Y = tf.placeholder(tf.float32)</div><div class="line"></div><div class="line">W = tf.Variable(tf.random_uniform([1, len(x_data)], -1.0, 1.0))</div><div class="line"></div><div class="line">h = tf.matmul(W, X)</div><div class="line">hypothesis = tf.div(1., 1. + tf.exp(-h))</div><div class="line"></div><div class="line">cost = -tf.reduce_mean(Y * tf.log(hypothesis) + (1 - Y) * tf.log(1 - hypothesis))</div><div class="line"></div><div class="line">a = tf.Variable(0.1)  # learning rate, alpha</div><div class="line">optimizer = tf.train.GradientDescentOptimizer(a)</div><div class="line">train = optimizer.minimize(cost)  # goal is minimize cost</div><div class="line"></div><div class="line">init = tf.global_variables_initializer()</div><div class="line"></div><div class="line">sess = tf.Session()</div><div class="line">sess.run(init)</div><div class="line"></div><div class="line">for step in range(2001):</div><div class="line">    sess.run(train, feed_dict=&#123;X: x_data, Y: y_data&#125;)</div><div class="line">    if step % 200 == 0:</div><div class="line">        print (step, sess.run(cost, feed_dict=&#123;X: x_data, Y: y_data&#125;), sess.run(W))</div><div class="line"></div><div class="line">print (&apos;-----------------------------------------&apos;)</div><div class="line">print (sess.run(hypothesis, feed_dict=&#123;X: [[1], [2], [2]]&#125;) &gt; 0.5)</div><div class="line">print (sess.run(hypothesis, feed_dict=&#123;X: [[1], [5], [5]]&#125;) &gt; 0.5)</div><div class="line">print (sess.run(hypothesis, feed_dict=&#123;X: [[1, 1], [4, 0], [2, 10]]&#125;) &gt; 0.5)</div></pre></td></tr></table></figure></p>
+<p><strong>결과값</strong><br>0 0.919001 [[ 0.8754766  -0.10433824  0.33632374]]<br>200 0.509501 [[-1.38300133  0.11766662  0.33868256]]<br>400 0.42692 [[-2.6384747   0.24237575  0.51069313]]<br>600 0.391719 [[-3.46154785  0.31578434  0.6304763 ]]<br>800 0.373097 [[-4.06127024  0.36348528  0.72200185]]<br>1000 0.361825 [[-4.52822399  0.39683989  0.79584837]]<br>1200 0.354366 [[-4.90821457  0.42141104  0.85761738]]<br>1400 0.34911 [[-5.22723818  0.44022152  0.91062367]]<br>1600 0.345229 [[-5.5013628   0.45505521  0.95699048]]<br>1800 0.342259 [[-5.74115181  0.46703169  0.99815571]]</p>
+<h2 id="2000-0-339921-5-95390177-0-47688928-1-03513932"><a href="#2000-0-339921-5-95390177-0-47688928-1-03513932" class="headerlink" title="2000 0.339921 [[-5.95390177  0.47688928  1.03513932]]"></a>2000 0.339921 [[-5.95390177  0.47688928  1.03513932]]</h2><p>[[False]]<br>[[ True]]<br>[[False  True]]</p>
+<p>주목해야할 부분은 cost함수 입니다.<br>왜 시그모이드 함수를 씌우고 log를 취했을까요?<br>0, 1의 값만을 갖는 true or false의 문제이기 때문인데요.<br>기존의 LinearRegression을 그대로 적용하면 최적화에 어려움이 있습니다.<br>어떤 어려움인지는 맨 아래 링크에 나와있구요.<br>그래서 sigmoid를 씌운 것입니다.</p>
+<p>log를 취한 이유는 gradient descent 알고리즘의 최적화와 연관이 있는데요.<br>그냥 sigmoid 만 취하면 함수가 울퉁불퉁해져서 최적화가 힘듭니다.<br>때문에 log를 취해서 적용시키려고 하는 것이지요.<br>cost에 대해 모르시겠는 분들은 다음 동영상으로 학습해주세요.<br>김성훈 교수님의 강의입니다.<br><div class="video-container"><iframe src="//www.youtube.com/embed/6vzchGYEJBc" frameborder="0" allowfullscreen></iframe></div></p>
+<p>기존의 LinearRegression 함수에 시그모이드 함수를 취했다는 것 이외에는 별 다른게 없죠?<br>하지만 sigmoid 함수의 필요성과 cost함수의 변화를 이해했다면 큰 발전입니다.<br>시그모이드 함수를 왜 취했는가를 모르신다면 아래의 url로 이동해주세요.<br><a href="https://penglover.github.io/2017/01/15/algorithm-sigmoid/">https://penglover.github.io/2017/01/15/algorithm-sigmoid/</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;logistic classification은 다들알고 계시죠?&lt;br&gt;true인지 false인지를 판가름해봅시다.&lt;br&gt;실제로 양자택일의 상황이 올 경우가 굉장히 많지요.&lt;br&gt;자, 코드부터 보겠습니다.&lt;br&gt;input.txt는 다음과 같습니다.&lt;
+    
+    </summary>
+    
+      <category term="ML" scheme="https://penglover.github.io/categories/ML/"/>
+    
+      <category term="TensorFlow" scheme="https://penglover.github.io/categories/ML/TensorFlow/"/>
+    
+    
+      <category term="machinelearning" scheme="https://penglover.github.io/tags/machinelearning/"/>
+    
+  </entry>
+  
+  <entry>
     <title>algorithm-sigmoid</title>
     <link href="https://penglover.github.io/2017/01/15/algorithm-sigmoid/"/>
     <id>https://penglover.github.io/2017/01/15/algorithm-sigmoid/</id>
     <published>2017-01-15T03:27:36.000Z</published>
-    <updated>2017-01-15T03:32:24.000Z</updated>
+    <updated>2017-01-15T04:00:14.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="why-sigmoid"><a href="#why-sigmoid" class="headerlink" title="why sigmoid"></a>why sigmoid</h1><p>머신러닝 알고리즘을 공부하다가보면 시그모이드 함수를 마주쳤을 것입니다.<br>그런데 이게 진짜 과연 써야하는 것인가?<br>그냥 linear한 함수를 쓰면 안되나?<br>이런 의문을 바로 해결해준 유투브 강의가 있어서 소개합니다.<br>김성훈님의 강의입니다.<br><div class="video-container"><iframe src="//www.youtube.com/embed/PIjno6paszY" frameborder="0" allowfullscreen></iframe></div></p>
 <p>Logistic classification을 설명해 주시면서 등장합니다.<br>이런 이유라면 충분히 시그모이드 함수의 등장이 이해가 가네요!</p>
@@ -110,7 +140,7 @@
     <link href="https://penglover.github.io/2017/01/15/tensorflow-graph/"/>
     <id>https://penglover.github.io/2017/01/15/tensorflow-graph/</id>
     <published>2017-01-15T01:22:39.000Z</published>
-    <updated>2017-01-15T03:34:12.000Z</updated>
+    <updated>2017-01-15T04:00:15.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="LinearRegression은-언제-적용시킬까요"><a href="#LinearRegression은-언제-적용시킬까요" class="headerlink" title="LinearRegression은 언제 적용시킬까요?"></a>LinearRegression은 언제 적용시킬까요?</h1><p>이것을 알기 위해서는 그래프를 그려 보는 것이 좋습니다.<br>파이썬에서는 그래프를 쉽게 그리게 해주는 라이브러리가 존재하는데요~<br>바로 matplotlib를 이용하면 아주 쉽습니다.<br>pip이 설치되어 있다면 그냥 pip install matplotlib 하시면 됩니다.<br>python3버전이신 경우에는 pip3 install matplotlib를 하시구요.<br><a href="http://matplotlib.org/users/installing.html" rel="external nofollow noopener noreferrer" target="_blank">http://matplotlib.org/users/installing.html</a> 에서 다른 설치법들도 알려줍니다~<br>설치 안되시면 댓글남겨주세요.</p>
 <p>그럼 코드를 보면서 설명드리도록 하겠습니다.<br><figure class="highlight plain"><figcaption><span>matplotlib.py</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">import tensorflow as tf</div><div class="line">import matplotlib.pyplot as plt</div><div class="line"></div><div class="line">X = [1., 2., 3.]</div><div class="line">Y = [1., 2., 3.]</div><div class="line">m = samples = len(X)</div><div class="line"></div><div class="line">W = tf.placeholder(tf.float32)</div><div class="line"></div><div class="line">hypothesis = tf.mul(X, W)</div><div class="line"></div><div class="line">cost = tf.reduce_sum(tf.pow(hypothesis-Y,2))/m</div><div class="line"></div><div class="line">init = tf.global_variables_initializer()</div><div class="line"></div><div class="line"></div><div class="line">W_val = []</div><div class="line">cost_val = []</div><div class="line"></div><div class="line">sess = tf.Session()</div><div class="line">sess.run(init)</div><div class="line">for i in range(-30,50):</div><div class="line">    print (i*0.1, sess.run(cost, feed_dict=&#123;W: i*0.1&#125;))</div><div class="line">    W_val.append(i*0.1)</div><div class="line">    cost_val.append(sess.run(cost, feed_dict=&#123;W: i*0.1&#125;))</div><div class="line"></div><div class="line">plt.plot(W_val, cost_val, &apos;ro&apos;)</div><div class="line">plt.ylabel(&apos;cost&apos;)</div><div class="line">plt.xlabel(&apos;W&apos;)</div><div class="line">plt.show()</div></pre></td></tr></table></figure><br>결과값은 그래프가 포함되다보니 스크린샷으로 보여드리겠습니다.<br><img src="https://penglover.github.io/images/matplotlib_sample.png" alt="matplotlib_sample"></p>
@@ -141,7 +171,7 @@
     <link href="https://penglover.github.io/2017/01/14/tf-LinearRegression/"/>
     <id>https://penglover.github.io/2017/01/14/tf-LinearRegression/</id>
     <published>2017-01-14T14:50:53.000Z</published>
-    <updated>2017-01-15T03:34:31.000Z</updated>
+    <updated>2017-01-15T04:00:17.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="Linear-Regression"><a href="#Linear-Regression" class="headerlink" title="Linear Regression"></a>Linear Regression</h1><p>Linear Regression에 대한 지식이 없으시다면 아래의 동영상을 보시는 것을 추천합니다.<br><a href="https://www.youtube.com/watch?v=GmtqOlPYB84" rel="external nofollow noopener noreferrer" target="_blank">https://www.youtube.com/watch?v=GmtqOlPYB84</a><br>이미 알고 계신다면 렛츠고!<br>아! 참고로 tensorflow 버전이나 python버전이 다르다면<br>tf.global_variables_initializer, print, range 부분에 수정이 필요합니다.<br>오류나면 댓글남겨주세요 ㅎㅎ 바로 알려드릴게요.</p>
 <figure class="highlight plain"><figcaption><span>LinearRegression.py</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">import tensorflow as tf</div><div class="line"></div><div class="line">x_data = [1, 2, 3, 4]</div><div class="line">y_data = [2, 4, 6, 8]</div><div class="line"></div><div class="line">W = tf.Variable(tf.random_uniform([1], -10000, 10000))</div><div class="line">b = tf.Variable(tf.random_uniform([1], -10000, 10000))</div><div class="line"></div><div class="line">X = tf.placeholder(tf.float32)</div><div class="line">Y = tf.placeholder(tf.float32)</div><div class="line"></div><div class="line">hypothesis = W * X + b</div><div class="line"></div><div class="line">cost = tf.reduce_mean(tf.square(hypothesis - Y))</div><div class="line"></div><div class="line">a = tf.Variable(0.1)</div><div class="line">optimizer = tf.train.GradientDescentOptimizer(a)</div><div class="line">train = optimizer.minimize(cost)</div><div class="line"></div><div class="line">init = tf.global_variables_initializer()</div><div class="line"></div><div class="line">sess = tf.Session()</div><div class="line">sess.run(init)</div><div class="line"></div><div class="line">for step in range(2001):</div><div class="line">    sess.run(train, feed_dict=&#123;X: x_data, Y: y_data&#125;)</div><div class="line">    if step % 200 == 0:</div><div class="line">        print (step, sess.run(cost, feed_dict=&#123;X: x_data, Y: y_data&#125;), sess.run(W), sess.run(b))</div><div class="line"></div><div class="line">print (sess.run(hypothesis, feed_dict=&#123;X: [5, 10]&#125;))</div><div class="line">print (sess.run(hypothesis, feed_dict=&#123;X: [2.5, 1.5]&#125;))</div></pre></td></tr></table></figure>
@@ -172,7 +202,7 @@
     <link href="https://penglover.github.io/2017/01/14/tf-placeholder/"/>
     <id>https://penglover.github.io/2017/01/14/tf-placeholder/</id>
     <published>2017-01-14T13:01:16.000Z</published>
-    <updated>2017-01-15T03:34:34.000Z</updated>
+    <updated>2017-01-15T04:00:19.000Z</updated>
     
     <content type="html"><![CDATA[<p>텐서플로우에서 참 재밌는 메서드가 있습니다.<br>바로 placeholder 인데요!<br>우리는 이것을 통해 값의 대입을 미룰 수 있습니다.<br>아래의 코드에서 자세히 확인해보겠습니다.<br>아! 참고로 python버전이 다르다면<br>print부분에 수정이 필요합니다.</p>
 <figure class="highlight plain"><figcaption><span>placeholder.py</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">import tensorflow as tf</div><div class="line"></div><div class="line">sess = tf.Session()</div><div class="line"></div><div class="line">a = tf.placeholder(tf.int16)</div><div class="line">b = tf.placeholder(tf.int16)</div><div class="line"></div><div class="line">add = tf.add(a, b)</div><div class="line">mul = tf.mul(a, b)</div><div class="line"></div><div class="line"></div><div class="line">print(&quot;더한 결과는 %i&quot; % sess.run(add,feed_dict=&#123;a: 2, b: 3&#125;))</div><div class="line">print(&quot;곱한 결과는 %i&quot; % sess.run(mul,feed_dict=&#123;a: 3, b: 4&#125;))</div></pre></td></tr></table></figure>
@@ -202,7 +232,7 @@
     <link href="https://penglover.github.io/2017/01/14/tensorflow1/"/>
     <id>https://penglover.github.io/2017/01/14/tensorflow1/</id>
     <published>2017-01-14T12:33:46.000Z</published>
-    <updated>2017-01-15T03:34:27.000Z</updated>
+    <updated>2017-01-15T04:00:17.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="텐서플로우에서-상수란-존재하지-않는다"><a href="#텐서플로우에서-상수란-존재하지-않는다" class="headerlink" title="텐서플로우에서 상수란 존재하지 않는다"></a>텐서플로우에서 상수란 존재하지 않는다</h1><figure class="highlight plain"><figcaption><span>NoConstant.py</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">import tensorflow as tf</div><div class="line"></div><div class="line">sess = tf.Session()</div><div class="line"></div><div class="line">a = tf.constant(1)</div><div class="line">b = tf.constant(2)</div><div class="line"></div><div class="line">c = a+b</div><div class="line"></div><div class="line">print(a)</div><div class="line">print(b)</div><div class="line">print(c)</div><div class="line"></div><div class="line">print(sess.run(a))</div><div class="line">print(sess.run(b))</div><div class="line">print(sess.run(c))</div></pre></td></tr></table></figure>
 <p><strong>결과값</strong><br>Tensor(“Const:0”, shape=(), dtype=int32)<br>Tensor(“Const_1:0”, shape=(), dtype=int32)<br>Tensor(“add:0”, shape=(), dtype=int32)<br>1<br>2<br>3</p>
@@ -262,7 +292,7 @@
     <link href="https://penglover.github.io/2017/01/14/tensorflow-lecture-korean/"/>
     <id>https://penglover.github.io/2017/01/14/tensorflow-lecture-korean/</id>
     <published>2017-01-14T08:24:28.000Z</published>
-    <updated>2017-01-15T03:34:17.000Z</updated>
+    <updated>2017-01-15T04:00:16.000Z</updated>
     
     <content type="html"><![CDATA[<p>머신러닝에서 가장 핫한 라이브러리중 하나죠! tensorflow!<br>그런데 아직 한글로 된 강의가 많이 없는 것이 현실입니다.<br><strong>홍콩 과학기술대학교의 김성훈 교수님이 tensorflow를 무료로 강의해주십니다.</strong><br>대상은 비전공자나 전공자 중에서 머신러닝 입문자들입니다. ㅎㅎ<br>정말 기초부터 차근차근 잘 알려주십니다.<br><a href="https://hunkim.github.io/ml/" rel="external nofollow noopener noreferrer" target="_blank">https://hunkim.github.io/ml/</a><br>다음의 링크를 타고 가시면 강의를 볼 수 있습니다~^^</p>
 ]]></content>
