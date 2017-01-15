@@ -15,14 +15,14 @@
 
     <url>
         <loc>https://penglover.github.io/categories/ML/</loc>
-        <lastmod>2017-01-15T08:35:43.000Z</lastmod>
+        <lastmod>2017-01-15T08:38:08.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>https://penglover.github.io/categories/ML/algorithm/</loc>
-        <lastmod>2017-01-15T08:35:43.000Z</lastmod>
+        <loc>https://penglover.github.io/categories/ML/ALGORITHM/</loc>
+        <lastmod>2017-01-15T08:38:08.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

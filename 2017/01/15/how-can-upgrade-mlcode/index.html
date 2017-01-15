@@ -3,22 +3,25 @@
 <head>
     <meta charset="utf-8">
     
-    <title>Archive: 2017 | Wellcome to IT Blog</title>
+    <title>머신러닝 코드 최적화하기 by rate, overfitting, regularization | Wellcome to IT Blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-    <meta name="description" content="Talk about software">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Wellcome to IT Blog">
-<meta property="og:url" content="https://penglover.github.io/archives/2017/page/2/index.html">
+        <meta name="keywords" content="machinelearning">
+    
+    <meta name="description" content="머신러닝 코드 최적화하기rate항상 우리는 머신러닝 코드를 짤때 learning rate라는 값을 줍니다.gradient descent알고리즘을 쓸 때에 업데이트 정도를 조절해주는데요.우리는 이 learning rate 를 조절함으로써 코드를 최적화 할 수 있습니다.너무 작은값을 주면 어떻게 될까요?또는 너무 큰값을 주면 어떻게 될까요?위의 그림처럼 되어서">
+<meta property="og:type" content="article">
+<meta property="og:title" content="머신러닝 코드 최적화하기 by rate, overfitting, regularization">
+<meta property="og:url" content="https://penglover.github.io/2017/01/15/how-can-upgrade-mlcode/index.html">
 <meta property="og:site_name" content="Wellcome to IT Blog">
-<meta property="og:description" content="Talk about software">
+<meta property="og:description" content="머신러닝 코드 최적화하기rate항상 우리는 머신러닝 코드를 짤때 learning rate라는 값을 줍니다.gradient descent알고리즘을 쓸 때에 업데이트 정도를 조절해주는데요.우리는 이 learning rate 를 조절함으로써 코드를 최적화 할 수 있습니다.너무 작은값을 주면 어떻게 될까요?또는 너무 큰값을 주면 어떻게 될까요?위의 그림처럼 되어서">
 <meta property="og:image" content="https://penglover.github.io/css/images/logo.png">
+<meta property="og:updated_time" content="2017-01-15T08:38:08.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Wellcome to IT Blog">
-<meta name="twitter:description" content="Talk about software">
+<meta name="twitter:title" content="머신러닝 코드 최적화하기 by rate, overfitting, regularization">
+<meta name="twitter:description" content="머신러닝 코드 최적화하기rate항상 우리는 머신러닝 코드를 짤때 learning rate라는 값을 줍니다.gradient descent알고리즘을 쓸 때에 업데이트 정도를 조절해주는데요.우리는 이 learning rate 를 조절함으로써 코드를 최적화 할 수 있습니다.너무 작은값을 주면 어떻게 될까요?또는 너무 큰값을 주면 어떻게 될까요?위의 그림처럼 되어서">
 <meta name="twitter:image" content="https://penglover.github.io/css/images/logo.png">
     
-    <link rel="canonical" href="https://penglover.github.io/archives/2017/page/2/">
+    <link rel="canonical" href="https://penglover.github.io/2017/01/15/how-can-upgrade-mlcode/">
     
         <link rel="alternate" href="http://blog.naver.com/penglover" title="Wellcome to IT Blog" type="application/atom+xml">
     
@@ -138,171 +141,119 @@ ga('send', 'pageview');
                         <div class="main-body-header">
     <h1 class="header">
     
-    <i class="icon fa fa-archive"></i>Archive: 2017
+    <a class="page-title-link" href="/categories/ML/">ML</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/ML/ALGORITHM/">ALGORITHM</a>
     </h1>
 </div>
                         <div class="main-body-content">
-                            
+                            <article id="post-how-can-upgrade-mlcode" class="article article-single article-type-post" itemscope="" itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        머신러닝 코드 최적화하기 by rate, overfitting, regularization
+        </h1>
+    
 
-    
-    
+            </header>
         
         
-        <section class="archives-wrap">
-            <div class="archive-year-wrap">
-                <a href="/archives/2017" class="archive-year"><i class="icon fa fa-calendar-o"></i>2017</a>
+            <div class="article-subtitle">
+                <a href="/2017/01/15/how-can-upgrade-mlcode/" class="article-date">
+    <time datetime="2017-01-15T08:07:38.000Z" itemprop="datePublished">2017-01-15</time>
+</a>
+                
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/machinelearning/">machinelearning</a></li></ul>
+
             </div>
-            <div class="archives">
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
         
-        <a href="/2017/01/14/tensorflow1/" class="thumbnail">
-    
-    
-        <span style="background-image:url(https://penglover.github.io/images/tensorflow.png)" alt="텐서플로우에서 상수란 존재하지 않는다? 모든것은 연산!" class="thumbnail-image"></span>
-    
-    
         
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="https://penglover.github.io/2017/01/14/tensorflow1/">0</span>
-    
-</span>
+        <div class="article-entry" itemprop="articleBody">
+            <h1 id="머신러닝-코드-최적화하기"><a href="#머신러닝-코드-최적화하기" class="headerlink" title="머신러닝 코드 최적화하기"></a>머신러닝 코드 최적화하기</h1><p><strong>rate</strong><br>항상 우리는 머신러닝 코드를 짤때 learning rate라는 값을 줍니다.<br>gradient descent알고리즘을 쓸 때에 업데이트 정도를 조절해주는데요.<br>우리는 이 learning rate 를 조절함으로써 코드를 최적화 할 수 있습니다.<br>너무 작은값을 주면 어떻게 될까요?<br>또는 너무 큰값을 주면 어떻게 될까요?<br><img src="https://penglover.github.io/images/learningrate.png" alt="compare_learningrate"><br>위의 그림처럼 되어서 최적화가 안됩니다.<br>해결방안은?<br>print로 꾸준히 cost함수의 변화를 체크하는 것이 최선입니다.</p>
+<p><strong>overfitting</strong><br>overfitting이라 하면 주로 test data가 적어서 일어납니다.<br>무리하게 적은 데이터로 fitting을 하려다보니 이상해 지는 것이지요.<br>또는 weight간의 값이 편차가 심하거나 해도 마찬가지로 일어납니다.<br>그래프가 구부러져 보인다고 해서 ‘구부러졌다’라고 표현하기도 합니다.<br>표준정규분포를 혹시 아시나요?<br>z = (x-평균)/표준편차<br>고등학교 수학시간에 한번 보셨을 겁니다.<br>이것을 이용해서 weight간의 격차를 일반화해줌으로서 해결하는 경우가 대부분입니다.<br>또는 regularization을 통해 해결할 수 있는데요.</p>
+<p><strong>regularization</strong><br>기존의 우리가 cost를 구하는 개념에서 weight의 제곱을 또 추가한것을 구하는 개념입니다.<br>gradient descent 알고리즘을 사용한다면 자동으로 weight의 제곱까지 고려해서 minimize를 시킬 것이고 그에따라서 자동으로 weight의 값들도 하향 평준화 시켜서 값을 낮춤으로써 구부러짐을 방지해주지요.<br>구부러짐이 뭐지 하는생각이 들 수 있습니다.<br><img src="https://penglover.github.io/images/regularization" alt="regularization"><br><img src="http://cs231n.github.io/assets/nn1/reg_strengths.jpeg" alt="overfitting_example"></p>
+<p>위에서 보이듯 람다값이 작을수록 weight 값을 신경쓰지 않겠다는 것입니다.</p>
 
-    
-</a>
-
-        
-        <div class="article-meta">
-            <p class="category">
-            <a class="article-category-link" href="/categories/ML/">ML</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/ML/TensorFlow/">TensorFlow</a>
-            </p>
-            <p class="date"><time datetime="2017-01-14T12:33:46.000Z" itemprop="datePublished">2017-01-14</time></p>
         </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2017/01/14/tensorflow1/">텐서플로우에서 상수란 존재하지 않는다? 모든것은 연산!</a>
-        </h1>
-    
+        <footer class="article-footer">
+            
 
-        <p class="article-excerpt">
-            텐서플로우에서 상수란 존재하지 않는다NoConstant.py12345678910111213141516import tensorflow as tfsess = tf.Session()a = tf.constant(1)b = tf.constant(2)c = a+bprint(a)print(b)print(c)print(sess.run(a))print(sess.run(b)
-        </p>
+
+
+    <a data-url="https://penglover.github.io/2017/01/15/how-can-upgrade-mlcode/" data-id="cixyetaj00004evbnzrcce2d1" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
     </div>
 </article>
-    
 
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2017/01/14/What-is-tensorflow-How-to-install/" class="thumbnail">
-    
-    
-        <span style="background-image:url(https://penglover.github.io/images/tensorflow.png)" alt="텐서플로우란 무엇일까? 추천 설치방법" class="thumbnail-image"></span>
-    
+    <section id="comments">
     
         
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="https://penglover.github.io/2017/01/14/What-is-tensorflow-How-to-install/">0</span>
-    
-</span>
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <p class="category">
-            <a class="article-category-link" href="/categories/ML/">ML</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/ML/TensorFlow/">TensorFlow</a>
-            </p>
-            <p class="date"><time datetime="2017-01-14T10:21:32.000Z" itemprop="datePublished">2017-01-14</time></p>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2017/01/14/What-is-tensorflow-How-to-install/">텐서플로우란 무엇일까? 추천 설치방법</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            텐서플로우란 무엇일까요새 굉장히 핫하죠! 머신러닝, 딥러닝!(머신러닝과 딥러닝에 대한 설명은 다음에 포스팅을 따로 하겠습니다)텐서플로우는 구글에서 발표한 머신러닝 오픈소스 라이브러리로 내부는 C++로 되어있고 여러 언어의 API를 제공합니다.가장 문서화가 잘 되어있고 인기있는 API는 파이썬입니다.때문에 주로 사람들이 파이썬으로 개발을 하는데요!그렇다면 왜
-        </p>
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
     </div>
-</article>
-    
-        </div>
-    
 
     
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2017/01/14/tensorflow-lecture-korean/" class="thumbnail">
-    
-    
-        <span style="background-image:url(https://penglover.github.io/images/tensorflow.png)" alt="텐서플로우 무료강의 소개" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="https://penglover.github.io/2017/01/14/tensorflow-lecture-korean/">0</span>
-    
-</span>
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <p class="category">
-            <a class="article-category-link" href="/categories/ML/">ML</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/ML/TensorFlow/">TensorFlow</a>
-            </p>
-            <p class="date"><time datetime="2017-01-14T08:24:28.000Z" itemprop="datePublished">2017-01-14</time></p>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2017/01/14/tensorflow-lecture-korean/">텐서플로우 무료강의 소개</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            머신러닝에서 가장 핫한 라이브러리중 하나죠! tensorflow!그런데 아직 한글로 된 강의가 많이 없는 것이 현실입니다.홍콩 과학기술대학교의 김성훈 교수님이 tensorflow를 무료로 강의해주십니다.대상은 비전공자나 전공자 중에서 머신러닝 입문자들입니다. ㅎㅎ정말 기초부터 차근차근 잘 알려주십니다.https://hunkim.github.io/ml/다음의
-        </p>
-    </div>
-</article>
-    
-        </div>
-    
-
-
-    </div></section>
-
-
-    <nav id="page-nav">
-        <span class="pages">Page 2 of 2</span>
-        <a class="extend prev" rel="prev" href="/archives/2017/">&laquo;</a><a class="page-number" href="/archives/2017/">1</a><span class="page-number current">2</span>
-    </nav>
+    </section>
 
 
                         </div>
@@ -357,6 +308,19 @@ ga('send', 'pageview');
     </div>
 <div class="github-card" data-github="penglover" data-width="100%" data-height="" data-theme="default"></div>
 <script src="//cdn.jsdelivr.net/github-cards/latest/widget.js"></script>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2017/01/15/tensorflow-softmaxC/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">텐서플로우에서 softmax 메서드를 사용해 봅시다!</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
     
     <div class="widgets-container">
         
@@ -555,11 +519,13 @@ ga('send', 'pageview');
     var disqus_shortname = 'miscellaneous';
     
     
+    var disqus_url = 'https://penglover.github.io/2017/01/15/how-can-upgrade-mlcode/';
+    
     (function() {
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
     </script>
