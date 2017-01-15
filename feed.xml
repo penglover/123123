@@ -5,7 +5,7 @@
   <link href="/feed.xml" rel="self"/>
   
   <link href="https://penglover.github.io/"/>
-  <updated>2017-01-15T04:39:07.000Z</updated>
+  <updated>2017-01-15T05:33:48.000Z</updated>
   <id>https://penglover.github.io/</id>
   
   <author>
@@ -16,11 +16,39 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>텐서플로우에서 reduction_indices 속성은 무엇일까?</title>
+    <link href="https://penglover.github.io/2017/01/15/tensorflow-reduction-indices/"/>
+    <id>https://penglover.github.io/2017/01/15/tensorflow-reduction-indices/</id>
+    <published>2017-01-15T05:29:16.000Z</published>
+    <updated>2017-01-15T05:33:48.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>텐서플로우를 공부하다보면 reduction_indices 속성이 등장합니다.<br>reduce_mean이라든가 연산메서드에서 등장하는 속성인데요.<br><figure class="highlight plain"><figcaption><span>simple.txt</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&apos;x&apos; is [[1., 1.]</div><div class="line">        [2., 2.]]</div></pre></td></tr></table></figure><br>다음의 행렬이 있다고 해보겠습니다.<br>결과값은 어떻게 될까요?<br>tf.reduce_mean(x) ==&gt; 1.5<br>tf.reduce_mean(x, 0) ==&gt; [1.5, 1.5]<br>tf.reduce_mean(x, 1) ==&gt; [1.,  2.]</p>
+<p>자 아시겠죠?<br>아무 값도 주지 않으면 전부다 처리해버립니다.<br>0으로 하면 열끼리 처리하고 1로 하면 행끼리 처리합니다.<br>도움이 되셨길 바라며 포스팅 마무리하겠습니다~</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;텐서플로우를 공부하다보면 reduction_indices 속성이 등장합니다.&lt;br&gt;reduce_mean이라든가 연산메서드에서 등장하는 속성인데요.&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;figcaption&gt;&lt;span&gt;si
+    
+    </summary>
+    
+      <category term="ML" scheme="https://penglover.github.io/categories/ML/"/>
+    
+      <category term="TensorFlow" scheme="https://penglover.github.io/categories/ML/TensorFlow/"/>
+    
+    
+      <category term="machinelearning" scheme="https://penglover.github.io/tags/machinelearning/"/>
+    
+      <category term="tensorflow" scheme="https://penglover.github.io/tags/tensorflow/"/>
+    
+  </entry>
+  
+  <entry>
     <title>텐서플로우로 logistic classification 구현해보자</title>
     <link href="https://penglover.github.io/2017/01/15/tensorflow-logisticC/"/>
     <id>https://penglover.github.io/2017/01/15/tensorflow-logisticC/</id>
     <published>2017-01-15T04:19:22.000Z</published>
-    <updated>2017-01-15T04:39:07.000Z</updated>
+    <updated>2017-01-15T05:30:03.000Z</updated>
     
     <content type="html"><![CDATA[<p>logistic classification은 다들알고 계시죠?<br>true인지 false인지를 판가름해봅시다.<br>실제로 양자택일의 상황이 올 경우가 굉장히 많지요.<br>자, 코드부터 보겠습니다.<br>input.txt는 다음과 같습니다.<br><figure class="highlight plain"><figcaption><span>input.txt</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">#x0 x1 x2 y</div><div class="line">1   2   1   0</div><div class="line">1   3   2   0</div><div class="line">1   3   5   0</div><div class="line">1   5   5   1</div><div class="line">1   7   5   1</div><div class="line">1   2   5   1</div></pre></td></tr></table></figure><br>코드부분 입니다.<br><figure class="highlight plain"><figcaption><span>logisticC.py</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line">import tensorflow as tf</div><div class="line">import numpy as np</div><div class="line"></div><div class="line">xy = np.loadtxt(&apos;input.txt&apos;, unpack=True, dtype=&apos;float32&apos;)</div><div class="line">x_data = xy[0:-1]</div><div class="line">y_data = xy[-1]</div><div class="line"></div><div class="line">X = tf.placeholder(tf.float32)</div><div class="line">Y = tf.placeholder(tf.float32)</div><div class="line"></div><div class="line">W = tf.Variable(tf.random_uniform([1, len(x_data)], -1.0, 1.0))</div><div class="line"></div><div class="line">h = tf.matmul(W, X)</div><div class="line">hypothesis = tf.div(1., 1. + tf.exp(-h))</div><div class="line"></div><div class="line">cost = -tf.reduce_mean(Y * tf.log(hypothesis) + (1 - Y) * tf.log(1 - hypothesis))</div><div class="line"></div><div class="line">a = tf.Variable(0.1)  # learning rate, alpha</div><div class="line">optimizer = tf.train.GradientDescentOptimizer(a)</div><div class="line">train = optimizer.minimize(cost)  # goal is minimize cost</div><div class="line"></div><div class="line">init = tf.global_variables_initializer()</div><div class="line"></div><div class="line">sess = tf.Session()</div><div class="line">sess.run(init)</div><div class="line"></div><div class="line">for step in range(2001):</div><div class="line">    sess.run(train, feed_dict=&#123;X: x_data, Y: y_data&#125;)</div><div class="line">    if step % 200 == 0:</div><div class="line">        print (step, sess.run(cost, feed_dict=&#123;X: x_data, Y: y_data&#125;), sess.run(W))</div><div class="line"></div><div class="line">print (&apos;-----------------------------------------&apos;)</div><div class="line">print (sess.run(hypothesis, feed_dict=&#123;X: [[1], [2], [2]]&#125;) &gt; 0.5)</div><div class="line">print (sess.run(hypothesis, feed_dict=&#123;X: [[1], [5], [5]]&#125;) &gt; 0.5)</div><div class="line">print (sess.run(hypothesis, feed_dict=&#123;X: [[1, 1], [4, 0], [2, 10]]&#125;) &gt; 0.5)</div></pre></td></tr></table></figure></p>
 <p><strong>결과값</strong><br>0 0.919001 [[ 0.8754766  -0.10433824  0.33632374]]<br>200 0.509501 [[-1.38300133  0.11766662  0.33868256]]<br>400 0.42692 [[-2.6384747   0.24237575  0.51069313]]<br>600 0.391719 [[-3.46154785  0.31578434  0.6304763 ]]<br>800 0.373097 [[-4.06127024  0.36348528  0.72200185]]<br>1000 0.361825 [[-4.52822399  0.39683989  0.79584837]]<br>1200 0.354366 [[-4.90821457  0.42141104  0.85761738]]<br>1400 0.34911 [[-5.22723818  0.44022152  0.91062367]]<br>1600 0.345229 [[-5.5013628   0.45505521  0.95699048]]<br>1800 0.342259 [[-5.74115181  0.46703169  0.99815571]]</p>
@@ -42,6 +70,8 @@
     
     
       <category term="machinelearning" scheme="https://penglover.github.io/tags/machinelearning/"/>
+    
+      <category term="tensorflow" scheme="https://penglover.github.io/tags/tensorflow/"/>
     
   </entry>
   

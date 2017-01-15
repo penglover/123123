@@ -3,22 +3,25 @@
 <head>
     <meta charset="utf-8">
     
-    <title>Tag: algorithm | Wellcome to IT Blog</title>
+    <title>텐서플로우에서 reduction_indices 속성은 무엇일까? | Wellcome to IT Blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-    <meta name="description" content="Talk about software">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Wellcome to IT Blog">
-<meta property="og:url" content="https://penglover.github.io/tags/algorithm/index.html">
+        <meta name="keywords" content="machinelearning,tensorflow">
+    
+    <meta name="description" content="텐서플로우를 공부하다보면 reduction_indices 속성이 등장합니다.reduce_mean이라든가 연산메서드에서 등장하는 속성인데요.simple.txt12&amp;apos;x&amp;apos; is [[1., 1.]        [2., 2.]]다음의 행렬이 있다고 해보겠습니다.결과값은 어떻게 될까요?tf.reduce_mean(x) ==&amp;gt; 1.5tf.reduc">
+<meta property="og:type" content="article">
+<meta property="og:title" content="텐서플로우에서 reduction_indices 속성은 무엇일까?">
+<meta property="og:url" content="https://penglover.github.io/2017/01/15/tensorflow-reduction-indices/index.html">
 <meta property="og:site_name" content="Wellcome to IT Blog">
-<meta property="og:description" content="Talk about software">
+<meta property="og:description" content="텐서플로우를 공부하다보면 reduction_indices 속성이 등장합니다.reduce_mean이라든가 연산메서드에서 등장하는 속성인데요.simple.txt12&amp;apos;x&amp;apos; is [[1., 1.]        [2., 2.]]다음의 행렬이 있다고 해보겠습니다.결과값은 어떻게 될까요?tf.reduce_mean(x) ==&amp;gt; 1.5tf.reduc">
 <meta property="og:image" content="https://penglover.github.io/css/images/logo.png">
+<meta property="og:updated_time" content="2017-01-15T05:33:48.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Wellcome to IT Blog">
-<meta name="twitter:description" content="Talk about software">
+<meta name="twitter:title" content="텐서플로우에서 reduction_indices 속성은 무엇일까?">
+<meta name="twitter:description" content="텐서플로우를 공부하다보면 reduction_indices 속성이 등장합니다.reduce_mean이라든가 연산메서드에서 등장하는 속성인데요.simple.txt12&amp;apos;x&amp;apos; is [[1., 1.]        [2., 2.]]다음의 행렬이 있다고 해보겠습니다.결과값은 어떻게 될까요?tf.reduce_mean(x) ==&amp;gt; 1.5tf.reduc">
 <meta name="twitter:image" content="https://penglover.github.io/css/images/logo.png">
     
-    <link rel="canonical" href="https://penglover.github.io/tags/algorithm/">
+    <link rel="canonical" href="https://penglover.github.io/2017/01/15/tensorflow-reduction-indices/">
     
         <link rel="alternate" href="http://blog.naver.com/penglover" title="Wellcome to IT Blog" type="application/atom+xml">
     
@@ -138,73 +141,117 @@ ga('send', 'pageview');
                         <div class="main-body-header">
     <h1 class="header">
     
-    <i class="icon fa fa-tag"></i>Tag: <em>algorithm</em>
+    <a class="page-title-link" href="/categories/ML/">ML</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/ML/TensorFlow/">TensorFlow</a>
     </h1>
 </div>
                         <div class="main-body-content">
-                            
-
-    
-    
+                            <article id="post-tensorflow-reduction-indices" class="article article-single article-type-post" itemscope="" itemprop="blogPost">
+    <div class="article-inner">
         
-        
-        <section class="archives-wrap">
-            <div class="archive-year-wrap">
-                <a href="/archives/2017" class="archive-year"><i class="icon fa fa-calendar-o"></i>2017</a>
-            </div>
-            <div class="archives">
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2017/01/15/algorithm-sigmoid/" class="thumbnail">
-    
-    
-        <span style="background-image:url(https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Logistic-curve.svg/640px-Logistic-curve.svg.png)" alt="algorithm-sigmoid" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="https://penglover.github.io/2017/01/15/algorithm-sigmoid/">0</span>
-    
-</span>
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <p class="category">
-            <a class="article-category-link" href="/categories/ML/">ML</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/ML/algorithm/">algorithm</a>
-            </p>
-            <p class="date"><time datetime="2017-01-15T03:27:36.000Z" itemprop="datePublished">2017-01-15</time></p>
-        </div>
-        
+            <header class="article-header">
+                
     
         <h1 class="article-title" itemprop="name">
-        <a href="/2017/01/15/algorithm-sigmoid/">algorithm-sigmoid</a>
+        텐서플로우에서 reduction_indices 속성은 무엇일까?
         </h1>
     
 
-        <p class="article-excerpt">
-            why sigmoid머신러닝 알고리즘을 공부하다가보면 시그모이드 함수를 마주쳤을 것입니다.그런데 이게 진짜 과연 써야하는 것인가?그냥 linear한 함수를 쓰면 안되나?이런 의문을 바로 해결해준 유투브 강의가 있어서 소개합니다.김성훈님의 강의입니다.
-Logistic classification을 설명해 주시면서 등장합니다.이런 이유라면 충분히 시그모이드 함수
-        </p>
+            </header>
+        
+        
+            <div class="article-subtitle">
+                <a href="/2017/01/15/tensorflow-reduction-indices/" class="article-date">
+    <time datetime="2017-01-15T05:29:16.000Z" itemprop="datePublished">2017-01-15</time>
+</a>
+                
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/machinelearning/">machinelearning</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tensorflow/">tensorflow</a></li></ul>
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <p>텐서플로우를 공부하다보면 reduction_indices 속성이 등장합니다.<br>reduce_mean이라든가 연산메서드에서 등장하는 속성인데요.<br><figure class="highlight plain"><figcaption><span>simple.txt</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&apos;x&apos; is [[1., 1.]</div><div class="line">        [2., 2.]]</div></pre></td></tr></table></figure><br>다음의 행렬이 있다고 해보겠습니다.<br>결과값은 어떻게 될까요?<br>tf.reduce_mean(x) ==&gt; 1.5<br>tf.reduce_mean(x, 0) ==&gt; [1.5, 1.5]<br>tf.reduce_mean(x, 1) ==&gt; [1.,  2.]</p>
+<p>자 아시겠죠?<br>아무 값도 주지 않으면 전부다 처리해버립니다.<br>0으로 하면 열끼리 처리하고 1로 하면 행끼리 처리합니다.<br>도움이 되셨길 바라며 포스팅 마무리하겠습니다~</p>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="https://penglover.github.io/2017/01/15/tensorflow-reduction-indices/" data-id="cixy8830v000eprbncfwzq3b5" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
     </div>
 </article>
+
+    <section id="comments">
     
-        </div>
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
     
-
-
-    </div></section>
-
+    </section>
 
 
                         </div>
@@ -259,6 +306,19 @@ Logistic classification을 설명해 주시면서 등장합니다.이런 이유�
     </div>
 <div class="github-card" data-github="penglover" data-width="100%" data-height="" data-theme="default"></div>
 <script src="//cdn.jsdelivr.net/github-cards/latest/widget.js"></script>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2017/01/15/tensorflow-logisticC/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">텐서플로우로 logistic classification 구현해보자</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
     
     <div class="widgets-container">
         
@@ -457,11 +517,13 @@ Logistic classification을 설명해 주시면서 등장합니다.이런 이유�
     var disqus_shortname = 'miscellaneous';
     
     
+    var disqus_url = 'https://penglover.github.io/2017/01/15/tensorflow-reduction-indices/';
+    
     (function() {
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
     </script>
