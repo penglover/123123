@@ -3,22 +3,25 @@
 <head>
     <meta charset="utf-8">
     
-    <title>Category: algorithm | Wellcome to IT Blog</title>
+    <title>텐서플로우에서 softmax 메서드를 사용해 봅시다! | Wellcome to IT Blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-    <meta name="description" content="Talk about software">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Wellcome to IT Blog">
-<meta property="og:url" content="https://penglover.github.io/categories/ML/algorithm/index.html">
+        <meta name="keywords" content="machinelearning,tensorflow">
+    
+    <meta name="description" content="텐서플로우가 아니라면 softmax 부분을 어떻게 구현해야 할까요?일일히 class별로 weight와 bias를 계산해서 제곱하고 sigmoid 씌우고 주저리주저리…어휴 참 끔찍합니다.다행히 tensorflow에서는 메서드로 이를 제공하는데요.아래의 코드는 weight와 bias를 행렬로 처리해서 W로 묶어서 두었습니다.hypothesis, 즉 기대값은 X">
+<meta property="og:type" content="article">
+<meta property="og:title" content="텐서플로우에서 softmax 메서드를 사용해 봅시다!">
+<meta property="og:url" content="https://penglover.github.io/2017/01/15/tensorflow-softmaxC/index.html">
 <meta property="og:site_name" content="Wellcome to IT Blog">
-<meta property="og:description" content="Talk about software">
+<meta property="og:description" content="텐서플로우가 아니라면 softmax 부분을 어떻게 구현해야 할까요?일일히 class별로 weight와 bias를 계산해서 제곱하고 sigmoid 씌우고 주저리주저리…어휴 참 끔찍합니다.다행히 tensorflow에서는 메서드로 이를 제공하는데요.아래의 코드는 weight와 bias를 행렬로 처리해서 W로 묶어서 두었습니다.hypothesis, 즉 기대값은 X">
 <meta property="og:image" content="https://penglover.github.io/css/images/logo.png">
+<meta property="og:updated_time" content="2017-01-15T07:01:12.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Wellcome to IT Blog">
-<meta name="twitter:description" content="Talk about software">
+<meta name="twitter:title" content="텐서플로우에서 softmax 메서드를 사용해 봅시다!">
+<meta name="twitter:description" content="텐서플로우가 아니라면 softmax 부분을 어떻게 구현해야 할까요?일일히 class별로 weight와 bias를 계산해서 제곱하고 sigmoid 씌우고 주저리주저리…어휴 참 끔찍합니다.다행히 tensorflow에서는 메서드로 이를 제공하는데요.아래의 코드는 weight와 bias를 행렬로 처리해서 W로 묶어서 두었습니다.hypothesis, 즉 기대값은 X">
 <meta name="twitter:image" content="https://penglover.github.io/css/images/logo.png">
     
-    <link rel="canonical" href="https://penglover.github.io/categories/ML/algorithm/">
+    <link rel="canonical" href="https://penglover.github.io/2017/01/15/tensorflow-softmaxC/">
     
         <link rel="alternate" href="http://blog.naver.com/penglover" title="Wellcome to IT Blog" type="application/atom+xml">
     
@@ -138,74 +141,118 @@ ga('send', 'pageview');
                         <div class="main-body-header">
     <h1 class="header">
     
-    <i class="icon fa fa-folder-open"></i>Category: <em class="page-title-link">algorithm</em>
+    <a class="page-title-link" href="/categories/ML/">ML</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/ML/TensorFlow/">TensorFlow</a>
     </h1>
 </div>
                         <div class="main-body-content">
-                            
-
-    
-    
+                            <article id="post-tensorflow-softmaxC" class="article article-single article-type-post" itemscope="" itemprop="blogPost">
+    <div class="article-inner">
         
-        
-        <section class="archives-wrap">
-            <div class="archive-year-wrap">
-                <a href="/archives/2017" class="archive-year"><i class="icon fa fa-calendar-o"></i>2017</a>
-            </div>
-            <div class="archives">
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2017/01/15/algorithm-sigmoid/" class="thumbnail">
-    
-    
-        <span style="background-image:url(https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Logistic-curve.svg/640px-Logistic-curve.svg.png)" alt="algorithm-sigmoid" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="https://penglover.github.io/2017/01/15/algorithm-sigmoid/">0</span>
-    
-</span>
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <p class="category">
-            <a class="article-category-link" href="/categories/ML/">ML</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/ML/algorithm/">algorithm</a>
-            </p>
-            <p class="date"><time datetime="2017-01-15T03:27:36.000Z" itemprop="datePublished">2017-01-15</time></p>
-        </div>
-        
+            <header class="article-header">
+                
     
         <h1 class="article-title" itemprop="name">
-        <a href="/2017/01/15/algorithm-sigmoid/">algorithm-sigmoid</a>
+        텐서플로우에서 softmax 메서드를 사용해 봅시다!
         </h1>
     
 
-        <p class="article-excerpt">
-            why sigmoid머신러닝 알고리즘을 공부하다가보면 시그모이드 함수를 마주쳤을 것입니다.그런데 이게 진짜 과연 써야하는 것인가?그냥 linear한 함수를 쓰면 안되나?이런 의문을 바로 해결해준 유투브 강의가 있어서 소개합니다.김성훈님의 강의입니다.
-Logistic classification을 설명해 주시면서 등장합니다.이런 이유라면 충분히 시그모이드 함수
-        </p>
+            </header>
+        
+        
+            <div class="article-subtitle">
+                <a href="/2017/01/15/tensorflow-softmaxC/" class="article-date">
+    <time datetime="2017-01-15T06:07:59.000Z" itemprop="datePublished">2017-01-15</time>
+</a>
+                
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/machinelearning/">machinelearning</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tensorflow/">tensorflow</a></li></ul>
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <p>텐서플로우가 아니라면 softmax 부분을 어떻게 구현해야 할까요?<br>일일히 class별로 weight와 bias를 계산해서 제곱하고 sigmoid 씌우고 주저리주저리…<br>어휴 참 끔찍합니다.<br>다행히 tensorflow에서는 메서드로 이를 제공하는데요.<br>아래의 코드는 weight와 bias를 행렬로 처리해서 W로 묶어서 두었습니다.<br>hypothesis, 즉 기대값은 X와 W의 행렬곱을 softmax처리 한 것입니다.<br>cost함수는 오류를 극대화 하기 위해서 + 선형성을 위해서 저렇게 한 것이라고 생각하면 됩니다.</p>
+<p>softmax에 대해서 아는 분이라면 다음의 코드가 쉽게 이해가 가실겁니다.<br><figure class="highlight plain"><figcaption><span>input.txt</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">#x0 x1 x2 y[A   B   C]</div><div class="line">1   2   1   0   0   1</div><div class="line">1   3   2   0   0   1</div><div class="line">1   3   4   0   0   1</div><div class="line">1   5   5   0   1   0</div><div class="line">1   7   5   0   1   0</div><div class="line">1   2   5   0   1   0</div><div class="line">1   6   6   1   0   0</div><div class="line">1   7   7   1   0   0</div></pre></td></tr></table></figure><br>아래는 예제 코드입니다.<br><figure class="highlight plain"><figcaption><span>softmax.py</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div></pre></td><td class="code"><pre><div class="line">import tensorflow as tf</div><div class="line">import numpy as np</div><div class="line"></div><div class="line">xy = np.loadtxt(&apos;05train.txt&apos;, unpack=True, dtype=&apos;float32&apos;)</div><div class="line"></div><div class="line">x_data = np.transpose(xy[0:3])</div><div class="line">y_data = np.transpose(xy[3:])</div><div class="line"></div><div class="line">X = tf.placeholder(&quot;float&quot;, [None, 3])</div><div class="line">Y = tf.placeholder(&quot;float&quot;, [None, 3])</div><div class="line"></div><div class="line">W = tf.Variable(tf.zeros([3, 3]))</div><div class="line"></div><div class="line">hypothesis = tf.nn.softmax(tf.matmul(X, W))</div><div class="line"></div><div class="line">learning_rate = 0.01</div><div class="line"></div><div class="line">cost = tf.reduce_mean(-tf.reduce_sum(Y * tf.log(hypothesis), reduction_indices=1))</div><div class="line"></div><div class="line">optimizer = tf.train.GradientDescentOptimizer(learning_rate).minimize(cost)</div><div class="line"></div><div class="line"></div><div class="line">init = tf.global_variables_initializer()</div><div class="line"></div><div class="line">sess = tf.Session()</div><div class="line"></div><div class="line">sess.run(init)</div><div class="line"></div><div class="line">for step in range(2001):</div><div class="line">    sess.run(optimizer, feed_dict=&#123;X: x_data, Y: y_data&#125;)</div><div class="line">    if step % 200 == 0:</div><div class="line">         print (step, sess.run(cost, feed_dict=&#123;X: x_data, Y: y_data&#125;), sess.run(W))</div><div class="line"></div><div class="line">a = sess.run(hypothesis, feed_dict=&#123;X: [[1, 11, 7]]&#125;)</div><div class="line">print (&quot;a :&quot;, a, sess.run(tf.arg_max(a, 1)))</div><div class="line"></div><div class="line">b = sess.run(hypothesis, feed_dict=&#123;X: [[1, 3, 4]]&#125;)</div><div class="line">print (&quot;b :&quot;, b, sess.run(tf.arg_max(b, 1)))</div><div class="line"></div><div class="line">c = sess.run(hypothesis, feed_dict=&#123;X: [[1, 1, 0]]&#125;)</div><div class="line">print (&quot;c :&quot;, c, sess.run(tf.arg_max(c, 1)))</div></pre></td></tr></table></figure><br><strong>결과값</strong><br>0 1.09048 [[-0.00083333  0.00041667  0.00041667]<br> [ 0.00166667  0.00291667 -0.00458333]<br> [ 0.00166667  0.00416667 -0.00583333]]<br>200 0.985653 [[-0.21679303 -0.05050437  0.26729742]<br> [ 0.02901031 -0.06265054  0.03364029]<br> [ 0.04244109  0.12451769 -0.16695869]]<br>400 0.926073 [[-0.41495511 -0.10318027  0.51813519]<br> [ 0.03762176 -0.10302337  0.06540174]<br> [ 0.07457665  0.17761268 -0.25218898]]<br>600 0.879342 [[-0.59596533 -0.1515553   0.74752003]<br> [ 0.04480708 -0.11983915  0.07503238]<br> [ 0.10447746  0.20644082 -0.31091776]]<br>800 0.840971 [[-0.76270223 -0.19499816  0.95770001]<br> [ 0.05223157 -0.12450957  0.07227841]<br> [ 0.13095778  0.22218271 -0.35314   ]]<br>1000 0.808647 [[-0.91752577 -0.2334879   1.15101326]<br> [ 0.06007884 -0.12292791  0.06284945]<br> [ 0.15438823  0.23068959 -0.38507724]]<br>1200 0.780959 [[-1.06231129 -0.26727253  1.32958329]<br> [ 0.06808005 -0.11823834  0.05015875]<br> [ 0.17550454  0.23514733 -0.41065112]]<br>1400 0.756943 [[-1.19854808 -0.29670808  1.49525583]<br> [ 0.07591439 -0.11214777  0.03623381]<br> [ 0.19498996  0.237331   -0.43232018]]<br>1600 0.735892 [[-1.32743537 -0.32218221  1.64961684]<br> [ 0.08333746 -0.10557999  0.022243  ]<br> [ 0.21336642  0.23823628 -0.45160189]]<br>1800 0.717269 [[-1.44994974 -0.34407791  1.79402602]<br> [ 0.09020081 -0.09902246  0.00882213]<br> [ 0.23099625  0.23841871 -0.46941414]]<br>2000 0.700649 [[-1.56689739 -0.36275655  1.92965221]<br> [ 0.09643649 -0.09271803 -0.00371792]<br> [ 0.24811605  0.23818412 -0.48629922]]<br>a : [[ 0.68849677  0.26731515  0.04418808]] [0]<br>b : [[ 0.24322268  0.44183081  0.3149465 ]] [1]<br>c : [[ 0.02974809  0.08208466  0.8881672 ]] [2]</p>
+<p>정말 놀랍죠?<br>참고로 transpose는 열과 행을 바꾸는 것입니다.<br>reduction_indices=1 이부분도 뭔지 모르실수가 있는데 아래의 링크에 설명했습니다.<br><a href="https://penglover.github.io/2017/01/15/tensorflow-reduction-indices/">https://penglover.github.io/2017/01/15/tensorflow-reduction-indices/</a></p>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="https://penglover.github.io/2017/01/15/tensorflow-softmaxC/" data-id="cixybcfvk000kj2bn6ls4ox2w" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
     </div>
 </article>
+
+    <section id="comments">
     
-        </div>
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
     
-
-
-    </div></section>
-
-
+    </section>
 
 
                         </div>
@@ -260,6 +307,19 @@ Logistic classification을 설명해 주시면서 등장합니다.이런 이유�
     </div>
 <div class="github-card" data-github="penglover" data-width="100%" data-height="" data-theme="default"></div>
 <script src="//cdn.jsdelivr.net/github-cards/latest/widget.js"></script>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2017/01/15/tensorflow-reduction-indices/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">텐서플로우에서 reduction_indices 속성은 무엇일까?</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
     
     <div class="widgets-container">
         
@@ -458,11 +518,13 @@ Logistic classification을 설명해 주시면서 등장합니다.이런 이유�
     var disqus_shortname = 'miscellaneous';
     
     
+    var disqus_url = 'https://penglover.github.io/2017/01/15/tensorflow-softmaxC/';
+    
     (function() {
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
     </script>
