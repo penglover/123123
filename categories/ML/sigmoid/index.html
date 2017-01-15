@@ -3,25 +3,22 @@
 <head>
     <meta charset="utf-8">
     
-    <title>텐서플로우로 linear regression 구현 및 설명 | Wellcome to IT Blog</title>
+    <title>Category: sigmoid | Wellcome to IT Blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="machinelearning">
-    
-    <meta name="description" content="Linear RegressionLinear Regression에 대한 지식이 없으시다면 아래의 동영상을 보시는 것을 추천합니다.https://www.youtube.com/watch?v=GmtqOlPYB84이미 알고 계신다면 렛츠고!아! 참고로 tensorflow 버전이나 python버전이 다르다면tf.global_variables_initializer, p">
-<meta property="og:type" content="article">
-<meta property="og:title" content="텐서플로우로 linear regression 구현 및 설명">
-<meta property="og:url" content="https://penglover.github.io/2017/01/14/tf-LinearRegression/index.html">
+    <meta name="description" content="Talk about software">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Wellcome to IT Blog">
+<meta property="og:url" content="https://penglover.github.io/categories/ML/sigmoid/index.html">
 <meta property="og:site_name" content="Wellcome to IT Blog">
-<meta property="og:description" content="Linear RegressionLinear Regression에 대한 지식이 없으시다면 아래의 동영상을 보시는 것을 추천합니다.https://www.youtube.com/watch?v=GmtqOlPYB84이미 알고 계신다면 렛츠고!아! 참고로 tensorflow 버전이나 python버전이 다르다면tf.global_variables_initializer, p">
+<meta property="og:description" content="Talk about software">
 <meta property="og:image" content="https://penglover.github.io/css/images/logo.png">
-<meta property="og:updated_time" content="2017-01-15T01:54:31.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="텐서플로우로 linear regression 구현 및 설명">
-<meta name="twitter:description" content="Linear RegressionLinear Regression에 대한 지식이 없으시다면 아래의 동영상을 보시는 것을 추천합니다.https://www.youtube.com/watch?v=GmtqOlPYB84이미 알고 계신다면 렛츠고!아! 참고로 tensorflow 버전이나 python버전이 다르다면tf.global_variables_initializer, p">
+<meta name="twitter:title" content="Wellcome to IT Blog">
+<meta name="twitter:description" content="Talk about software">
 <meta name="twitter:image" content="https://penglover.github.io/css/images/logo.png">
     
-    <link rel="canonical" href="https://penglover.github.io/2017/01/14/tf-LinearRegression/">
+    <link rel="canonical" href="https://penglover.github.io/categories/ML/sigmoid/">
     
         <link rel="alternate" href="http://blog.naver.com/penglover" title="Wellcome to IT Blog" type="application/atom+xml">
     
@@ -141,120 +138,74 @@ ga('send', 'pageview');
                         <div class="main-body-header">
     <h1 class="header">
     
-    <a class="page-title-link" href="/categories/ML/">ML</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/ML/TensorFlow/">TensorFlow</a>
+    <i class="icon fa fa-folder-open"></i>Category: <em class="page-title-link">sigmoid</em>
     </h1>
 </div>
                         <div class="main-body-content">
-                            <article id="post-tf-LinearRegression" class="article article-single article-type-post" itemscope="" itemprop="blogPost">
-    <div class="article-inner">
+                            
+
+    
+    
         
-            <header class="article-header">
-                
+        
+        <section class="archives-wrap">
+            <div class="archive-year-wrap">
+                <a href="/archives/2017" class="archive-year"><i class="icon fa fa-calendar-o"></i>2017</a>
+            </div>
+            <div class="archives">
+    
+    
+    
+        <div class="article-row">
+    
+        <article class="article article-summary">
+    <div class="article-summary-inner">
+        
+        <a href="/2017/01/15/algorithm-sigmoid/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Logistic-curve.svg/640px-Logistic-curve.svg.png)" alt="algorithm-sigmoid" class="thumbnail-image"></span>
+    
+    
+        
+<span class="comment-counter">
+    <i class="fa fa-comments-o"></i>
+    
+        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="https://penglover.github.io/2017/01/15/algorithm-sigmoid/">0</span>
+    
+</span>
+
+    
+</a>
+
+        
+        <div class="article-meta">
+            <p class="category">
+            <a class="article-category-link" href="/categories/ML/">ML</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/ML/sigmoid/">sigmoid</a>
+            </p>
+            <p class="date"><time datetime="2017-01-15T03:27:36.000Z" itemprop="datePublished">2017-01-15</time></p>
+        </div>
+        
     
         <h1 class="article-title" itemprop="name">
-        텐서플로우로 linear regression 구현 및 설명
+        <a href="/2017/01/15/algorithm-sigmoid/">algorithm-sigmoid</a>
         </h1>
     
 
-            </header>
-        
-        
-            <div class="article-subtitle">
-                <a href="/2017/01/14/tf-LinearRegression/" class="article-date">
-    <time datetime="2017-01-14T14:50:53.000Z" itemprop="datePublished">2017-01-14</time>
-</a>
-                
-    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/machinelearning/">machinelearning</a></li></ul>
-
-            </div>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-            <h1 id="Linear-Regression"><a href="#Linear-Regression" class="headerlink" title="Linear Regression"></a>Linear Regression</h1><p>Linear Regression에 대한 지식이 없으시다면 아래의 동영상을 보시는 것을 추천합니다.<br><a href="https://www.youtube.com/watch?v=GmtqOlPYB84" rel="external nofollow noopener noreferrer" target="_blank">https://www.youtube.com/watch?v=GmtqOlPYB84</a><br>이미 알고 계신다면 렛츠고!<br>아! 참고로 tensorflow 버전이나 python버전이 다르다면<br>tf.global_variables_initializer, print, range 부분에 수정이 필요합니다.<br>오류나면 댓글남겨주세요 ㅎㅎ 바로 알려드릴게요.</p>
-<figure class="highlight plain"><figcaption><span>LinearRegression.py</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">import tensorflow as tf</div><div class="line"></div><div class="line">x_data = [1, 2, 3, 4]</div><div class="line">y_data = [2, 4, 6, 8]</div><div class="line"></div><div class="line">W = tf.Variable(tf.random_uniform([1], -10000, 10000))</div><div class="line">b = tf.Variable(tf.random_uniform([1], -10000, 10000))</div><div class="line"></div><div class="line">X = tf.placeholder(tf.float32)</div><div class="line">Y = tf.placeholder(tf.float32)</div><div class="line"></div><div class="line">hypothesis = W * X + b</div><div class="line"></div><div class="line">cost = tf.reduce_mean(tf.square(hypothesis - Y))</div><div class="line"></div><div class="line">a = tf.Variable(0.1)</div><div class="line">optimizer = tf.train.GradientDescentOptimizer(a)</div><div class="line">train = optimizer.minimize(cost)</div><div class="line"></div><div class="line">init = tf.global_variables_initializer()</div><div class="line"></div><div class="line">sess = tf.Session()</div><div class="line">sess.run(init)</div><div class="line"></div><div class="line">for step in range(2001):</div><div class="line">    sess.run(train, feed_dict=&#123;X: x_data, Y: y_data&#125;)</div><div class="line">    if step % 200 == 0:</div><div class="line">        print (step, sess.run(cost, feed_dict=&#123;X: x_data, Y: y_data&#125;), sess.run(W), sess.run(b))</div><div class="line"></div><div class="line">print (sess.run(hypothesis, feed_dict=&#123;X: [5, 10]&#125;))</div><div class="line">print (sess.run(hypothesis, feed_dict=&#123;X: [2.5, 1.5]&#125;))</div></pre></td></tr></table></figure>
-<p><strong>결과값</strong><br>0 1.17541e+07 [-3064.45288086] [ 7678.85205078]<br>200 53.5173 [-4.08845949] [ 17.90081406]<br>400 0.000280612 [ 1.98605835] [ 0.04099015]<br>600 1.46635e-09 [ 1.99996805] [  9.38054509e-05]<br>800 1.42109e-14 [ 1.99999988] [  4.28800519e-07]<br>1000 0.0 [ 2.] [  1.18856534e-07]<br>1200 0.0 [ 2.] [  1.18856534e-07]<br>1400 0.0 [ 2.] [  1.18856534e-07]<br>1600 0.0 [ 2.] [  1.18856534e-07]<br>1800 0.0 [ 2.] [  1.18856534e-07]<br>2000 0.0 [ 2.] [  1.18856534e-07]<br>[ 10.  20.]<br>[ 5.  3.]</p>
-<p>아주 쉽게 이해가 가실 것입니다.<br>W와 b를 -10000에서 10000사이의 랜덤한 값으로 두었습니다.<br>X와 Y는 32bit의 float형 데이터로 선언해 두었지요.<br>hypothesis는 input값이 될 X에게 w와 b를 더해서 나오는 결과에 대한 기대값입니다.<br>cost는 기대값과 실제값을 뺀것을 제곱을 한 것의 평균값을 갖게 될 것입니다.<br>reduce_mean은 참고로 평균값을 내게 해주는 매소드입니다.<br>(m개의 input이 있으면 그것들의 평균값을 매겨줌)<br>a는 learning rate입니다.<br>tf.train.GradientDescentOptimizer가 gradient descent 알고리즘을 처리해줍니다.<br>그리고 minimize가 cost를 인자로 받아서 train될때마다 W와 b를 업데이트합니다.<br>화면이 너무 꽉 찰 것 같아서 step은 200개당 1번 print 했습니다.<br>결과값을 보니 training이 아주 잘 되었네요!</p>
-<p>헷갈리는 tensorflow의 링크가 있다면 아래에 모든 것이 나와있습니다.<br><a href="https://www.tensorflow.org/versions/master/api_docs/python/math_ops/reduction#reduce_mean" rel="external nofollow noopener noreferrer" target="_blank">https://www.tensorflow.org/versions/master/api_docs/python/math_ops/reduction#reduce_mean</a></p>
-
-        </div>
-        <footer class="article-footer">
-            
-
-
-
-    <a data-url="https://penglover.github.io/2017/01/14/tf-LinearRegression/" data-id="cixy3v3g4000gt8bn6pzs77j3" class="article-share-link"><i class="fa fa-share"></i>Share</a>
-<script>
-    (function ($) {
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-        </footer>
+        <p class="article-excerpt">
+            why sigmoid머신러닝 알고리즘을 공부하다가보면 시그모이드 함수를 마주쳤을 것입니다.그런데 이게 진짜 과연 써야하는 것인가?그냥 linear한 함수를 쓰면 안되나?이런 의문을 바로 해결해준 유투브 강의가 있어서 소개합니다.김성훈님의 강의입니다.
+Logistic classification을 설명해 주시면서 등장합니다.이런 이유라면 충분히 시그모이드 함수
+        </p>
     </div>
 </article>
-
-    <section id="comments">
     
-        
-    <div id="disqus_thread">
-        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-    </div>
-
+        </div>
     
-    </section>
+
+
+    </div></section>
+
+
 
 
                         </div>
@@ -309,29 +260,6 @@ ga('send', 'pageview');
     </div>
 <div class="github-card" data-github="penglover" data-width="100%" data-height="" data-theme="default"></div>
 <script src="//cdn.jsdelivr.net/github-cards/latest/widget.js"></script>
-    
-        
-<nav id="article-nav">
-    
-        <a href="/2017/01/15/tensorflow-graph/" id="article-nav-newer" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">newer</strong>
-        <p class="article-nav-title">
-        
-            tensorflow에서 언제 LinearRegression을 적용시킬지 알아보는 법
-        
-        </p>
-        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
-    </a>
-    
-    
-        <a href="/2017/01/14/tf-placeholder/" id="article-nav-older" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">older</strong>
-        <p class="article-nav-title">텐서플로우에서 placeholder란 무엇일까?</p>
-        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
-        </a>
-    
-</nav>
-
     
     <div class="widgets-container">
         
@@ -530,13 +458,11 @@ ga('send', 'pageview');
     var disqus_shortname = 'miscellaneous';
     
     
-    var disqus_url = 'https://penglover.github.io/2017/01/14/tf-LinearRegression/';
-    
     (function() {
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
     </script>

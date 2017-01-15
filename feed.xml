@@ -5,7 +5,7 @@
   <link href="/feed.xml" rel="self"/>
   
   <link href="https://penglover.github.io/"/>
-  <updated>2017-01-15T03:00:27.000Z</updated>
+  <updated>2017-01-15T03:31:44.000Z</updated>
   <id>https://penglover.github.io/</id>
   
   <author>
@@ -14,6 +14,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>algorithm-sigmoid</title>
+    <link href="https://penglover.github.io/2017/01/15/algorithm-sigmoid/"/>
+    <id>https://penglover.github.io/2017/01/15/algorithm-sigmoid/</id>
+    <published>2017-01-15T03:27:36.000Z</published>
+    <updated>2017-01-15T03:31:44.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="why-sigmoid"><a href="#why-sigmoid" class="headerlink" title="why sigmoid"></a>why sigmoid</h1><p>머신러닝 알고리즘을 공부하다가보면 시그모이드 함수를 마주쳤을 것입니다.<br>그런데 이게 진짜 과연 써야하는 것인가?<br>그냥 linear한 함수를 쓰면 안되나?<br>이런 의문을 바로 해결해준 유투브 강의가 있어서 소개합니다.<br>김성훈님의 강의입니다.<br><div class="video-container"><iframe src="//www.youtube.com/embed/PIjno6paszY" frameborder="0" allowfullscreen></iframe></div></p>
+<p>Logistic classification을 설명해 주시면서 등장합니다.<br>이런 이유라면 충분히 시그모이드 함수의 등장이 이해가 가네요!</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;why-sigmoid&quot;&gt;&lt;a href=&quot;#why-sigmoid&quot; class=&quot;headerlink&quot; title=&quot;why sigmoid&quot;&gt;&lt;/a&gt;why sigmoid&lt;/h1&gt;&lt;p&gt;머신러닝 알고리즘을 공부하다가보면 시그모이드 함수를 마주쳤을 
+    
+    </summary>
+    
+      <category term="ML" scheme="https://penglover.github.io/categories/ML/"/>
+    
+      <category term="sigmoid" scheme="https://penglover.github.io/categories/ML/sigmoid/"/>
+    
+    
+      <category term="machinelearning" scheme="https://penglover.github.io/tags/machinelearning/"/>
+    
+      <category term="algorithm" scheme="https://penglover.github.io/tags/algorithm/"/>
+    
+  </entry>
   
   <entry>
     <title>텐서플로우할 때 txt파일을 쉽게 배열로 가져오는법(numpy)</title>
