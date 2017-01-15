@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="Wellcome to IT Blog">
 <meta property="og:description" content="머신러닝 코드 최적화하기rate항상 우리는 머신러닝 코드를 짤때 learning rate라는 값을 줍니다.gradient descent알고리즘을 쓸 때에 업데이트 정도를 조절해주는데요.우리는 이 learning rate 를 조절함으로써 코드를 최적화 할 수 있습니다.너무 작은값을 주면 어떻게 될까요?또는 너무 큰값을 주면 어떻게 될까요?위의 그림처럼 되어서">
 <meta property="og:image" content="https://penglover.github.io/css/images/logo.png">
-<meta property="og:updated_time" content="2017-01-15T08:48:26.000Z">
+<meta property="og:updated_time" content="2017-01-15T10:11:44.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="머신러닝 코드 최적화하기 by rate, overfitting, regularization">
 <meta name="twitter:description" content="머신러닝 코드 최적화하기rate항상 우리는 머신러닝 코드를 짤때 learning rate라는 값을 줍니다.gradient descent알고리즘을 쓸 때에 업데이트 정도를 조절해주는데요.우리는 이 learning rate 를 조절함으로써 코드를 최적화 할 수 있습니다.너무 작은값을 주면 어떻게 될까요?또는 너무 큰값을 주면 어떻게 될까요?위의 그림처럼 되어서">
@@ -82,7 +82,7 @@ ga('send', 'pageview');
                                     <a class="main-nav-list-link" href="/">Home</a>
                                 </li>
                             
-                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/ML/">ML</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/ML/TensorFlow/">TensorFlow</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/ML/algorithm/">algorithm</a></li></ul></li></ul>
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/ML/">ML</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/ML/DeepLearning/">DeepLearning</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/ML/TensorFlow/">TensorFlow</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/ML/algorithm/">algorithm</a></li></ul></li></ul>
                                     
                                 <li class="main-nav-list-item">
                                     <a class="main-nav-list-link" href="https://about.me/myeongsookim/edit" rel="external nofollow noopener noreferrer" target="_blank">About</a>
@@ -172,7 +172,7 @@ ga('send', 'pageview');
         <div class="article-entry" itemprop="articleBody">
             <h1 id="머신러닝-코드-최적화하기"><a href="#머신러닝-코드-최적화하기" class="headerlink" title="머신러닝 코드 최적화하기"></a>머신러닝 코드 최적화하기</h1><p><strong>rate</strong><br>항상 우리는 머신러닝 코드를 짤때 learning rate라는 값을 줍니다.<br>gradient descent알고리즘을 쓸 때에 업데이트 정도를 조절해주는데요.<br>우리는 이 learning rate 를 조절함으로써 코드를 최적화 할 수 있습니다.<br>너무 작은값을 주면 어떻게 될까요?<br>또는 너무 큰값을 주면 어떻게 될까요?<br><img src="https://penglover.github.io/images/learningrate.png" alt="compare_learningrate"><br>위의 그림처럼 되어서 최적화가 안됩니다.<br>해결방안은?<br>print로 꾸준히 cost함수의 변화를 체크하는 것이 최선입니다.</p>
 <p><strong>overfitting</strong><br>overfitting이라 하면 주로 test data가 적어서 일어납니다.<br>무리하게 적은 데이터로 fitting을 하려다보니 이상해 지는 것이지요.<br>또는 weight간의 값이 편차가 심하거나 해도 마찬가지로 일어납니다.<br>그래프가 구부러져 보인다고 해서 ‘구부러졌다’라고 표현하기도 합니다.<br>표준정규분포를 혹시 아시나요?<br>z = (x-평균)/표준편차<br>고등학교 수학시간에 한번 보셨을 겁니다.<br>이것을 이용해서 weight간의 격차를 일반화해줌으로서 해결하는 경우가 대부분입니다.<br>또는 regularization을 통해 해결할 수 있는데요.</p>
-<p><strong>regularization</strong><br>기존의 우리가 cost를 구하는 개념에서 weight의 제곱을 또 추가한것을 구하는 개념입니다.<br>gradient descent 알고리즘을 사용한다면 자동으로 weight의 제곱까지 고려해서 minimize를 시킬 것이고 그에따라서 자동으로 weight의 값들도 하향 평준화 시켜서 값을 낮춤으로써 구부러짐을 방지해주지요.<br>구부러짐이 뭐지 하는생각이 들 수 있습니다.<br><img src="https://penglover.github.io/images/regularization" alt="regularization"><br><img src="http://cs231n.github.io/assets/nn1/reg_strengths.jpeg" alt="overfitting_example"></p>
+<p><strong>regularization</strong><br>기존의 우리가 cost를 구하는 개념에서 weight의 제곱을 또 추가한것을 구하는 개념입니다.<br>gradient descent 알고리즘을 사용한다면 자동으로 weight의 제곱까지 고려해서 minimize를 시킬 것이고 그에따라서 자동으로 weight의 값들도 하향 평준화 시켜서 값을 낮춤으로써 구부러짐을 방지해주지요.<br>구부러짐이 뭐지 하는생각이 들 수 있습니다.<br><img src="https://penglover.github.io/images/regularization.png" alt="regularization"><br><img src="http://cs231n.github.io/assets/nn1/reg_strengths.jpeg" alt="overfitting_example"></p>
 <p>위에서 보이듯 람다값이 작을수록 weight 값을 신경쓰지 않겠다는 것입니다.</p>
 
         </div>
@@ -181,7 +181,7 @@ ga('send', 'pageview');
 
 
 
-    <a data-url="https://penglover.github.io/2017/01/15/how-can-upgrade-mlcode/" data-id="cixyf6hir0004ksbn1nh260gb" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://penglover.github.io/2017/01/15/how-can-upgrade-mlcode/" data-id="cixyikdk700044kbn3b38r7wx" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -312,6 +312,16 @@ ga('send', 'pageview');
         
 <nav id="article-nav">
     
+        <a href="/2017/01/15/what-is-deep-learning/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">newer</strong>
+        <p class="article-nav-title">
+        
+            딥러닝이란 무었일까? 김성훈 교수님의 말씀!
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
     
         <a href="/2017/01/15/tensorflow-softmaxC/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">older</strong>
@@ -330,6 +340,26 @@ ga('send', 'pageview');
         <h3 class="widget-title">recents</h3>
         <div class="widget">
             <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/01/15/what-is-deep-learning/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Colored_neural_network.svg/600px-Colored_neural_network.svg.png)" alt="딥러닝이란 무었일까? 김성훈 교수님의 말씀!" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/ML/">ML</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/ML/DeepLearning/">DeepLearning</a></p>
+                            <p class="item-title"><a href="/2017/01/15/what-is-deep-learning/" class="title">딥러닝이란 무었일까? 김성훈 교수님의 말씀!</a></p>
+                            <p class="item-date"><time datetime="2017-01-15T10:09:31.000Z" itemprop="datePublished">2017-01-15</time></p>
+                        </div>
+                    </li>
                 
                     <li>
                         
@@ -411,26 +441,6 @@ ga('send', 'pageview');
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2017/01/15/algorithm-sigmoid/" class="thumbnail">
-    
-    
-        <span style="background-image:url(https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Logistic-curve.svg/640px-Logistic-curve.svg.png)" alt="머신러닝에서는 왜 시그모이드함수를 쓰는지 알아보자" class="thumbnail-image"></span>
-    
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/ML/">ML</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/ML/algorithm/">algorithm</a></p>
-                            <p class="item-title"><a href="/2017/01/15/algorithm-sigmoid/" class="title">머신러닝에서는 왜 시그모이드함수를 쓰는지 알아보자</a></p>
-                            <p class="item-date"><time datetime="2017-01-15T03:27:36.000Z" itemprop="datePublished">2017-01-15</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -440,7 +450,7 @@ ga('send', 'pageview');
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">categories</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/ML/">ML</a><span class="category-list-count">13</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/ML/TensorFlow/">TensorFlow</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ML/algorithm/">algorithm</a><span class="category-list-count">2</span></li></ul></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/ML/">ML</a><span class="category-list-count">14</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/ML/DeepLearning/">DeepLearning</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ML/TensorFlow/">TensorFlow</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ML/algorithm/">algorithm</a><span class="category-list-count">2</span></li></ul></li></ul>
         </div>
     </div>
 
@@ -450,7 +460,7 @@ ga('send', 'pageview');
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">archives</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a><span class="archive-list-count">13</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a><span class="archive-list-count">14</span></li></ul>
         </div>
     </div>
 
@@ -460,7 +470,7 @@ ga('send', 'pageview');
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">tags</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/">algorithm</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/machinelearning/">machinelearning</a><span class="tag-list-count">13</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tensorflow/">tensorflow</a><span class="tag-list-count">11</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/">algorithm</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/machinelearning/">machinelearning</a><span class="tag-list-count">14</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tensorflow/">tensorflow</a><span class="tag-list-count">11</span></li></ul>
         </div>
     </div>
 

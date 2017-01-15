@@ -7,8 +7,8 @@
     </url>
 
     <url>
-        <loc>https://penglover.github.io/2017/01/15/algorithm-sigmoid/</loc>
-        <lastmod>2017-01-15T08:48:31.000Z</lastmod>
+        <loc>https://penglover.github.io/2017/01/15/what-is-deep-learning/</loc>
+        <lastmod>2017-01-15T10:23:20.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -16,7 +16,15 @@
 
     <url>
         <loc>https://penglover.github.io/2017/01/15/how-can-upgrade-mlcode/</loc>
-        <lastmod>2017-01-15T08:48:26.000Z</lastmod>
+        <lastmod>2017-01-15T10:11:44.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://penglover.github.io/2017/01/15/algorithm-sigmoid/</loc>
+        <lastmod>2017-01-15T08:48:31.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
