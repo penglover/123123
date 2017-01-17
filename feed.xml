@@ -5,7 +5,7 @@
   <link href="/feed.xml" rel="self"/>
   
   <link href="https://penglover.github.io/"/>
-  <updated>2017-01-17T07:23:58.000Z</updated>
+  <updated>2017-01-17T07:59:47.000Z</updated>
   <id>https://penglover.github.io/</id>
   
   <author>
@@ -14,6 +14,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>하이브리드 웹앱은 왜 생겼을까?</title>
+    <link href="https://penglover.github.io/2017/01/17/why-hybrid-app/"/>
+    <id>https://penglover.github.io/2017/01/17/why-hybrid-app/</id>
+    <published>2017-01-17T07:36:41.000Z</published>
+    <updated>2017-01-17T07:59:47.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="하이브리드-웹앱의-탄생"><a href="#하이브리드-웹앱의-탄생" class="headerlink" title="하이브리드 웹앱의 탄생"></a>하이브리드 웹앱의 탄생</h1><p>하이브리드 웹앱을 이야기하려면 웹앱과 네이티브앱에 대한 이야기가 필요합니다.<br>웹앱은 브라우저를 바탕으로 어디에서나 활용할 수 있습니다.<br>(대부분의 플랫폼에 브라우저는 있으닌깐요! 맥북이든 윈도우든 스마트폰이든 기타등등이든..)<br>네이티브 앱은 그와 반대로 개발환경과 대상이 제한적이지만 스마트폰의 하드웨어 기능을 직접 사용할 수 있는 특혜가 있습니다.<br>기타 여러가지 차이점이 있는데 아래표로 말을 대신하겠습니다.<br><img src="https://penglover.github.io/images/webappvsnative" alt="네이티브앱vs웹앱"></p>
+<p>그렇다면 둘의 장점을 취합할수는 없을까요?<br>당연히 이런 시도가 있었고 그 끝에 나온것이 하이브리드 웹앱입니다.<br>하이브리드앱이란 웹표준 기술을 그대로 사용하여 웹앱을 개발한 후에 오픈 소스 크로스 프레임워크를 이용하여 네이티브앱으로 변환시켜 배포되는 앱 형식을 의미합니다.<br>(대표적인 크로스 프레임워크로 폰갭이 있습니다.)<br>그리고 또한 네이티브방식과 웹앱의 방식을 섞어서 개발할 수도 있게 되었습니다.<br>하이브리드웹앱이 네이티브앱과 웹앱의 경계를 허물어 준것이지요!</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;하이브리드-웹앱의-탄생&quot;&gt;&lt;a href=&quot;#하이브리드-웹앱의-탄생&quot; class=&quot;headerlink&quot; title=&quot;하이브리드 웹앱의 탄생&quot;&gt;&lt;/a&gt;하이브리드 웹앱의 탄생&lt;/h1&gt;&lt;p&gt;하이브리드 웹앱을 이야기하려면 웹앱과 네이티브앱에 대한
+    
+    </summary>
+    
+      <category term="WEB" scheme="https://penglover.github.io/categories/WEB/"/>
+    
+      <category term="HybridWebApp" scheme="https://penglover.github.io/categories/WEB/HybridWebApp/"/>
+    
+    
+      <category term="web" scheme="https://penglover.github.io/tags/web/"/>
+    
+      <category term="app" scheme="https://penglover.github.io/tags/app/"/>
+    
+  </entry>
   
   <entry>
     <title>하이브리드웹앱 vs 네이티브앱 비교해보자</title>
