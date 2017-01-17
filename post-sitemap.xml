@@ -7,6 +7,14 @@
     </url>
 
     <url>
+        <loc>https://penglover.github.io/2017/01/17/hybid-vs-native-app/</loc>
+        <lastmod>2017-01-17T07:23:58.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://penglover.github.io/2017/01/15/relu-vs-sigmoid/</loc>
         <lastmod>2017-01-15T13:03:36.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -95,7 +103,7 @@
     </url>
 
     <url>
-        <loc>https://penglover.github.io/2017/01/14/tf-LinearRegression/</loc>
+        <loc>https://penglover.github.io/2017/01/14/tensorflow1/</loc>
         <lastmod>2017-01-15T04:00:17.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -103,7 +111,7 @@
     </url>
 
     <url>
-        <loc>https://penglover.github.io/2017/01/14/tensorflow1/</loc>
+        <loc>https://penglover.github.io/2017/01/14/tf-LinearRegression/</loc>
         <lastmod>2017-01-15T04:00:17.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>

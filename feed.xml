@@ -5,7 +5,7 @@
   <link href="/feed.xml" rel="self"/>
   
   <link href="https://penglover.github.io/"/>
-  <updated>2017-01-15T13:03:36.000Z</updated>
+  <updated>2017-01-17T07:23:58.000Z</updated>
   <id>https://penglover.github.io/</id>
   
   <author>
@@ -14,6 +14,37 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>하이브리드웹앱 vs 네이티브앱 비교해보자</title>
+    <link href="https://penglover.github.io/2017/01/17/hybid-vs-native-app/"/>
+    <id>https://penglover.github.io/2017/01/17/hybid-vs-native-app/</id>
+    <published>2017-01-17T06:51:59.000Z</published>
+    <updated>2017-01-17T07:23:58.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="누가-더-빠를까"><a href="#누가-더-빠를까" class="headerlink" title="누가 더 빠를까?"></a>누가 더 빠를까?</h1><p>흔히들 네이티브앱의 가장 큰 강점으로 빠르기를 꼽습니다.<br>그런데 정말 빠를까요? 또 빠르면 얼만큼 빠를까요?<br>정확히 말씀드릴 수 있는부분은 결코 성능차이가 크지 않다는 것입니다.<br>물론 매우 무겁고 힘든 프로젝트들은 당연히 네이티브로 가야하는 것이 맞습니다.<br>그러나 평범한 프로젝트들은 하이브리드앱과 네이티브앱이 별 속도차이가 없습니다.<br>(개인적인 견해이긴 하지만 실제로 두 방법으로 모두 개발하는 개발사에서 이야기를 들었습니다.)<br>자바스크립트로 앱을 만들어주는 프레임워크인 fuse도 이미 네이티브를 따라잡았다고 광고를 하죠.<br>하이브리드 웹앱이 일반적으로 훨씬 개발속도가 빠른 만큼 자신의 프로젝트의 규모를 보고 잘 판단해서 결정해야 할 것 같습니다.<br>속도는 한마디로 ‘부분적으로 네이티브가 더 빠르다’라고 할 수 있겠습니다.</p>
+<h1 id="핸드폰-자원을-얼마나-활용가능할까-API"><a href="#핸드폰-자원을-얼마나-활용가능할까-API" class="headerlink" title="핸드폰 자원을 얼마나 활용가능할까?(API)"></a>핸드폰 자원을 얼마나 활용가능할까?(API)</h1><p>흔히들 하이브리드 웹앱은 네이티브가 할 수 있는 수많은 일들을 아예 못한다고 생각합니다.<br>하지만 큰 오산입니다. 푸쉬알림 등등 거의 전부다 가능합니다!<br>물론 일부 문서화가 잘 안되어있어서 힘든 것들이 있지요.<br>심각한 커스터마이징이 필요하다면 네이티브가 옳은 선택일 것입니다.<br>하지만 일반적인 UI를 가지고 푸쉬알림 등의 기능만 필요하다면 하이브리드 웹앱이 더 좋은 판단이라고 생각됩니다.</p>
+<h1 id="유지보수는-어느쪽이-더-쉬울까"><a href="#유지보수는-어느쪽이-더-쉬울까" class="headerlink" title="유지보수는 어느쪽이 더 쉬울까?"></a>유지보수는 어느쪽이 더 쉬울까?</h1><p>하이브리드 웹앱이 압도적으로 더 쉽습니다.<br>단순히 안드로이드와 IOS를 동시에 관리할 수 있기 때문이 아닙니다.<br>서버에서 관리할 수 있는 자원이 태생적으로 더 많을 수 밖에 없습니다.<br>따라서 유지보수 또한 하이브리드 웹앱이 일반적으로 수월합니다.</p>
+<h1 id="개발기간-단가는-어떨까"><a href="#개발기간-단가는-어떨까" class="headerlink" title="개발기간 + 단가는 어떨까?"></a>개발기간 + 단가는 어떨까?</h1><p>개발기간은 네이티브앱이 압도적으로 길게 걸립니다.<br>단가 또한 마찬가지이지요.<br>저는 네이티브앱 개발이 3배힘들다고 생각합니다.<br>IOS와 안드로이드를 둘다 만들어줘야 할 뿐아니라 개발자 단가도 웹개발자에 비해 앱개발자가 더 비싼편입니다.</p>
+<h1 id="결론"><a href="#결론" class="headerlink" title="결론"></a>결론</h1><p>커스터마이징이 심한 어플 + 매우 무거운 어플이라면 네이티브 앱을,<br>그런게 아니라면 하이브리드 웹앱을 추천합니다.<br>또한 서버에서 관리할 자원이 많아도 하이브리드 웹앱을 추천합니다.</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;누가-더-빠를까&quot;&gt;&lt;a href=&quot;#누가-더-빠를까&quot; class=&quot;headerlink&quot; title=&quot;누가 더 빠를까?&quot;&gt;&lt;/a&gt;누가 더 빠를까?&lt;/h1&gt;&lt;p&gt;흔히들 네이티브앱의 가장 큰 강점으로 빠르기를 꼽습니다.&lt;br&gt;그런데 정말 빠를
+    
+    </summary>
+    
+      <category term="WEB" scheme="https://penglover.github.io/categories/WEB/"/>
+    
+      <category term="HybridWebApp" scheme="https://penglover.github.io/categories/WEB/HybridWebApp/"/>
+    
+    
+      <category term="web" scheme="https://penglover.github.io/tags/web/"/>
+    
+      <category term="app" scheme="https://penglover.github.io/tags/app/"/>
+    
+  </entry>
   
   <entry>
     <title>sigmoid함수가 버려진 이유 - ReLU</title>
