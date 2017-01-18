@@ -37,15 +37,22 @@
     </url>
 
     <url>
-        <loc>https://penglover.github.io/tags/web/</loc>
+        <loc>https://penglover.github.io/tags/css/</loc>
         <lastmod>2017-01-18T04:34:29.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>https://penglover.github.io/tags/css/</loc>
-        <lastmod>2017-01-18T04:34:29.000Z</lastmod>
+        <loc>https://penglover.github.io/tags/web/</loc>
+        <lastmod>2017-01-18T05:23:48.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://penglover.github.io/tags/javascript/</loc>
+        <lastmod>2017-01-18T05:23:48.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
