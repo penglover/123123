@@ -5,7 +5,7 @@
   <link href="/feed.xml" rel="self"/>
   
   <link href="https://penglover.github.io/"/>
-  <updated>2017-01-18T04:04:27.000Z</updated>
+  <updated>2017-01-18T04:23:00.000Z</updated>
   <id>https://penglover.github.io/</id>
   
   <author>
@@ -14,6 +14,35 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>CSS3 tutorial1</title>
+    <link href="https://penglover.github.io/2017/01/18/CSS3-tutorial1/"/>
+    <id>https://penglover.github.io/2017/01/18/CSS3-tutorial1/</id>
+    <published>2017-01-18T04:06:17.000Z</published>
+    <updated>2017-01-18T04:23:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="css란-무엇"><a href="#css란-무엇" class="headerlink" title="css란 무엇?"></a>css란 무엇?</h1><p>css는 html의 형제라고 볼 수 있습니다.<br>html이 문서의 구조를 설계해주면 css가 그것을 꾸며주는 것이지요.<br>우리가 실제로 보는 문서는 css가 없다면 그냥 줄글형태일 것입니다.<br>우리가 편하게 웹을 사용할 수 있는 것은 어쩌면 css의 덕이 가장 크지요!<br>공부하기 위해서는 html의 지식이 선행되어야 합니다.<br>(제 이전 포스팅이 HTML5 포스팅이었습니다 ㅎㅎ 참고하세용)</p>
+<h1 id="CSS3이란-무엇"><a href="#CSS3이란-무엇" class="headerlink" title="CSS3이란 무엇?"></a>CSS3이란 무엇?</h1><p>기존의 css는 아무래도 자바스크립트나 기타 플러그인에 많이 의지할 수 밖에 없었습니다.<br>우리는 동적인 웹사이트를 원하지만 css로만 코딩을 한다면 웹사이트는 너무 정적이기 때문이지요.<br>이러한 한계를 깨고있는 가장 최신버전의 css가 바로 CSS3입니다.<br>이미지가 왔다갔다 한다던가 자동으로 크기조절이 된다던가 하는 것들이 가능하게 됩니다.<br>심지어는 3차원적으로도 활용이 가능해서 매우 동적으로 변한것이 포인트입니다.<br>하지만 HTML5와 마찬가지로 구형브라우저에 대한 지원이 미미합니다.<br>그래서 자신의 타겟들의 연령대가 높거나 공공기관을 대상으로 한다면 CSS3의 최신기술들은 미뤄두는 것이 좋을수도 있습니다.<br>하지만 트렌디한 웹을 만들고 싶다면 도전해보세요!</p>
+<h1 id="추천-공부방식은"><a href="#추천-공부방식은" class="headerlink" title="추천 공부방식은?"></a>추천 공부방식은?</h1><p>opentutorials.org에서 css강의를 우선 듣는 것을 추천합니다.<br>그리고 w3schools.com에서 튜토리얼을 진행해보세요.<br>그 후 마지막으로 서점에 가서 가능한 최신의 css3서적을 한권정도 읽으시면 됩니다.<br>그 이후에는 개발을 하다가 모르는 것이 나온다면 w3schools의 레퍼런스를 뒤지면서 하신다면 무리없이 개발이 가능할겁니다!</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;css란-무엇&quot;&gt;&lt;a href=&quot;#css란-무엇&quot; class=&quot;headerlink&quot; title=&quot;css란 무엇?&quot;&gt;&lt;/a&gt;css란 무엇?&lt;/h1&gt;&lt;p&gt;css는 html의 형제라고 볼 수 있습니다.&lt;br&gt;html이 문서의 구조를 설계해주면
+    
+    </summary>
+    
+      <category term="WEB" scheme="https://penglover.github.io/categories/WEB/"/>
+    
+      <category term="HTML/CSS" scheme="https://penglover.github.io/categories/WEB/HTML-CSS/"/>
+    
+    
+      <category term="web" scheme="https://penglover.github.io/tags/web/"/>
+    
+      <category term="css" scheme="https://penglover.github.io/tags/css/"/>
+    
+  </entry>
   
   <entry>
     <title>HTML5를 효율적으로 빠르게 공부하는법</title>
