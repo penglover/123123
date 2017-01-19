@@ -7,6 +7,14 @@
     </url>
 
     <url>
+        <loc>https://penglover.github.io/2017/01/19/face-pimple/</loc>
+        <lastmod>2017-01-19T23:26:27.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://penglover.github.io/2017/01/19/short-condition/</loc>
         <lastmod>2017-01-19T09:34:50.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -25,14 +33,6 @@
     <url>
         <loc>https://penglover.github.io/2017/01/14/What-is-tensorflow-How-to-install/</loc>
         <lastmod>2017-01-19T07:56:38.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://penglover.github.io/2017/01/19/face-pimple/</loc>
-        <lastmod>2017-01-19T05:19:26.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
