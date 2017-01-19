@@ -5,7 +5,7 @@
   <link href="/feed.xml" rel="self"/>
   
   <link href="https://penglover.github.io/"/>
-  <updated>2017-01-19T09:21:56.000Z</updated>
+  <updated>2017-01-19T09:34:50.000Z</updated>
   <id>https://penglover.github.io/</id>
   
   <author>
@@ -16,14 +16,14 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>if문 대신 삼항연산자와 짧은조건문을 써봅시다~</title>
+    <title>if문 대신 삼항연산자와 짧은조건문을 써봅시다~(javascript)</title>
     <link href="https://penglover.github.io/2017/01/19/short-condition/"/>
     <id>https://penglover.github.io/2017/01/19/short-condition/</id>
     <published>2017-01-19T09:09:19.000Z</published>
-    <updated>2017-01-19T09:21:56.000Z</updated>
+    <updated>2017-01-19T09:34:50.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="삼항-연산자"><a href="#삼항-연산자" class="headerlink" title="삼항 연산자"></a>삼항 연산자</h1><p>보통 if문과 switch문으로 코딩을 많이 합니다.<br>삼항 연산자 조건문은 이들보다 간단하고 직관적으로 코딩이 가능합니다.<br>사용법은 아래와 같습니다.<br>(불표현식)?(참일 때 실행하는 문장):(거짓일 때 실행하는 문장)<br>{codeblock samhang.js}<br>var input = prompt(“숫자를 입력해주세요.”,””);<br>var number = Number(input);</p>
-<p>(number &gt;= 0) ? alert(“양수입니다.”) : alert(“음수입니다.”);<br>{endcodeblock}<br>자, 위의 문장은 어떤 의미를 가지고 있을까요?<br>입력값을 받은뒤 입력값이 0이상이면 “양수입니다.”를 출력합니다.<br>0미망니라면 “음수입니다.”를 출력하겠지요.<br>코드가 매우 가독성이 좋고 짧지요?</p>
+<p>(number &gt;= 0) ? alert(“양수입니다.”) : alert(“음수입니다.”);<br>{endcodeblock}<br>자, 위의 문장은 어떤 의미를 가지고 있을까요?<br>입력값을 받은뒤 입력값이 0이상이면 “양수입니다.”를 출력합니다.<br>0미만이라면 “음수입니다.”를 출력하겠지요.<br>코드가 매우 가독성이 좋고 짧지요?</p>
 <h1 id="짧은-조건문"><a href="#짧은-조건문" class="headerlink" title="짧은 조건문"></a>짧은 조건문</h1><p>짧은 조건문은 논리 연산자의 특성을 조건문으로 사용한 것입니다.<br>true || alert(“실행안됨”);<br>위의 문장은 실행이 될까요?<br>자바스크립트는 true까지만 읽고 참임이 확실하기 때문에 추가 연산을 진행하지 않습니다.<br>짧은 조건문은 이런점을 이용한 조건문입니다.<br><figure class="highlight plain"><figcaption><span>shortcondition.js</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var input = Number(prompt(&quot;숫자를 입력해주세요.&quot;,&quot;&quot;));</div><div class="line">input % 2 == 0 || alert(&quot;홀수입니다.&quot;);</div><div class="line">input % 2 == 0 &amp;&amp; alert(&quot;짝수입니다.&quot;);</div></pre></td></tr></table></figure><br>위의 코드는 어떨까요?<br>입력값을 받고 만약 그것이 짝수라면 2번째 줄에서 input % 2 == 0이 참이므로 더이상 진행하지 않습니다.<br>하지만 3번째 줄은 and 연산이므로 뒤까지 봐야 전체 문장이 true인지 false인지를 알수 있습니다.<br>따라서 뒤의 문장이 읽혀 “짝수입니다.”가 출력되게 됩니다.</p>
 <h1 id="둘다-많이-쓰이나요"><a href="#둘다-많이-쓰이나요" class="headerlink" title="둘다 많이 쓰이나요?"></a>둘다 많이 쓰이나요?</h1><p>삼항 연산자는 짧은 코드를 선호하는 개발자들이 굉장히 많이 사용합니다.<br>저도 선호합니다.<br>짧은 조건문은 코드를 봤을 때 한눈에 코드를 파악하기 어려워 많이 사용되지는 않습니다.</p>
 ]]></content>
@@ -332,9 +332,9 @@
       <category term="algorithm" scheme="https://penglover.github.io/categories/ML/algorithm/"/>
     
     
-      <category term="machinelearning" scheme="https://penglover.github.io/tags/machinelearning/"/>
-    
       <category term="algorithm" scheme="https://penglover.github.io/tags/algorithm/"/>
+    
+      <category term="machinelearning" scheme="https://penglover.github.io/tags/machinelearning/"/>
     
   </entry>
   
@@ -389,9 +389,9 @@
       <category term="algorithm" scheme="https://penglover.github.io/categories/ML/algorithm/"/>
     
     
-      <category term="machinelearning" scheme="https://penglover.github.io/tags/machinelearning/"/>
-    
       <category term="algorithm" scheme="https://penglover.github.io/tags/algorithm/"/>
+    
+      <category term="machinelearning" scheme="https://penglover.github.io/tags/machinelearning/"/>
     
   </entry>
   
@@ -508,9 +508,9 @@
       <category term="algorithm" scheme="https://penglover.github.io/categories/ML/algorithm/"/>
     
     
-      <category term="machinelearning" scheme="https://penglover.github.io/tags/machinelearning/"/>
-    
       <category term="algorithm" scheme="https://penglover.github.io/tags/algorithm/"/>
+    
+      <category term="machinelearning" scheme="https://penglover.github.io/tags/machinelearning/"/>
     
   </entry>
   
