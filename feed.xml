@@ -5,7 +5,7 @@
   <link href="/feed.xml" rel="self"/>
   
   <link href="https://penglover.github.io/"/>
-  <updated>2017-01-19T09:34:50.000Z</updated>
+  <updated>2017-01-19T23:52:47.000Z</updated>
   <id>https://penglover.github.io/</id>
   
   <author>
@@ -14,6 +14,35 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>왜 웹에서는 자바스크립트가 쓰일까?</title>
+    <link href="https://penglover.github.io/2017/01/20/why-javascript/"/>
+    <id>https://penglover.github.io/2017/01/20/why-javascript/</id>
+    <published>2017-01-19T23:38:50.000Z</published>
+    <updated>2017-01-19T23:52:47.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="왜-웹에서는-자바스크립트가-쓰이지"><a href="#왜-웹에서는-자바스크립트가-쓰이지" class="headerlink" title="왜 웹에서는 자바스크립트가 쓰이지?"></a>왜 웹에서는 자바스크립트가 쓰이지?</h1><p>모두 알다시피 웹기술이란 결국 브라우저 기술입니다.<br>Explorer나 chrome 등이 다 브라우저입니다.<br>자바스크립트가 웹에서 쓰이는 이유는 이 브라우저들이 자바스크립트 엔진이 있기 때문인데요!<br>현재 HTML5도 javascript의존적인 API들이 대부분이기 때문에 웹에서 javascript의 위치는 더욱 탄탄해졌습니다.</p>
+<h1 id="자바스크립트-엔진을-브라우저들이-넣게된-이유"><a href="#자바스크립트-엔진을-브라우저들이-넣게된-이유" class="headerlink" title="자바스크립트 엔진을 브라우저들이 넣게된 이유"></a>자바스크립트 엔진을 브라우저들이 넣게된 이유</h1><p>웹이 나오게된 배경은 본래 문서 표현 및 전달입니다.<br>웹은 원래 HTML과 XML같이 문서를 표현하기 위한 기술이 중심이었는데요.<br>이것을 발빠르게 javascript가 최적화시키면서 웹 표준 모델로 채택되었다고 보시면 됩니다.<br>따라서 브라우저들이 자바스크립트 엔진을 넣어서 지원하기 때문에 우리는 자바스크립트로 오늘도 웹개발을 하고있는 것이지요!</p>
+<h1 id="다른언어로-개발은-불가능할까"><a href="#다른언어로-개발은-불가능할까" class="headerlink" title="다른언어로 개발은 불가능할까?"></a>다른언어로 개발은 불가능할까?</h1><p>웹 브라우저는 c와 cpp로 개발되었지만 API는 javascript로 지원된다고 보시면 됩니다.<br>구글·MS·모질라·애플에서 “웹어셈블리” 에 대한 시도가 이루어지고 있습니다.<br>개발자가 자바스크립트 대신에 C, C++등의 언어로 어떤 브라우저에서든 돌아가는 프로그램을 만들어 배포할 수 있다는 취지로 2017년 3월 사용자에게 선보일 예정이라고 합니다.<br>조만간 c와 cpp로 프론트엔드가 개발되는 모습을 볼수도 있겠네요!</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;왜-웹에서는-자바스크립트가-쓰이지&quot;&gt;&lt;a href=&quot;#왜-웹에서는-자바스크립트가-쓰이지&quot; class=&quot;headerlink&quot; title=&quot;왜 웹에서는 자바스크립트가 쓰이지?&quot;&gt;&lt;/a&gt;왜 웹에서는 자바스크립트가 쓰이지?&lt;/h1&gt;&lt;p&gt;모두 알
+    
+    </summary>
+    
+      <category term="WEB" scheme="https://penglover.github.io/categories/WEB/"/>
+    
+      <category term="Javascript" scheme="https://penglover.github.io/categories/WEB/Javascript/"/>
+    
+    
+      <category term="web" scheme="https://penglover.github.io/tags/web/"/>
+    
+      <category term="javascript" scheme="https://penglover.github.io/tags/javascript/"/>
+    
+  </entry>
   
   <entry>
     <title>if문 대신 삼항연산자와 짧은조건문을 써봅시다~(javascript)</title>
@@ -333,9 +362,9 @@
       <category term="algorithm" scheme="https://penglover.github.io/categories/ML/algorithm/"/>
     
     
-      <category term="algorithm" scheme="https://penglover.github.io/tags/algorithm/"/>
-    
       <category term="machinelearning" scheme="https://penglover.github.io/tags/machinelearning/"/>
+    
+      <category term="algorithm" scheme="https://penglover.github.io/tags/algorithm/"/>
     
   </entry>
   
@@ -390,9 +419,9 @@
       <category term="algorithm" scheme="https://penglover.github.io/categories/ML/algorithm/"/>
     
     
-      <category term="algorithm" scheme="https://penglover.github.io/tags/algorithm/"/>
-    
       <category term="machinelearning" scheme="https://penglover.github.io/tags/machinelearning/"/>
+    
+      <category term="algorithm" scheme="https://penglover.github.io/tags/algorithm/"/>
     
   </entry>
   
@@ -509,9 +538,9 @@
       <category term="algorithm" scheme="https://penglover.github.io/categories/ML/algorithm/"/>
     
     
-      <category term="algorithm" scheme="https://penglover.github.io/tags/algorithm/"/>
-    
       <category term="machinelearning" scheme="https://penglover.github.io/tags/machinelearning/"/>
+    
+      <category term="algorithm" scheme="https://penglover.github.io/tags/algorithm/"/>
     
   </entry>
   
@@ -563,37 +592,6 @@
     <summary type="html">
     
       &lt;h1 id=&quot;텐서플로우에서-선형회귀함수-적용중-변수가-여러개라면&quot;&gt;&lt;a href=&quot;#텐서플로우에서-선형회귀함수-적용중-변수가-여러개라면&quot; class=&quot;headerlink&quot; title=&quot;텐서플로우에서 선형회귀함수 적용중 변수가 여러개라면?&quot;&gt;&lt;/a&gt;텐
-    
-    </summary>
-    
-      <category term="ML" scheme="https://penglover.github.io/categories/ML/"/>
-    
-      <category term="TensorFlow" scheme="https://penglover.github.io/categories/ML/TensorFlow/"/>
-    
-    
-      <category term="machinelearning" scheme="https://penglover.github.io/tags/machinelearning/"/>
-    
-      <category term="tensorflow" scheme="https://penglover.github.io/tags/tensorflow/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>tensorflow에서 언제 LinearRegression을 적용시킬지 알아보는 법</title>
-    <link href="https://penglover.github.io/2017/01/15/tensorflow-graph/"/>
-    <id>https://penglover.github.io/2017/01/15/tensorflow-graph/</id>
-    <published>2017-01-15T01:22:39.000Z</published>
-    <updated>2017-01-15T04:00:15.000Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="LinearRegression은-언제-적용시킬까요"><a href="#LinearRegression은-언제-적용시킬까요" class="headerlink" title="LinearRegression은 언제 적용시킬까요?"></a>LinearRegression은 언제 적용시킬까요?</h1><p>이것을 알기 위해서는 그래프를 그려 보는 것이 좋습니다.<br>파이썬에서는 그래프를 쉽게 그리게 해주는 라이브러리가 존재하는데요~<br>바로 matplotlib를 이용하면 아주 쉽습니다.<br>pip이 설치되어 있다면 그냥 pip install matplotlib 하시면 됩니다.<br>python3버전이신 경우에는 pip3 install matplotlib를 하시구요.<br><a href="http://matplotlib.org/users/installing.html" rel="external nofollow noopener noreferrer" target="_blank">http://matplotlib.org/users/installing.html</a> 에서 다른 설치법들도 알려줍니다~<br>설치 안되시면 댓글남겨주세요.</p>
-<p>그럼 코드를 보면서 설명드리도록 하겠습니다.<br><figure class="highlight plain"><figcaption><span>matplotlib.py</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">import tensorflow as tf</div><div class="line">import matplotlib.pyplot as plt</div><div class="line"></div><div class="line">X = [1., 2., 3.]</div><div class="line">Y = [1., 2., 3.]</div><div class="line">m = samples = len(X)</div><div class="line"></div><div class="line">W = tf.placeholder(tf.float32)</div><div class="line"></div><div class="line">hypothesis = tf.mul(X, W)</div><div class="line"></div><div class="line">cost = tf.reduce_sum(tf.pow(hypothesis-Y,2))/m</div><div class="line"></div><div class="line">init = tf.global_variables_initializer()</div><div class="line"></div><div class="line"></div><div class="line">W_val = []</div><div class="line">cost_val = []</div><div class="line"></div><div class="line">sess = tf.Session()</div><div class="line">sess.run(init)</div><div class="line">for i in range(-30,50):</div><div class="line">    print (i*0.1, sess.run(cost, feed_dict=&#123;W: i*0.1&#125;))</div><div class="line">    W_val.append(i*0.1)</div><div class="line">    cost_val.append(sess.run(cost, feed_dict=&#123;W: i*0.1&#125;))</div><div class="line"></div><div class="line">plt.plot(W_val, cost_val, &apos;ro&apos;)</div><div class="line">plt.ylabel(&apos;cost&apos;)</div><div class="line">plt.xlabel(&apos;W&apos;)</div><div class="line">plt.show()</div></pre></td></tr></table></figure><br>결과값은 그래프가 포함되다보니 스크린샷으로 보여드리겠습니다.<br><img src="https://penglover.github.io/images/matplotlib_sample.png" alt="matplotlib_sample"></p>
-<p>자 그럼 본격적인 이야기를 해보겠습니다.<br>코드는 참 평범합니다. 그냥 hypothesis-Y에 제곱을 한 값을 평균을 내어 준 것인데요.<br>우리는 이미 X와 Y의 관계가 X * 1 = Y라는 것을 알고 있습니다.<br>X = [1, 2, 3]이고 Y = [1, 2, 3]이니 당연한 일이지요.<br>컴퓨터를 통해서 그래프를 그려보도록 하겠습니다.<br>사용법은 코드를 조금만 보시면 이해가 쉽게 가실겁니다.</p>
-<p>그림처럼 저렇게 순탄한 아래쪽이 둥근모형이면 손쉽게 LinearRegression을 적용할 수 있습니다.<br>기울기 값이 줄어들거나 늘어나는 패턴이 일정하기 때문이지요.<br>수식으로 순간미분값(해당 점의 기울기값)이 0에 가까워 지도록 찾아주기만 하면 되닌까요.</p>
-<p>아주 간단하죠?<br>요약하자면 연속하고 아래쪽 둥근부분이 저렇게 그림처럼 한부분만 있으면 됩니다.<br>3차원의 경우에도 마찬가지에요!</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;LinearRegression은-언제-적용시킬까요&quot;&gt;&lt;a href=&quot;#LinearRegression은-언제-적용시킬까요&quot; class=&quot;headerlink&quot; title=&quot;LinearRegression은 언제 적용시킬까요?&quot;&gt;&lt;/a&gt;Line
     
     </summary>
     
