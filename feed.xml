@@ -5,7 +5,7 @@
   <link href="/feed.xml" rel="self"/>
   
   <link href="https://penglover.github.io/"/>
-  <updated>2017-01-19T07:55:08.000Z</updated>
+  <updated>2017-01-19T09:21:56.000Z</updated>
   <id>https://penglover.github.io/</id>
   
   <author>
@@ -16,11 +16,41 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>if문 대신 삼항연산자와 짧은조건문을 써봅시다~</title>
+    <link href="https://penglover.github.io/2017/01/19/short-condition/"/>
+    <id>https://penglover.github.io/2017/01/19/short-condition/</id>
+    <published>2017-01-19T09:09:19.000Z</published>
+    <updated>2017-01-19T09:21:56.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="삼항-연산자"><a href="#삼항-연산자" class="headerlink" title="삼항 연산자"></a>삼항 연산자</h1><p>보통 if문과 switch문으로 코딩을 많이 합니다.<br>삼항 연산자 조건문은 이들보다 간단하고 직관적으로 코딩이 가능합니다.<br>사용법은 아래와 같습니다.<br>(불표현식)?(참일 때 실행하는 문장):(거짓일 때 실행하는 문장)<br>{codeblock samhang.js}<br>var input = prompt(“숫자를 입력해주세요.”,””);<br>var number = Number(input);</p>
+<p>(number &gt;= 0) ? alert(“양수입니다.”) : alert(“음수입니다.”);<br>{endcodeblock}<br>자, 위의 문장은 어떤 의미를 가지고 있을까요?<br>입력값을 받은뒤 입력값이 0이상이면 “양수입니다.”를 출력합니다.<br>0미망니라면 “음수입니다.”를 출력하겠지요.<br>코드가 매우 가독성이 좋고 짧지요?</p>
+<h1 id="짧은-조건문"><a href="#짧은-조건문" class="headerlink" title="짧은 조건문"></a>짧은 조건문</h1><p>짧은 조건문은 논리 연산자의 특성을 조건문으로 사용한 것입니다.<br>true || alert(“실행안됨”);<br>위의 문장은 실행이 될까요?<br>자바스크립트는 true까지만 읽고 참임이 확실하기 때문에 추가 연산을 진행하지 않습니다.<br>짧은 조건문은 이런점을 이용한 조건문입니다.<br><figure class="highlight plain"><figcaption><span>shortcondition.js</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var input = Number(prompt(&quot;숫자를 입력해주세요.&quot;,&quot;&quot;));</div><div class="line">input % 2 == 0 || alert(&quot;홀수입니다.&quot;);</div><div class="line">input % 2 == 0 &amp;&amp; alert(&quot;짝수입니다.&quot;);</div></pre></td></tr></table></figure><br>위의 코드는 어떨까요?<br>입력값을 받고 만약 그것이 짝수라면 2번째 줄에서 input % 2 == 0이 참이므로 더이상 진행하지 않습니다.<br>하지만 3번째 줄은 and 연산이므로 뒤까지 봐야 전체 문장이 true인지 false인지를 알수 있습니다.<br>따라서 뒤의 문장이 읽혀 “짝수입니다.”가 출력되게 됩니다.</p>
+<h1 id="둘다-많이-쓰이나요"><a href="#둘다-많이-쓰이나요" class="headerlink" title="둘다 많이 쓰이나요?"></a>둘다 많이 쓰이나요?</h1><p>삼항 연산자는 짧은 코드를 선호하는 개발자들이 굉장히 많이 사용합니다.<br>저도 선호합니다.<br>짧은 조건문은 코드를 봤을 때 한눈에 코드를 파악하기 어려워 많이 사용되지는 않습니다.</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;삼항-연산자&quot;&gt;&lt;a href=&quot;#삼항-연산자&quot; class=&quot;headerlink&quot; title=&quot;삼항 연산자&quot;&gt;&lt;/a&gt;삼항 연산자&lt;/h1&gt;&lt;p&gt;보통 if문과 switch문으로 코딩을 많이 합니다.&lt;br&gt;삼항 연산자 조건문은 이들보다 간단하고
+    
+    </summary>
+    
+      <category term="WEB" scheme="https://penglover.github.io/categories/WEB/"/>
+    
+      <category term="Javascript" scheme="https://penglover.github.io/categories/WEB/Javascript/"/>
+    
+    
+      <category term="web" scheme="https://penglover.github.io/tags/web/"/>
+    
+      <category term="javascript" scheme="https://penglover.github.io/tags/javascript/"/>
+    
+  </entry>
+  
+  <entry>
     <title>텐서 플로우의 기본 사용법 정리 이건알고가셔야합니다!</title>
     <link href="https://penglover.github.io/2017/01/19/tf-basic-usage/"/>
     <id>https://penglover.github.io/2017/01/19/tf-basic-usage/</id>
     <published>2017-01-19T06:24:51.000Z</published>
-    <updated>2017-01-19T07:55:08.000Z</updated>
+    <updated>2017-01-19T09:11:37.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="개요"><a href="#개요" class="headerlink" title="개요"></a>개요</h1><p>이전 시간에 텐서플로우가 무엇인지, 어떻게 설치하는지를 보았습니다.<br><a href="https://penglover.github.io/2017/01/14/What-is-tensorflow-How-to-install/">https://penglover.github.io/2017/01/14/What-is-tensorflow-How-to-install/</a><br>오늘은 그렇다면 기본적인 사용법에 대한 정리를 해보겠습니다.<br>우선 지난시간에 말씀드렸듯이 텐서플로우란 op들이 계산을 수행하고 tensor들이 작업(op)에 의해 반환되는 일련의 과정들을 session을 통해 캡슐화 한 것이라고 할 수 있습니다.<br>순서대로 좀더 일목요연하게 나타내면 아래와 같습니다.</p>
 <ol>
@@ -28,7 +58,7 @@
 <li>graph의 op를 실행시키는 실행단계를 갖습니다.<br>그래프는 연산을 표현해 놓은 것이기 때문에 session상에서 실행시켜야 합니다.<br>session은 CPU나 GPU같은 Device에 배정하고 실행하기 위한 매서드를 제공합니다.</li>
 </ol>
 <h1 id="언어"><a href="#언어" class="headerlink" title="언어"></a>언어</h1><p>현재 공식적으로 지원하는 것은 cpp와 python이지만 점차 확대해나가겠다고 합니다.<br>문서화가 가장 잘 되어있고 사용하기 편한것은 python으로 대부분 python을 이용해 개발합니다.<br>또한 파이썬의 문법이 공부하기가 더 쉽고 헬퍼함수도 더 많아서 추천드립니다.</p>
-<h1 id="전체적인-코드-주석해설"><a href="#전체적인-코드-주석해설" class="headerlink" title="전체적인 코드 + 주석해설"></a>전체적인 코드 + 주석해설</h1><figure class="highlight plain"><figcaption><span>code.py</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">import tensorflow as tf #텐서플로우를 불러옵니다.</div><div class="line">matrix1 = tf.constant([[3., 3.]]) # 1x2행렬지정</div><div class="line">matrix2 = tf.constant([[2.],[2.]]) # 2x1행렬지정</div><div class="line">product = tf.matmul(matrix1, matrix2) # 두 행렬을 곱해줍니다.</div><div class="line">sess = tf.Session() # defualt graph의 세션만듭니다.</div><div class="line">result = sess.run(product) # 위의 세션을 실행시킵니다.</div><div class="line">print(result) # 결과를 보여줍니다.</div><div class="line">sess.close() # 연산에 쓰인 시스템 자원을 반환해줍니다.</div></pre></td></tr></table></figure>
+<h1 id="일반적인-코드-주석해설"><a href="#일반적인-코드-주석해설" class="headerlink" title="일반적인 코드 + 주석해설"></a>일반적인 코드 + 주석해설</h1><figure class="highlight plain"><figcaption><span>code.py</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">import tensorflow as tf #텐서플로우를 불러옵니다.</div><div class="line">matrix1 = tf.constant([[3., 3.]]) # 1x2행렬지정</div><div class="line">matrix2 = tf.constant([[2.],[2.]]) # 2x1행렬지정</div><div class="line">product = tf.matmul(matrix1, matrix2) # 두 행렬을 곱해줍니다.</div><div class="line">sess = tf.Session() # defualt graph의 세션만듭니다.</div><div class="line">result = sess.run(product) # 위의 세션을 실행시킵니다.</div><div class="line">print(result) # 결과를 보여줍니다.</div><div class="line">sess.close() # 연산에 쓰인 시스템 자원을 반환해줍니다.</div></pre></td></tr></table></figure>
 <h1 id="세션지정"><a href="#세션지정" class="headerlink" title="세션지정"></a>세션지정</h1><figure class="highlight plain"><figcaption><span>session.py</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">with tf.Session() as sess:</div><div class="line">  with tf.device(&quot;/gpu:1&quot;):</div><div class="line">    matrix1 = tf.constant([[3., 3.]])</div><div class="line">    matrix2 = tf.constant([[2.],[2.]])</div><div class="line">    product = tf.matmul(matrix1, matrix2)</div><div class="line">    ...</div></pre></td></tr></table></figure>
 <p>이런식으로 gpu가 여러개라면 따로따로 지정해 줄수도 있습니다.<br>“/cpu:0”: 컴퓨터의 CPU.<br>“/gpu:0”: 컴퓨터의 1번째 GPU.<br>“/gpu:1”: 컴퓨터의 2번쨰 GPU.<br>이런식입니다.</p>
 <h1 id="클러스터도-만들-수-있습니다"><a href="#클러스터도-만들-수-있습니다" class="headerlink" title="클러스터도 만들 수 있습니다."></a>클러스터도 만들 수 있습니다.</h1><p>클러스터란 여러대의 컴퓨터를 모아서 하나의 컴퓨터처럼 동작시키는 것을 말합니다.<br><figure class="highlight plain"><figcaption><span>cluster.py</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"># 1번코드</div><div class="line">with tf.Session(&quot;grpc://example.org:2222&quot;) as sess:</div><div class="line">--------------------------------------------------</div><div class="line"># 2번코드</div><div class="line">with tf.device(&quot;/job:ps/task:0&quot;):</div><div class="line">  weights = tf.Variable(...)</div><div class="line">  biases = tf.Variable(...)</div></pre></td></tr></table></figure><br>1번코드처럼 각 머신에 텐서플로우 서버를 설치하고 session을 머신의 네트워크 위치로 넘기면 됩니다.<br>세션을 받은 머신은 해당 Session의 마스터가 됩니다.<br>머신 내에서는 Tensorflow의 구현 코드(implementation)가 머신 내 연산 자원에게 작업을 나눠주지만, 클러스터에서는 마스터가 클러스터 내의 다른 머신들에게 graph를 분배하는 것입니다.<br>2번코드처럼 “with tf.device():” 구문을 이용해서 특정 머신에게 직접 graph의 특정 부분을 지정해 줄 수도 있습니다.</p>
@@ -563,37 +593,6 @@
     <summary type="html">
     
       &lt;h1 id=&quot;LinearRegression은-언제-적용시킬까요&quot;&gt;&lt;a href=&quot;#LinearRegression은-언제-적용시킬까요&quot; class=&quot;headerlink&quot; title=&quot;LinearRegression은 언제 적용시킬까요?&quot;&gt;&lt;/a&gt;Line
-    
-    </summary>
-    
-      <category term="ML" scheme="https://penglover.github.io/categories/ML/"/>
-    
-      <category term="TensorFlow" scheme="https://penglover.github.io/categories/ML/TensorFlow/"/>
-    
-    
-      <category term="machinelearning" scheme="https://penglover.github.io/tags/machinelearning/"/>
-    
-      <category term="tensorflow" scheme="https://penglover.github.io/tags/tensorflow/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>텐서플로우로 linear regression 구현 및 설명</title>
-    <link href="https://penglover.github.io/2017/01/14/tf-LinearRegression/"/>
-    <id>https://penglover.github.io/2017/01/14/tf-LinearRegression/</id>
-    <published>2017-01-14T14:50:53.000Z</published>
-    <updated>2017-01-15T04:00:17.000Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="Linear-Regression"><a href="#Linear-Regression" class="headerlink" title="Linear Regression"></a>Linear Regression</h1><p>Linear Regression에 대한 지식이 없으시다면 아래의 동영상을 보시는 것을 추천합니다.<br><a href="https://www.youtube.com/watch?v=GmtqOlPYB84" rel="external nofollow noopener noreferrer" target="_blank">https://www.youtube.com/watch?v=GmtqOlPYB84</a><br>이미 알고 계신다면 렛츠고!<br>아! 참고로 tensorflow 버전이나 python버전이 다르다면<br>tf.global_variables_initializer, print, range 부분에 수정이 필요합니다.<br>오류나면 댓글남겨주세요 ㅎㅎ 바로 알려드릴게요.</p>
-<figure class="highlight plain"><figcaption><span>LinearRegression.py</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">import tensorflow as tf</div><div class="line"></div><div class="line">x_data = [1, 2, 3, 4]</div><div class="line">y_data = [2, 4, 6, 8]</div><div class="line"></div><div class="line">W = tf.Variable(tf.random_uniform([1], -10000, 10000))</div><div class="line">b = tf.Variable(tf.random_uniform([1], -10000, 10000))</div><div class="line"></div><div class="line">X = tf.placeholder(tf.float32)</div><div class="line">Y = tf.placeholder(tf.float32)</div><div class="line"></div><div class="line">hypothesis = W * X + b</div><div class="line"></div><div class="line">cost = tf.reduce_mean(tf.square(hypothesis - Y))</div><div class="line"></div><div class="line">a = tf.Variable(0.1)</div><div class="line">optimizer = tf.train.GradientDescentOptimizer(a)</div><div class="line">train = optimizer.minimize(cost)</div><div class="line"></div><div class="line">init = tf.global_variables_initializer()</div><div class="line"></div><div class="line">sess = tf.Session()</div><div class="line">sess.run(init)</div><div class="line"></div><div class="line">for step in range(2001):</div><div class="line">    sess.run(train, feed_dict=&#123;X: x_data, Y: y_data&#125;)</div><div class="line">    if step % 200 == 0:</div><div class="line">        print (step, sess.run(cost, feed_dict=&#123;X: x_data, Y: y_data&#125;), sess.run(W), sess.run(b))</div><div class="line"></div><div class="line">print (sess.run(hypothesis, feed_dict=&#123;X: [5, 10]&#125;))</div><div class="line">print (sess.run(hypothesis, feed_dict=&#123;X: [2.5, 1.5]&#125;))</div></pre></td></tr></table></figure>
-<p><strong>결과값</strong><br>0 1.17541e+07 [-3064.45288086] [ 7678.85205078]<br>200 53.5173 [-4.08845949] [ 17.90081406]<br>400 0.000280612 [ 1.98605835] [ 0.04099015]<br>600 1.46635e-09 [ 1.99996805] [  9.38054509e-05]<br>800 1.42109e-14 [ 1.99999988] [  4.28800519e-07]<br>1000 0.0 [ 2.] [  1.18856534e-07]<br>1200 0.0 [ 2.] [  1.18856534e-07]<br>1400 0.0 [ 2.] [  1.18856534e-07]<br>1600 0.0 [ 2.] [  1.18856534e-07]<br>1800 0.0 [ 2.] [  1.18856534e-07]<br>2000 0.0 [ 2.] [  1.18856534e-07]<br>[ 10.  20.]<br>[ 5.  3.]</p>
-<p>아주 쉽게 이해가 가실 것입니다.<br>W와 b를 -10000에서 10000사이의 랜덤한 값으로 두었습니다.<br>X와 Y는 32bit의 float형 데이터로 선언해 두었지요.<br>hypothesis는 input값이 될 X에게 w와 b를 더해서 나오는 결과에 대한 기대값입니다.<br>cost는 기대값과 실제값을 뺀것을 제곱을 한 것의 평균값을 갖게 될 것입니다.<br>reduce_mean은 참고로 평균값을 내게 해주는 매소드입니다.<br>(m개의 input이 있으면 그것들의 평균값을 매겨줌)<br>a는 learning rate입니다.<br>tf.train.GradientDescentOptimizer가 gradient descent 알고리즘을 처리해줍니다.<br>그리고 minimize가 cost를 인자로 받아서 train될때마다 W와 b를 업데이트합니다.<br>화면이 너무 꽉 찰 것 같아서 step은 200개당 1번 print 했습니다.<br>결과값을 보니 training이 아주 잘 되었네요!</p>
-<p>헷갈리는 tensorflow의 링크가 있다면 아래에 모든 것이 나와있습니다.<br><a href="https://www.tensorflow.org/versions/master/api_docs/python/math_ops/reduction#reduce_mean" rel="external nofollow noopener noreferrer" target="_blank">https://www.tensorflow.org/versions/master/api_docs/python/math_ops/reduction#reduce_mean</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;Linear-Regression&quot;&gt;&lt;a href=&quot;#Linear-Regression&quot; class=&quot;headerlink&quot; title=&quot;Linear Regression&quot;&gt;&lt;/a&gt;Linear Regression&lt;/h1&gt;&lt;p&gt;Linear Reg
     
     </summary>
     

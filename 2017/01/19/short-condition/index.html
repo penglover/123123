@@ -9,22 +9,25 @@
   </script>
     <meta charset="utf-8">
     
-    <title>Category: algorithm | IT&#39;s IT Blog</title>
+    <title>if문 대신 삼항연산자와 짧은조건문을 써봅시다~ | IT&#39;s IT Blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-    <meta name="description" content="Talk about software">
-<meta property="og:type" content="website">
-<meta property="og:title" content="IT's IT Blog">
-<meta property="og:url" content="https://penglover.github.io/categories/ML/algorithm/index.html">
+        <meta name="keywords" content="web,javascript">
+    
+    <meta name="description" content="삼항 연산자보통 if문과 switch문으로 코딩을 많이 합니다.삼항 연산자 조건문은 이들보다 간단하고 직관적으로 코딩이 가능합니다.사용법은 아래와 같습니다.(불표현식)?(참일 때 실행하는 문장):(거짓일 때 실행하는 문장){codeblock samhang.js}var input = prompt(“숫자를 입력해주세요.”,””);var number = Numb">
+<meta property="og:type" content="article">
+<meta property="og:title" content="if문 대신 삼항연산자와 짧은조건문을 써봅시다~">
+<meta property="og:url" content="https://penglover.github.io/2017/01/19/short-condition/index.html">
 <meta property="og:site_name" content="IT's IT Blog">
-<meta property="og:description" content="Talk about software">
+<meta property="og:description" content="삼항 연산자보통 if문과 switch문으로 코딩을 많이 합니다.삼항 연산자 조건문은 이들보다 간단하고 직관적으로 코딩이 가능합니다.사용법은 아래와 같습니다.(불표현식)?(참일 때 실행하는 문장):(거짓일 때 실행하는 문장){codeblock samhang.js}var input = prompt(“숫자를 입력해주세요.”,””);var number = Numb">
 <meta property="og:image" content="https://penglover.github.io/css/images/logo.png">
+<meta property="og:updated_time" content="2017-01-19T09:21:56.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="IT's IT Blog">
-<meta name="twitter:description" content="Talk about software">
+<meta name="twitter:title" content="if문 대신 삼항연산자와 짧은조건문을 써봅시다~">
+<meta name="twitter:description" content="삼항 연산자보통 if문과 switch문으로 코딩을 많이 합니다.삼항 연산자 조건문은 이들보다 간단하고 직관적으로 코딩이 가능합니다.사용법은 아래와 같습니다.(불표현식)?(참일 때 실행하는 문장):(거짓일 때 실행하는 문장){codeblock samhang.js}var input = prompt(“숫자를 입력해주세요.”,””);var number = Numb">
 <meta name="twitter:image" content="https://penglover.github.io/css/images/logo.png">
     
-    <link rel="canonical" href="https://penglover.github.io/categories/ML/algorithm/">
+    <link rel="canonical" href="https://penglover.github.io/2017/01/19/short-condition/">
     
         <link rel="alternate" href="http://blog.naver.com/penglover" title="IT&#39;s IT Blog" type="application/atom+xml">
     
@@ -145,168 +148,119 @@ ga('send', 'pageview');
                         <div class="main-body-header">
     <h1 class="header">
     
-    <i class="icon fa fa-folder-open"></i>Category: <em class="page-title-link">algorithm</em>
+    <a class="page-title-link" href="/categories/WEB/">WEB</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/WEB/Javascript/">Javascript</a>
     </h1>
 </div>
                         <div class="main-body-content">
-                            
+                            <article id="post-short-condition" class="article article-single article-type-post" itemscope="" itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        if문 대신 삼항연산자와 짧은조건문을 써봅시다~
+        </h1>
+    
 
-    
-    
+            </header>
         
         
-        <section class="archives-wrap">
-            <div class="archive-year-wrap">
-                <a href="/archives/2017" class="archive-year"><i class="icon fa fa-calendar-o"></i>2017</a>
+            <div class="article-subtitle">
+                <a href="/2017/01/19/short-condition/" class="article-date">
+    <time datetime="2017-01-19T09:09:19.000Z" itemprop="datePublished">2017-01-19</time>
+</a>
+                
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/web/">web</a></li></ul>
+
             </div>
-            <div class="archives">
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
         
-        <a href="/2017/01/15/backpropagation/" class="thumbnail">
-    
-    
-        <span style="background-image:url(https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Colored_neural_network.svg/600px-Colored_neural_network.svg.png)" alt="백프로퍼게이션(역전파)에 대한 친절한 강의" class="thumbnail-image"></span>
-    
-    
         
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="https://penglover.github.io/2017/01/15/backpropagation/">0</span>
-    
-</span>
+        <div class="article-entry" itemprop="articleBody">
+            <h1 id="삼항-연산자"><a href="#삼항-연산자" class="headerlink" title="삼항 연산자"></a>삼항 연산자</h1><p>보통 if문과 switch문으로 코딩을 많이 합니다.<br>삼항 연산자 조건문은 이들보다 간단하고 직관적으로 코딩이 가능합니다.<br>사용법은 아래와 같습니다.<br>(불표현식)?(참일 때 실행하는 문장):(거짓일 때 실행하는 문장)<br>{codeblock samhang.js}<br>var input = prompt(“숫자를 입력해주세요.”,””);<br>var number = Number(input);</p>
+<p>(number &gt;= 0) ? alert(“양수입니다.”) : alert(“음수입니다.”);<br>{endcodeblock}<br>자, 위의 문장은 어떤 의미를 가지고 있을까요?<br>입력값을 받은뒤 입력값이 0이상이면 “양수입니다.”를 출력합니다.<br>0미망니라면 “음수입니다.”를 출력하겠지요.<br>코드가 매우 가독성이 좋고 짧지요?</p>
+<h1 id="짧은-조건문"><a href="#짧은-조건문" class="headerlink" title="짧은 조건문"></a>짧은 조건문</h1><p>짧은 조건문은 논리 연산자의 특성을 조건문으로 사용한 것입니다.<br>true || alert(“실행안됨”);<br>위의 문장은 실행이 될까요?<br>자바스크립트는 true까지만 읽고 참임이 확실하기 때문에 추가 연산을 진행하지 않습니다.<br>짧은 조건문은 이런점을 이용한 조건문입니다.<br><figure class="highlight plain"><figcaption><span>shortcondition.js</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var input = Number(prompt(&quot;숫자를 입력해주세요.&quot;,&quot;&quot;));</div><div class="line">input % 2 == 0 || alert(&quot;홀수입니다.&quot;);</div><div class="line">input % 2 == 0 &amp;&amp; alert(&quot;짝수입니다.&quot;);</div></pre></td></tr></table></figure><br>위의 코드는 어떨까요?<br>입력값을 받고 만약 그것이 짝수라면 2번째 줄에서 input % 2 == 0이 참이므로 더이상 진행하지 않습니다.<br>하지만 3번째 줄은 and 연산이므로 뒤까지 봐야 전체 문장이 true인지 false인지를 알수 있습니다.<br>따라서 뒤의 문장이 읽혀 “짝수입니다.”가 출력되게 됩니다.</p>
+<h1 id="둘다-많이-쓰이나요"><a href="#둘다-많이-쓰이나요" class="headerlink" title="둘다 많이 쓰이나요?"></a>둘다 많이 쓰이나요?</h1><p>삼항 연산자는 짧은 코드를 선호하는 개발자들이 굉장히 많이 사용합니다.<br>저도 선호합니다.<br>짧은 조건문은 코드를 봤을 때 한눈에 코드를 파악하기 어려워 많이 사용되지는 않습니다.</p>
 
-    
-</a>
-
-        
-        <div class="article-meta">
-            <p class="category">
-            <a class="article-category-link" href="/categories/ML/">ML</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/ML/algorithm/">algorithm</a>
-            </p>
-            <p class="date"><time datetime="2017-01-15T11:32:11.000Z" itemprop="datePublished">2017-01-15</time></p>
         </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2017/01/15/backpropagation/">백프로퍼게이션(역전파)에 대한 친절한 강의</a>
-        </h1>
-    
+        <footer class="article-footer">
+            
 
-        <p class="article-excerpt">
-            backpropagation역전파 알고리즘, 즉 백프로퍼게이션 알고리즘은 머신러닝, 딥러닝의 핵심으로 많이 쓰입니다.어떻게 뉴런들을 학습시킬 것이냐? 에 대한 해답을 던져준 것이기 때문이죠.쉽게 말하면 feed forward를 통해 결과값을 우선 얻습니다.그리곤 실제값과의 차이를 통해 backpropagation으로 값들을 update시키죠.각 값들을 up
-        </p>
+
+
+    <a data-url="https://penglover.github.io/2017/01/19/short-condition/" data-id="ciy464uol000uctbnu6o3irci" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
     </div>
 </article>
-    
 
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2017/01/15/how-can-upgrade-mlcode/" class="thumbnail">
-    
-    
-        <span style="background-image:url(https://penglover.github.io/images/learningrate.png)" alt="머신러닝 코드 최적화하기 by rate, overfitting, regularization" class="thumbnail-image"></span>
-    
+    <section id="comments">
     
         
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="https://penglover.github.io/2017/01/15/how-can-upgrade-mlcode/">0</span>
-    
-</span>
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <p class="category">
-            <a class="article-category-link" href="/categories/ML/">ML</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/ML/algorithm/">algorithm</a>
-            </p>
-            <p class="date"><time datetime="2017-01-15T08:07:38.000Z" itemprop="datePublished">2017-01-15</time></p>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2017/01/15/how-can-upgrade-mlcode/">머신러닝 코드 최적화하기 by rate, overfitting, regularization</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            머신러닝 코드 최적화하기rate항상 우리는 머신러닝 코드를 짤때 learning rate라는 값을 줍니다.gradient descent알고리즘을 쓸 때에 업데이트 정도를 조절해주는데요.우리는 이 learning rate 를 조절함으로써 코드를 최적화 할 수 있습니다.너무 작은값을 주면 어떻게 될까요?또는 너무 큰값을 주면 어떻게 될까요?위의 그림처럼 되어서
-        </p>
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
     </div>
-</article>
-    
-        </div>
-    
 
     
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2017/01/15/algorithm-sigmoid/" class="thumbnail">
-    
-    
-        <span style="background-image:url(https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Logistic-curve.svg/640px-Logistic-curve.svg.png)" alt="머신러닝에서는 왜 시그모이드함수를 쓰는지 알아보자" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="https://penglover.github.io/2017/01/15/algorithm-sigmoid/">0</span>
-    
-</span>
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <p class="category">
-            <a class="article-category-link" href="/categories/ML/">ML</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/ML/algorithm/">algorithm</a>
-            </p>
-            <p class="date"><time datetime="2017-01-15T03:27:36.000Z" itemprop="datePublished">2017-01-15</time></p>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2017/01/15/algorithm-sigmoid/">머신러닝에서는 왜 시그모이드함수를 쓰는지 알아보자</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            why sigmoid머신러닝 알고리즘을 공부하다가보면 시그모이드 함수를 마주쳤을 것입니다.그런데 이게 진짜 과연 써야하는 것인가?그냥 linear한 함수를 쓰면 안되나?이런 의문을 바로 해결해준 유투브 강의가 있어서 소개합니다.김성훈님의 강의입니다.
-Logistic classification을 설명해 주시면서 등장합니다.이런 이유라면 충분히 시그모이드 함수
-        </p>
-    </div>
-</article>
-    
-        </div>
-    
-
-
-    </div></section>
-
-
+    </section>
 
 
                         </div>
@@ -361,6 +315,19 @@ Logistic classification을 설명해 주시면서 등장합니다.이런 이유�
     </div>
 <div class="github-card" data-github="penglover" data-width="100%" data-height="" data-theme="default"></div>
 <script src="//cdn.jsdelivr.net/github-cards/latest/widget.js"></script>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2017/01/19/tf-basic-usage/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">텐서 플로우의 기본 사용법 정리 이건알고가셔야합니다!</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
     
     <div class="widgets-container">
         
@@ -559,11 +526,13 @@ Logistic classification을 설명해 주시면서 등장합니다.이런 이유�
     var disqus_shortname = 'miscellaneous';
     
     
+    var disqus_url = 'https://penglover.github.io/2017/01/19/short-condition/';
+    
     (function() {
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
     </script>

@@ -21,7 +21,7 @@
 <meta property="og:site_name" content="IT's IT Blog">
 <meta property="og:description" content="개요이전 시간에 텐서플로우가 무엇인지, 어떻게 설치하는지를 보았습니다.https://penglover.github.io/2017/01/14/What-is-tensorflow-How-to-install/오늘은 그렇다면 기본적인 사용법에 대한 정리를 해보겠습니다.우선 지난시간에 말씀드렸듯이 텐서플로우란 op들이 계산을 수행하고 tensor들이 작업(op)에 의">
 <meta property="og:image" content="https://penglover.github.io/css/images/logo.png">
-<meta property="og:updated_time" content="2017-01-19T07:55:08.000Z">
+<meta property="og:updated_time" content="2017-01-19T09:11:37.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="텐서 플로우의 기본 사용법 정리 이건알고가셔야합니다!">
 <meta name="twitter:description" content="개요이전 시간에 텐서플로우가 무엇인지, 어떻게 설치하는지를 보았습니다.https://penglover.github.io/2017/01/14/What-is-tensorflow-How-to-install/오늘은 그렇다면 기본적인 사용법에 대한 정리를 해보겠습니다.우선 지난시간에 말씀드렸듯이 텐서플로우란 op들이 계산을 수행하고 tensor들이 작업(op)에 의">
@@ -183,7 +183,7 @@ ga('send', 'pageview');
 <li>graph의 op를 실행시키는 실행단계를 갖습니다.<br>그래프는 연산을 표현해 놓은 것이기 때문에 session상에서 실행시켜야 합니다.<br>session은 CPU나 GPU같은 Device에 배정하고 실행하기 위한 매서드를 제공합니다.</li>
 </ol>
 <h1 id="언어"><a href="#언어" class="headerlink" title="언어"></a>언어</h1><p>현재 공식적으로 지원하는 것은 cpp와 python이지만 점차 확대해나가겠다고 합니다.<br>문서화가 가장 잘 되어있고 사용하기 편한것은 python으로 대부분 python을 이용해 개발합니다.<br>또한 파이썬의 문법이 공부하기가 더 쉽고 헬퍼함수도 더 많아서 추천드립니다.</p>
-<h1 id="전체적인-코드-주석해설"><a href="#전체적인-코드-주석해설" class="headerlink" title="전체적인 코드 + 주석해설"></a>전체적인 코드 + 주석해설</h1><figure class="highlight plain"><figcaption><span>code.py</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">import tensorflow as tf #텐서플로우를 불러옵니다.</div><div class="line">matrix1 = tf.constant([[3., 3.]]) # 1x2행렬지정</div><div class="line">matrix2 = tf.constant([[2.],[2.]]) # 2x1행렬지정</div><div class="line">product = tf.matmul(matrix1, matrix2) # 두 행렬을 곱해줍니다.</div><div class="line">sess = tf.Session() # defualt graph의 세션만듭니다.</div><div class="line">result = sess.run(product) # 위의 세션을 실행시킵니다.</div><div class="line">print(result) # 결과를 보여줍니다.</div><div class="line">sess.close() # 연산에 쓰인 시스템 자원을 반환해줍니다.</div></pre></td></tr></table></figure>
+<h1 id="일반적인-코드-주석해설"><a href="#일반적인-코드-주석해설" class="headerlink" title="일반적인 코드 + 주석해설"></a>일반적인 코드 + 주석해설</h1><figure class="highlight plain"><figcaption><span>code.py</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">import tensorflow as tf #텐서플로우를 불러옵니다.</div><div class="line">matrix1 = tf.constant([[3., 3.]]) # 1x2행렬지정</div><div class="line">matrix2 = tf.constant([[2.],[2.]]) # 2x1행렬지정</div><div class="line">product = tf.matmul(matrix1, matrix2) # 두 행렬을 곱해줍니다.</div><div class="line">sess = tf.Session() # defualt graph의 세션만듭니다.</div><div class="line">result = sess.run(product) # 위의 세션을 실행시킵니다.</div><div class="line">print(result) # 결과를 보여줍니다.</div><div class="line">sess.close() # 연산에 쓰인 시스템 자원을 반환해줍니다.</div></pre></td></tr></table></figure>
 <h1 id="세션지정"><a href="#세션지정" class="headerlink" title="세션지정"></a>세션지정</h1><figure class="highlight plain"><figcaption><span>session.py</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">with tf.Session() as sess:</div><div class="line">  with tf.device(&quot;/gpu:1&quot;):</div><div class="line">    matrix1 = tf.constant([[3., 3.]])</div><div class="line">    matrix2 = tf.constant([[2.],[2.]])</div><div class="line">    product = tf.matmul(matrix1, matrix2)</div><div class="line">    ...</div></pre></td></tr></table></figure>
 <p>이런식으로 gpu가 여러개라면 따로따로 지정해 줄수도 있습니다.<br>“/cpu:0”: 컴퓨터의 CPU.<br>“/gpu:0”: 컴퓨터의 1번째 GPU.<br>“/gpu:1”: 컴퓨터의 2번쨰 GPU.<br>이런식입니다.</p>
 <h1 id="클러스터도-만들-수-있습니다"><a href="#클러스터도-만들-수-있습니다" class="headerlink" title="클러스터도 만들 수 있습니다."></a>클러스터도 만들 수 있습니다.</h1><p>클러스터란 여러대의 컴퓨터를 모아서 하나의 컴퓨터처럼 동작시키는 것을 말합니다.<br><figure class="highlight plain"><figcaption><span>cluster.py</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"># 1번코드</div><div class="line">with tf.Session(&quot;grpc://example.org:2222&quot;) as sess:</div><div class="line">--------------------------------------------------</div><div class="line"># 2번코드</div><div class="line">with tf.device(&quot;/job:ps/task:0&quot;):</div><div class="line">  weights = tf.Variable(...)</div><div class="line">  biases = tf.Variable(...)</div></pre></td></tr></table></figure><br>1번코드처럼 각 머신에 텐서플로우 서버를 설치하고 session을 머신의 네트워크 위치로 넘기면 됩니다.<br>세션을 받은 머신은 해당 Session의 마스터가 됩니다.<br>머신 내에서는 Tensorflow의 구현 코드(implementation)가 머신 내 연산 자원에게 작업을 나눠주지만, 클러스터에서는 마스터가 클러스터 내의 다른 머신들에게 graph를 분배하는 것입니다.<br>2번코드처럼 “with tf.device():” 구문을 이용해서 특정 머신에게 직접 graph의 특정 부분을 지정해 줄 수도 있습니다.</p>
@@ -197,7 +197,7 @@ ga('send', 'pageview');
 
 
 
-    <a data-url="https://penglover.github.io/2017/01/19/tf-basic-usage/" data-id="ciy43ziou001h1vbntmw4dxfm" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://penglover.github.io/2017/01/19/tf-basic-usage/" data-id="ciy464up0001kctbnyguncszj" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -328,6 +328,16 @@ ga('send', 'pageview');
         
 <nav id="article-nav">
     
+        <a href="/2017/01/19/short-condition/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">newer</strong>
+        <p class="article-nav-title">
+        
+            if문 대신 삼항연산자와 짧은조건문을 써봅시다~
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
     
         <a href="/2017/01/19/face-pimple/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">older</strong>
@@ -346,6 +356,26 @@ ga('send', 'pageview');
         <h3 class="widget-title">recents</h3>
         <div class="widget">
             <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/01/19/short-condition/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/440px-Unofficial_JavaScript_logo_2.svg.png)" alt="if문 대신 삼항연산자와 짧은조건문을 써봅시다~" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/WEB/">WEB</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/WEB/Javascript/">Javascript</a></p>
+                            <p class="item-title"><a href="/2017/01/19/short-condition/" class="title">if문 대신 삼항연산자와 짧은조건문을 써봅시다~</a></p>
+                            <p class="item-date"><time datetime="2017-01-19T09:09:19.000Z" itemprop="datePublished">2017-01-19</time></p>
+                        </div>
+                    </li>
                 
                     <li>
                         
@@ -427,26 +457,6 @@ ga('send', 'pageview');
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2017/01/18/CSS3-tutorial1/" class="thumbnail">
-    
-    
-        <span style="background-image:url(https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Gnome-mime-text-css.svg/400px-Gnome-mime-text-css.svg.png)" alt="CSS3을 빠르고 효율적으로 공부하는 방법" class="thumbnail-image"></span>
-    
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/WEB/">WEB</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/WEB/HTML-CSS/">HTML/CSS</a></p>
-                            <p class="item-title"><a href="/2017/01/18/CSS3-tutorial1/" class="title">CSS3을 빠르고 효율적으로 공부하는 방법</a></p>
-                            <p class="item-date"><time datetime="2017-01-18T04:06:17.000Z" itemprop="datePublished">2017-01-18</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -456,7 +466,7 @@ ga('send', 'pageview');
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">categories</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/ML/">ML</a><span class="category-list-count">17</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/ML/DeepLearning/">DeepLearning</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ML/TensorFlow/">TensorFlow</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ML/algorithm/">algorithm</a><span class="category-list-count">3</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/PRIVATE/">PRIVATE</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/PRIVATE/Face/">Face</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/WEB/">WEB</a><span class="category-list-count">6</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/WEB/HTML-CSS/">HTML/CSS</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WEB/HybridWebApp/">HybridWebApp</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WEB/Javascript/">Javascript</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WEB/Other/">Other</a><span class="category-list-count">1</span></li></ul></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/ML/">ML</a><span class="category-list-count">17</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/ML/DeepLearning/">DeepLearning</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ML/TensorFlow/">TensorFlow</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ML/algorithm/">algorithm</a><span class="category-list-count">3</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/PRIVATE/">PRIVATE</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/PRIVATE/Face/">Face</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/WEB/">WEB</a><span class="category-list-count">7</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/WEB/HTML-CSS/">HTML/CSS</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WEB/HybridWebApp/">HybridWebApp</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WEB/Javascript/">Javascript</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WEB/Other/">Other</a><span class="category-list-count">1</span></li></ul></li></ul>
         </div>
     </div>
 
@@ -466,7 +476,7 @@ ga('send', 'pageview');
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">archives</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a><span class="archive-list-count">24</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a><span class="archive-list-count">25</span></li></ul>
         </div>
     </div>
 
@@ -476,7 +486,7 @@ ga('send', 'pageview');
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">tags</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/">algorithm</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/app/">app</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/face/">face</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/">html</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/machinelearning/">machinelearning</a><span class="tag-list-count">17</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pimple/">pimple</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tensorflow/">tensorflow</a><span class="tag-list-count">11</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web/">web</a><span class="tag-list-count">6</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/">algorithm</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/app/">app</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/face/">face</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/">html</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/machinelearning/">machinelearning</a><span class="tag-list-count">17</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pimple/">pimple</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tensorflow/">tensorflow</a><span class="tag-list-count">11</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web/">web</a><span class="tag-list-count">7</span></li></ul>
         </div>
     </div>
 
@@ -486,7 +496,7 @@ ga('send', 'pageview');
     <div class="widget-wrap widget-float">
         <h3 class="widget-title">tag cloud</h3>
         <div class="widget tagcloud">
-            <a href="/tags/algorithm/" style="font-size: 14px;">algorithm</a> <a href="/tags/app/" style="font-size: 12px;">app</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/face/" style="font-size: 10px;">face</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/machinelearning/" style="font-size: 20px;">machinelearning</a> <a href="/tags/pimple/" style="font-size: 10px;">pimple</a> <a href="/tags/tensorflow/" style="font-size: 18px;">tensorflow</a> <a href="/tags/web/" style="font-size: 16px;">web</a>
+            <a href="/tags/algorithm/" style="font-size: 14px;">algorithm</a> <a href="/tags/app/" style="font-size: 12px;">app</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/face/" style="font-size: 10px;">face</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/javascript/" style="font-size: 12px;">javascript</a> <a href="/tags/machinelearning/" style="font-size: 20px;">machinelearning</a> <a href="/tags/pimple/" style="font-size: 10px;">pimple</a> <a href="/tags/tensorflow/" style="font-size: 18px;">tensorflow</a> <a href="/tags/web/" style="font-size: 16px;">web</a>
         </div>
     </div>
 
