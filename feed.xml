@@ -5,7 +5,7 @@
   <link href="/feed.xml" rel="self"/>
   
   <link href="https://penglover.github.io/"/>
-  <updated>2017-01-18T05:55:37.000Z</updated>
+  <updated>2017-01-19T05:19:26.000Z</updated>
   <id>https://penglover.github.io/</id>
   
   <author>
@@ -14,6 +14,35 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>직접체험&gt;&gt;여드름없애기1번째 - 피부재생편(잠, 음식)</title>
+    <link href="https://penglover.github.io/2017/01/19/face-pimple/"/>
+    <id>https://penglover.github.io/2017/01/19/face-pimple/</id>
+    <published>2017-01-19T04:57:23.000Z</published>
+    <updated>2017-01-19T05:19:26.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="여드름은-왜생길까"><a href="#여드름은-왜생길까" class="headerlink" title="여드름은 왜생길까?"></a>여드름은 왜생길까?</h1><p>여드름의 근본적인 원인, 즉 모공이 막히는 원인에 대해서는 아직 명확하게 밝혀진 바는 없다고합니다.<br>피부의학계에서는 현재까지 가장 유력한 원인으로 유전을 꼽고 있습니다.<br>피지가 적절히 생성되는 사람들이 있는가 하면 어떤 사람들은 피지가 과분비되는 유전자를 보유하고 있다는 것입니다.</p>
+<h1 id="어떻게-여드름을-없애지"><a href="#어떻게-여드름을-없애지" class="headerlink" title="어떻게 여드름을 없애지?"></a>어떻게 여드름을 없애지?</h1><p>의학적으로 원인이 아직 명확하지 않다보니 고민을 많이했습니다.<br>그러다가 제가 한 생각은 ‘적당히 익으면 뽑고 피부재생이 원활히 되도록 하자’입니다.<br>안익은 것이 터지면 더 심해진다고 해서 완전히 익은것만 뽑기로 했습니다.<br>뽑는 것은 간단하게 집에 있는 면봉으로 하기로 했습니다.<br>그리고 피부재생에 대해 열심히 구글링해본 결과 10시부터 재생을 돕는 호르몬이 나오므로 10시에 취침을 하기로 결정했습니다.<br>수면시간은 7~8시간이 적절하다는 의견에 따라 6시에 알람을 맞추었습니다.<br>음식으로는 양배추, 파프리카, 시금치, 당근, 버섯, 브로콜리, 토마토, 블루베리, 사과 등이 피부재생을 돕는다고 합니다<br>&lt;관련 링크&gt;<br><a href="http://blog.daum.net/_blog/BlogTypeView.do?blogid=0UXGk&amp;articleno=46&amp;categoryId=6&amp;regdt=20100912155907" rel="external nofollow noopener noreferrer" target="_blank">http://blog.daum.net/_blog/BlogTypeView.do?blogid=0UXGk&amp;articleno=46&amp;categoryId=6&amp;regdt=20100912155907</a><br><a href="http://blog.daum.net/yho9721/128" rel="external nofollow noopener noreferrer" target="_blank">http://blog.daum.net/yho9721/128</a><br>따라서 매일 의식적으로 저기 적힌 음식들중 한가지 이상을 먹기로 했습니다.<br>이것을 하며 최소 1주일 최대 2주일까지 매일 사진을 찍으며 실제 효능성을 따져보기로 했습니다.<br>(과학적으로 증명된 것이 없으니 직접 실험해봐야죠 ㅠㅠ)</p>
+<h1 id="결과"><a href="#결과" class="headerlink" title="결과"></a>결과</h1><p>1일차입니다.<br><img src="https://penglover.github.io/images/face1.jpeg" alt="day1"><br>화질이 안좋아서 잘 안보이는군요.<br>실제로는 색이 사진보다 좀 더 진합니다.<br>저런것들이 이마부터 목 부근까지 덮여있습니다 ㅠㅠ<br>이제 시작이니 힘내야지요!</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;여드름은-왜생길까&quot;&gt;&lt;a href=&quot;#여드름은-왜생길까&quot; class=&quot;headerlink&quot; title=&quot;여드름은 왜생길까?&quot;&gt;&lt;/a&gt;여드름은 왜생길까?&lt;/h1&gt;&lt;p&gt;여드름의 근본적인 원인, 즉 모공이 막히는 원인에 대해서는 아직 명확하게
+    
+    </summary>
+    
+      <category term="PRIVATE" scheme="https://penglover.github.io/categories/PRIVATE/"/>
+    
+      <category term="Face" scheme="https://penglover.github.io/categories/PRIVATE/Face/"/>
+    
+    
+      <category term="face" scheme="https://penglover.github.io/tags/face/"/>
+    
+      <category term="pimple" scheme="https://penglover.github.io/tags/pimple/"/>
+    
+  </entry>
   
   <entry>
     <title>웹 에디터 아톰 추천 및 권장 패키지</title>
@@ -558,35 +587,6 @@
     <summary type="html">
     
       &lt;p&gt;텐서플로우에서 참 재밌는 메서드가 있습니다.&lt;br&gt;바로 placeholder 인데요!&lt;br&gt;우리는 이것을 통해 값의 대입을 미룰 수 있습니다.&lt;br&gt;아래의 코드에서 자세히 확인해보겠습니다.&lt;br&gt;아! 참고로 python버전이 다르다면&lt;br&gt;pri
-    
-    </summary>
-    
-      <category term="ML" scheme="https://penglover.github.io/categories/ML/"/>
-    
-      <category term="TensorFlow" scheme="https://penglover.github.io/categories/ML/TensorFlow/"/>
-    
-    
-      <category term="machinelearning" scheme="https://penglover.github.io/tags/machinelearning/"/>
-    
-      <category term="tensorflow" scheme="https://penglover.github.io/tags/tensorflow/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>텐서플로우에서 상수란 존재하지 않는다? 모든것은 연산!</title>
-    <link href="https://penglover.github.io/2017/01/14/tensorflow1/"/>
-    <id>https://penglover.github.io/2017/01/14/tensorflow1/</id>
-    <published>2017-01-14T12:33:46.000Z</published>
-    <updated>2017-01-15T04:00:17.000Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="텐서플로우에서-상수란-존재하지-않는다"><a href="#텐서플로우에서-상수란-존재하지-않는다" class="headerlink" title="텐서플로우에서 상수란 존재하지 않는다"></a>텐서플로우에서 상수란 존재하지 않는다</h1><figure class="highlight plain"><figcaption><span>NoConstant.py</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">import tensorflow as tf</div><div class="line"></div><div class="line">sess = tf.Session()</div><div class="line"></div><div class="line">a = tf.constant(1)</div><div class="line">b = tf.constant(2)</div><div class="line"></div><div class="line">c = a+b</div><div class="line"></div><div class="line">print(a)</div><div class="line">print(b)</div><div class="line">print(c)</div><div class="line"></div><div class="line">print(sess.run(a))</div><div class="line">print(sess.run(b))</div><div class="line">print(sess.run(c))</div></pre></td></tr></table></figure>
-<p><strong>결과값</strong><br>Tensor(“Const:0”, shape=(), dtype=int32)<br>Tensor(“Const_1:0”, shape=(), dtype=int32)<br>Tensor(“add:0”, shape=(), dtype=int32)<br>1<br>2<br>3</p>
-<p>위에 보이듯이 모든 텐서플로우에서의 변수는 상수상태로 존재하지 않습니다.<br><strong>operation 상태로 존재하고 session에 run메소드를 주는 순간 연산이 이루어지지요.</strong><br>이로서 우리는 각 노드들을 병렬적으로 다룰 수 있게 되지요.<br>한마디로 각 노드들은 tensor들(데이터 배열들)을 나르는 역할을 할 뿐이기 때문에 모든 node는 operation이라고 하는 것이지요.<br>아래의 애니메이션을 보면 더 정확히 아실 수 있으실거에요!<br><img src="https://camo.githubusercontent.com/4ee55154486232ec9edd8f1a3bad4c4a146f6cfe/68747470733a2f2f7777772e74656e736f72666c6f772e6f72672f696d616765732f74656e736f72735f666c6f77696e672e676966" alt="움직이는텐서플로우그래프"></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;텐서플로우에서-상수란-존재하지-않는다&quot;&gt;&lt;a href=&quot;#텐서플로우에서-상수란-존재하지-않는다&quot; class=&quot;headerlink&quot; title=&quot;텐서플로우에서 상수란 존재하지 않는다&quot;&gt;&lt;/a&gt;텐서플로우에서 상수란 존재하지 않는다&lt;/h1&gt;&lt;
     
     </summary>
     
