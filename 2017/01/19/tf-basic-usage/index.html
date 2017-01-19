@@ -3,25 +3,25 @@
 <head>
     <meta charset="utf-8">
     
-    <title>tensorflow에서 언제 LinearRegression을 적용시킬지 알아보는 법 | IT&#39;s IT Blog</title>
+    <title>텐서 플로우의 기본 사용법 정리 이건알고가셔야합니다! | IT&#39;s IT Blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="machinelearning,tensorflow">
+        <meta name="keywords" content="machinelearning">
     
-    <meta name="description" content="LinearRegression은 언제 적용시킬까요?이것을 알기 위해서는 그래프를 그려 보는 것이 좋습니다.파이썬에서는 그래프를 쉽게 그리게 해주는 라이브러리가 존재하는데요~바로 matplotlib를 이용하면 아주 쉽습니다.pip이 설치되어 있다면 그냥 pip install matplotlib 하시면 됩니다.python3버전이신 경우에는 pip3 instal">
+    <meta name="description" content="개요이전 시간에 텐서플로우가 무엇인지, 어떻게 설치하는지를 보았습니다.https://penglover.github.io/2017/01/14/What-is-tensorflow-How-to-install/오늘은 그렇다면 기본적인 사용법에 대한 정리를 해보겠습니다.우선 지난시간에 말씀드렸듯이 텐서플로우란 op들이 계산을 수행하고 tensor들이 작업(op)에 의">
 <meta property="og:type" content="article">
-<meta property="og:title" content="tensorflow에서 언제 LinearRegression을 적용시킬지 알아보는 법">
-<meta property="og:url" content="https://penglover.github.io/2017/01/15/tensorflow-graph/index.html">
+<meta property="og:title" content="텐서 플로우의 기본 사용법 정리 이건알고가셔야합니다!">
+<meta property="og:url" content="https://penglover.github.io/2017/01/19/tf-basic-usage/index.html">
 <meta property="og:site_name" content="IT's IT Blog">
-<meta property="og:description" content="LinearRegression은 언제 적용시킬까요?이것을 알기 위해서는 그래프를 그려 보는 것이 좋습니다.파이썬에서는 그래프를 쉽게 그리게 해주는 라이브러리가 존재하는데요~바로 matplotlib를 이용하면 아주 쉽습니다.pip이 설치되어 있다면 그냥 pip install matplotlib 하시면 됩니다.python3버전이신 경우에는 pip3 instal">
+<meta property="og:description" content="개요이전 시간에 텐서플로우가 무엇인지, 어떻게 설치하는지를 보았습니다.https://penglover.github.io/2017/01/14/What-is-tensorflow-How-to-install/오늘은 그렇다면 기본적인 사용법에 대한 정리를 해보겠습니다.우선 지난시간에 말씀드렸듯이 텐서플로우란 op들이 계산을 수행하고 tensor들이 작업(op)에 의">
 <meta property="og:image" content="https://penglover.github.io/css/images/logo.png">
-<meta property="og:updated_time" content="2017-01-15T04:00:15.000Z">
+<meta property="og:updated_time" content="2017-01-19T07:55:08.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="tensorflow에서 언제 LinearRegression을 적용시킬지 알아보는 법">
-<meta name="twitter:description" content="LinearRegression은 언제 적용시킬까요?이것을 알기 위해서는 그래프를 그려 보는 것이 좋습니다.파이썬에서는 그래프를 쉽게 그리게 해주는 라이브러리가 존재하는데요~바로 matplotlib를 이용하면 아주 쉽습니다.pip이 설치되어 있다면 그냥 pip install matplotlib 하시면 됩니다.python3버전이신 경우에는 pip3 instal">
+<meta name="twitter:title" content="텐서 플로우의 기본 사용법 정리 이건알고가셔야합니다!">
+<meta name="twitter:description" content="개요이전 시간에 텐서플로우가 무엇인지, 어떻게 설치하는지를 보았습니다.https://penglover.github.io/2017/01/14/What-is-tensorflow-How-to-install/오늘은 그렇다면 기본적인 사용법에 대한 정리를 해보겠습니다.우선 지난시간에 말씀드렸듯이 텐서플로우란 op들이 계산을 수행하고 tensor들이 작업(op)에 의">
 <meta name="twitter:image" content="https://penglover.github.io/css/images/logo.png">
     
-    <link rel="canonical" href="https://penglover.github.io/2017/01/15/tensorflow-graph/">
+    <link rel="canonical" href="https://penglover.github.io/2017/01/19/tf-basic-usage/">
     
         <link rel="alternate" href="http://blog.naver.com/penglover" title="IT&#39;s IT Blog" type="application/atom+xml">
     
@@ -145,14 +145,14 @@ ga('send', 'pageview');
     </h1>
 </div>
                         <div class="main-body-content">
-                            <article id="post-tensorflow-graph" class="article article-single article-type-post" itemscope="" itemprop="blogPost">
+                            <article id="post-tf-basic-usage" class="article article-single article-type-post" itemscope="" itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-        tensorflow에서 언제 LinearRegression을 적용시킬지 알아보는 법
+        텐서 플로우의 기본 사용법 정리 이건알고가셔야합니다!
         </h1>
     
 
@@ -160,21 +160,29 @@ ga('send', 'pageview');
         
         
             <div class="article-subtitle">
-                <a href="/2017/01/15/tensorflow-graph/" class="article-date">
-    <time datetime="2017-01-15T01:22:39.000Z" itemprop="datePublished">2017-01-15</time>
+                <a href="/2017/01/19/tf-basic-usage/" class="article-date">
+    <time datetime="2017-01-19T06:24:51.000Z" itemprop="datePublished">2017-01-19</time>
 </a>
                 
-    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/machinelearning/">machinelearning</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tensorflow/">tensorflow</a></li></ul>
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/machinelearning/">machinelearning</a></li></ul>
 
             </div>
         
         
         <div class="article-entry" itemprop="articleBody">
-            <h1 id="LinearRegression은-언제-적용시킬까요"><a href="#LinearRegression은-언제-적용시킬까요" class="headerlink" title="LinearRegression은 언제 적용시킬까요?"></a>LinearRegression은 언제 적용시킬까요?</h1><p>이것을 알기 위해서는 그래프를 그려 보는 것이 좋습니다.<br>파이썬에서는 그래프를 쉽게 그리게 해주는 라이브러리가 존재하는데요~<br>바로 matplotlib를 이용하면 아주 쉽습니다.<br>pip이 설치되어 있다면 그냥 pip install matplotlib 하시면 됩니다.<br>python3버전이신 경우에는 pip3 install matplotlib를 하시구요.<br><a href="http://matplotlib.org/users/installing.html" rel="external nofollow noopener noreferrer" target="_blank">http://matplotlib.org/users/installing.html</a> 에서 다른 설치법들도 알려줍니다~<br>설치 안되시면 댓글남겨주세요.</p>
-<p>그럼 코드를 보면서 설명드리도록 하겠습니다.<br><figure class="highlight plain"><figcaption><span>matplotlib.py</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">import tensorflow as tf</div><div class="line">import matplotlib.pyplot as plt</div><div class="line"></div><div class="line">X = [1., 2., 3.]</div><div class="line">Y = [1., 2., 3.]</div><div class="line">m = samples = len(X)</div><div class="line"></div><div class="line">W = tf.placeholder(tf.float32)</div><div class="line"></div><div class="line">hypothesis = tf.mul(X, W)</div><div class="line"></div><div class="line">cost = tf.reduce_sum(tf.pow(hypothesis-Y,2))/m</div><div class="line"></div><div class="line">init = tf.global_variables_initializer()</div><div class="line"></div><div class="line"></div><div class="line">W_val = []</div><div class="line">cost_val = []</div><div class="line"></div><div class="line">sess = tf.Session()</div><div class="line">sess.run(init)</div><div class="line">for i in range(-30,50):</div><div class="line">    print (i*0.1, sess.run(cost, feed_dict=&#123;W: i*0.1&#125;))</div><div class="line">    W_val.append(i*0.1)</div><div class="line">    cost_val.append(sess.run(cost, feed_dict=&#123;W: i*0.1&#125;))</div><div class="line"></div><div class="line">plt.plot(W_val, cost_val, &apos;ro&apos;)</div><div class="line">plt.ylabel(&apos;cost&apos;)</div><div class="line">plt.xlabel(&apos;W&apos;)</div><div class="line">plt.show()</div></pre></td></tr></table></figure><br>결과값은 그래프가 포함되다보니 스크린샷으로 보여드리겠습니다.<br><img src="https://penglover.github.io/images/matplotlib_sample.png" alt="matplotlib_sample"></p>
-<p>자 그럼 본격적인 이야기를 해보겠습니다.<br>코드는 참 평범합니다. 그냥 hypothesis-Y에 제곱을 한 값을 평균을 내어 준 것인데요.<br>우리는 이미 X와 Y의 관계가 X * 1 = Y라는 것을 알고 있습니다.<br>X = [1, 2, 3]이고 Y = [1, 2, 3]이니 당연한 일이지요.<br>컴퓨터를 통해서 그래프를 그려보도록 하겠습니다.<br>사용법은 코드를 조금만 보시면 이해가 쉽게 가실겁니다.</p>
-<p>그림처럼 저렇게 순탄한 아래쪽이 둥근모형이면 손쉽게 LinearRegression을 적용할 수 있습니다.<br>기울기 값이 줄어들거나 늘어나는 패턴이 일정하기 때문이지요.<br>수식으로 순간미분값(해당 점의 기울기값)이 0에 가까워 지도록 찾아주기만 하면 되닌까요.</p>
-<p>아주 간단하죠?<br>요약하자면 연속하고 아래쪽 둥근부분이 저렇게 그림처럼 한부분만 있으면 됩니다.<br>3차원의 경우에도 마찬가지에요!</p>
+            <h1 id="개요"><a href="#개요" class="headerlink" title="개요"></a>개요</h1><p>이전 시간에 텐서플로우가 무엇인지, 어떻게 설치하는지를 보았습니다.<br><a href="https://penglover.github.io/2017/01/14/What-is-tensorflow-How-to-install/">https://penglover.github.io/2017/01/14/What-is-tensorflow-How-to-install/</a><br>오늘은 그렇다면 기본적인 사용법에 대한 정리를 해보겠습니다.<br>우선 지난시간에 말씀드렸듯이 텐서플로우란 op들이 계산을 수행하고 tensor들이 작업(op)에 의해 반환되는 일련의 과정들을 session을 통해 캡슐화 한 것이라고 할 수 있습니다.<br>순서대로 좀더 일목요연하게 나타내면 아래와 같습니다.</p>
+<ol>
+<li>graph를 조립하는 구성단계를 갖습니다.<br>작업(op)들을 반환될 데이터(tensor)를 고려하여 구성합니다.</li>
+<li>graph의 op를 실행시키는 실행단계를 갖습니다.<br>그래프는 연산을 표현해 놓은 것이기 때문에 session상에서 실행시켜야 합니다.<br>session은 CPU나 GPU같은 Device에 배정하고 실행하기 위한 매서드를 제공합니다.</li>
+</ol>
+<h1 id="언어"><a href="#언어" class="headerlink" title="언어"></a>언어</h1><p>현재 공식적으로 지원하는 것은 cpp와 python이지만 점차 확대해나가겠다고 합니다.<br>문서화가 가장 잘 되어있고 사용하기 편한것은 python으로 대부분 python을 이용해 개발합니다.<br>또한 파이썬의 문법이 공부하기가 더 쉽고 헬퍼함수도 더 많아서 추천드립니다.</p>
+<h1 id="전체적인-코드-주석해설"><a href="#전체적인-코드-주석해설" class="headerlink" title="전체적인 코드 + 주석해설"></a>전체적인 코드 + 주석해설</h1><figure class="highlight plain"><figcaption><span>code.py</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">import tensorflow as tf #텐서플로우를 불러옵니다.</div><div class="line">matrix1 = tf.constant([[3., 3.]]) # 1x2행렬지정</div><div class="line">matrix2 = tf.constant([[2.],[2.]]) # 2x1행렬지정</div><div class="line">product = tf.matmul(matrix1, matrix2) # 두 행렬을 곱해줍니다.</div><div class="line">sess = tf.Session() # defualt graph의 세션만듭니다.</div><div class="line">result = sess.run(product) # 위의 세션을 실행시킵니다.</div><div class="line">print(result) # 결과를 보여줍니다.</div><div class="line">sess.close() # 연산에 쓰인 시스템 자원을 반환해줍니다.</div></pre></td></tr></table></figure>
+<h1 id="세션지정"><a href="#세션지정" class="headerlink" title="세션지정"></a>세션지정</h1><figure class="highlight plain"><figcaption><span>session.py</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">with tf.Session() as sess:</div><div class="line">  with tf.device(&quot;/gpu:1&quot;):</div><div class="line">    matrix1 = tf.constant([[3., 3.]])</div><div class="line">    matrix2 = tf.constant([[2.],[2.]])</div><div class="line">    product = tf.matmul(matrix1, matrix2)</div><div class="line">    ...</div></pre></td></tr></table></figure>
+<p>이런식으로 gpu가 여러개라면 따로따로 지정해 줄수도 있습니다.<br>“/cpu:0”: 컴퓨터의 CPU.<br>“/gpu:0”: 컴퓨터의 1번째 GPU.<br>“/gpu:1”: 컴퓨터의 2번쨰 GPU.<br>이런식입니다.</p>
+<h1 id="클러스터도-만들-수-있습니다"><a href="#클러스터도-만들-수-있습니다" class="headerlink" title="클러스터도 만들 수 있습니다."></a>클러스터도 만들 수 있습니다.</h1><p>클러스터란 여러대의 컴퓨터를 모아서 하나의 컴퓨터처럼 동작시키는 것을 말합니다.<br><figure class="highlight plain"><figcaption><span>cluster.py</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"># 1번코드</div><div class="line">with tf.Session(&quot;grpc://example.org:2222&quot;) as sess:</div><div class="line">--------------------------------------------------</div><div class="line"># 2번코드</div><div class="line">with tf.device(&quot;/job:ps/task:0&quot;):</div><div class="line">  weights = tf.Variable(...)</div><div class="line">  biases = tf.Variable(...)</div></pre></td></tr></table></figure><br>1번코드처럼 각 머신에 텐서플로우 서버를 설치하고 session을 머신의 네트워크 위치로 넘기면 됩니다.<br>세션을 받은 머신은 해당 Session의 마스터가 됩니다.<br>머신 내에서는 Tensorflow의 구현 코드(implementation)가 머신 내 연산 자원에게 작업을 나눠주지만, 클러스터에서는 마스터가 클러스터 내의 다른 머신들에게 graph를 분배하는 것입니다.<br>2번코드처럼 “with tf.device():” 구문을 이용해서 특정 머신에게 직접 graph의 특정 부분을 지정해 줄 수도 있습니다.</p>
+<h1 id="Tensor란"><a href="#Tensor란" class="headerlink" title="Tensor란?"></a>Tensor란?</h1><p>tensor를 n 차원의 배열이나 리스트라고 봐도 좋습니다.<br>작업(op)들간에는 tensor만 주고 받을 수 있습니다.<br>나중에 다루겠지만 이 tensor도 상당히 중요한 역할을 합니다만 지금은 데이터정도로만 봐주세요!</p>
+<h1 id="Variable란"><a href="#Variable란" class="headerlink" title="Variable란?"></a>Variable란?</h1><p>변수(Variable) 를 생성할 때 Variable() 생성자의 초기값으로 Tensor 를 전달받게 됩니다.<br>TensorFlow는 상수(constants) 또는 임의(random)의 값 으로 초기화 하는 다양한 명령어(op)를 제공합니다.<br><figure class="highlight plain"><figcaption><span>variable.py</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">weights = tf.Variable(tf.random_normal([784, 200], stddev=0.35), name=&quot;weights&quot;)</div><div class="line">biases = tf.Variable(tf.zeros([200]), name=&quot;biases&quot;)</div></pre></td></tr></table></figure><br>무슨 뜻인지는 아직 모르셔도 됩니다.<br>그냥 variable이 tensor를 전달받을 수 있구나~ 그리고 tensorflow에서는 variable을 다양한 방법으로 초기화하는 방법을 제공하는구나~ 정도로만 아셔도 되요!</p>
+<h1 id="Feed란"><a href="#Feed란" class="headerlink" title="Feed란?"></a>Feed란?</h1><p>우선 이런걸 나중에 선언할거야~ 라고 지정하고 난 뒤에 일시적으로 연산의 출력값을 입력한 tensor 값으로 대체합니다. feed 데이터는 run()으로 전달되어서 run()의 변수로만 사용됩니다.<br>가장 일반적인 사용방법은 tf.placeholder()를 사용해서 특정 작업(op)을 “feed” 작업으로 지정해 주는 것입니다.<br>예시는 아래와 같습니다.<br><figure class="highlight plain"><figcaption><span>feed.py</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">input1 = tf.placeholder(tf.float32)</div><div class="line">input2 = tf.placeholder(tf.float32)</div><div class="line">output = tf.mul(input1, input2)</div><div class="line"></div><div class="line">with tf.Session() as sess:</div><div class="line">  print(sess.run([output], feed_dict=&#123;input1:[7.], input2:[2.]&#125;))</div></pre></td></tr></table></figure><br>이렇게 우리는 input1과 input2의 형만 지정해 두고 일시적으로 나중에 값을 줄 수가 있는 것입니다.</p>
 
         </div>
         <footer class="article-footer">
@@ -182,7 +190,7 @@ ga('send', 'pageview');
 
 
 
-    <a data-url="https://penglover.github.io/2017/01/15/tensorflow-graph/" data-id="ciy4318rc000qt7bnejqaoqbp" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://penglover.github.io/2017/01/19/tf-basic-usage/" data-id="ciy4318ro001ht7bngk4acvtd" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -313,20 +321,10 @@ ga('send', 'pageview');
         
 <nav id="article-nav">
     
-        <a href="/2017/01/15/how-to-handle-multiple-variables-in-tensorflow/" id="article-nav-newer" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">newer</strong>
-        <p class="article-nav-title">
-        
-            텐서플로우 LinearRegression 변수가 여러가지인경우 대처법
-        
-        </p>
-        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
-    </a>
     
-    
-        <a href="/2017/01/14/tf-LinearRegression/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2017/01/19/face-pimple/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">older</strong>
-        <p class="article-nav-title">텐서플로우로 linear regression 구현 및 설명</p>
+        <p class="article-nav-title">직접체험&gt;&gt;여드름없애기1번째 - 피부재생편(잠, 음식)</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
@@ -530,7 +528,7 @@ ga('send', 'pageview');
     var disqus_shortname = 'miscellaneous';
     
     
-    var disqus_url = 'https://penglover.github.io/2017/01/15/tensorflow-graph/';
+    var disqus_url = 'https://penglover.github.io/2017/01/19/tf-basic-usage/';
     
     (function() {
     var dsq = document.createElement('script');

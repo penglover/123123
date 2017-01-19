@@ -16,20 +16,6 @@
     </url>
 
     <url>
-        <loc>https://penglover.github.io/tags/machinelearning/</loc>
-        <lastmod>2017-01-18T03:17:06.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://penglover.github.io/tags/tensorflow/</loc>
-        <lastmod>2017-01-18T03:17:06.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>https://penglover.github.io/tags/html/</loc>
         <lastmod>2017-01-18T04:34:27.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -67,6 +53,20 @@
     <url>
         <loc>https://penglover.github.io/tags/pimple/</loc>
         <lastmod>2017-01-19T05:19:26.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://penglover.github.io/tags/tensorflow/</loc>
+        <lastmod>2017-01-19T06:46:15.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://penglover.github.io/tags/machinelearning/</loc>
+        <lastmod>2017-01-19T07:55:08.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
