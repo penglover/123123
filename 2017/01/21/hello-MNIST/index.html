@@ -9,25 +9,28 @@
   </script>
     <meta charset="utf-8">
     
-    <title>HTML5를 효율적으로 빠르게 공부하는 방법 | IT&#39;s IT Blog</title>
+    <title>MNIST란 무엇인가? with tensorflow | IT&#39;s IT Blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="web,html">
+        <meta name="keywords" content="machinelearning">
     
-    <meta name="description" content="HTML이란 무엇?우선 html이야기를 하기 이전에 웹 이야기를 빼놓을 수가 없군요.우리는 웹을 항상 접하며 삽니다.네이버 다음 이런것들이 웹사이트들이닌깐요.그렇다면 이 웹은 어떻게 구성되어 있을까요?먼저 frontend - backend로 나뉘는데요.프론트엔드는 사용자경험을 위한 UI제공을 하고 백엔드는 서버나 디비를 다룹니다.한마디로 프론트엔드는 사용자">
+    <meta name="description" content="MNIST란?MNIST는 간단한 컴퓨터 비전 데이터셋입니다.이는 다음과 같이 손으로 쓰여진 이미지로 구성되어 있습니다.
+MNIST로 무엇을 할까?컴퓨터 프로그래밍을 배운 사람이라면 HelloWorld를 화면에 출력해본 경험이 있을 것입니다.MNIST는 머신러닝계의 HelloWorld라고 볼 수 있습니다.저 손글씨들을 컴퓨터가 인식해서 숫자로 출력을 할 수">
 <meta property="og:type" content="article">
-<meta property="og:title" content="HTML5를 효율적으로 빠르게 공부하는 방법">
-<meta property="og:url" content="https://penglover.github.io/2017/01/18/HTML5-tutorial1/index.html">
+<meta property="og:title" content="MNIST란 무엇인가? with tensorflow">
+<meta property="og:url" content="https://penglover.github.io/2017/01/21/hello-MNIST/index.html">
 <meta property="og:site_name" content="IT's IT Blog">
-<meta property="og:description" content="HTML이란 무엇?우선 html이야기를 하기 이전에 웹 이야기를 빼놓을 수가 없군요.우리는 웹을 항상 접하며 삽니다.네이버 다음 이런것들이 웹사이트들이닌깐요.그렇다면 이 웹은 어떻게 구성되어 있을까요?먼저 frontend - backend로 나뉘는데요.프론트엔드는 사용자경험을 위한 UI제공을 하고 백엔드는 서버나 디비를 다룹니다.한마디로 프론트엔드는 사용자">
+<meta property="og:description" content="MNIST란?MNIST는 간단한 컴퓨터 비전 데이터셋입니다.이는 다음과 같이 손으로 쓰여진 이미지로 구성되어 있습니다.
+MNIST로 무엇을 할까?컴퓨터 프로그래밍을 배운 사람이라면 HelloWorld를 화면에 출력해본 경험이 있을 것입니다.MNIST는 머신러닝계의 HelloWorld라고 볼 수 있습니다.저 손글씨들을 컴퓨터가 인식해서 숫자로 출력을 할 수">
 <meta property="og:image" content="https://penglover.github.io/css/images/logo.png">
-<meta property="og:updated_time" content="2017-01-18T04:34:27.000Z">
+<meta property="og:updated_time" content="2017-01-21T07:42:11.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="HTML5를 효율적으로 빠르게 공부하는 방법">
-<meta name="twitter:description" content="HTML이란 무엇?우선 html이야기를 하기 이전에 웹 이야기를 빼놓을 수가 없군요.우리는 웹을 항상 접하며 삽니다.네이버 다음 이런것들이 웹사이트들이닌깐요.그렇다면 이 웹은 어떻게 구성되어 있을까요?먼저 frontend - backend로 나뉘는데요.프론트엔드는 사용자경험을 위한 UI제공을 하고 백엔드는 서버나 디비를 다룹니다.한마디로 프론트엔드는 사용자">
+<meta name="twitter:title" content="MNIST란 무엇인가? with tensorflow">
+<meta name="twitter:description" content="MNIST란?MNIST는 간단한 컴퓨터 비전 데이터셋입니다.이는 다음과 같이 손으로 쓰여진 이미지로 구성되어 있습니다.
+MNIST로 무엇을 할까?컴퓨터 프로그래밍을 배운 사람이라면 HelloWorld를 화면에 출력해본 경험이 있을 것입니다.MNIST는 머신러닝계의 HelloWorld라고 볼 수 있습니다.저 손글씨들을 컴퓨터가 인식해서 숫자로 출력을 할 수">
 <meta name="twitter:image" content="https://penglover.github.io/css/images/logo.png">
     
-    <link rel="canonical" href="https://penglover.github.io/2017/01/18/HTML5-tutorial1/">
+    <link rel="canonical" href="https://penglover.github.io/2017/01/21/hello-MNIST/">
     
         <link rel="alternate" href="http://blog.naver.com/penglover" title="IT&#39;s IT Blog" type="application/atom+xml">
     
@@ -148,18 +151,18 @@ ga('send', 'pageview');
                         <div class="main-body-header">
     <h1 class="header">
     
-    <a class="page-title-link" href="/categories/WEB/">WEB</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/WEB/HTML-CSS/">HTML/CSS</a>
+    <a class="page-title-link" href="/categories/ML/">ML</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/ML/TensorFlow/">TensorFlow</a>
     </h1>
 </div>
                         <div class="main-body-content">
-                            <article id="post-HTML5-tutorial1" class="article article-single article-type-post" itemscope="" itemprop="blogPost">
+                            <article id="post-hello-MNIST" class="article article-single article-type-post" itemscope="" itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-        HTML5를 효율적으로 빠르게 공부하는 방법
+        MNIST란 무엇인가? with tensorflow
         </h1>
     
 
@@ -167,19 +170,29 @@ ga('send', 'pageview');
         
         
             <div class="article-subtitle">
-                <a href="/2017/01/18/HTML5-tutorial1/" class="article-date">
-    <time datetime="2017-01-18T03:30:44.000Z" itemprop="datePublished">2017-01-18</time>
+                <a href="/2017/01/21/hello-MNIST/" class="article-date">
+    <time datetime="2017-01-21T05:14:41.000Z" itemprop="datePublished">2017-01-21</time>
 </a>
                 
-    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/html/">html</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/web/">web</a></li></ul>
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/machinelearning/">machinelearning</a></li></ul>
 
             </div>
         
         
         <div class="article-entry" itemprop="articleBody">
-            <h1 id="HTML이란-무엇"><a href="#HTML이란-무엇" class="headerlink" title="HTML이란 무엇?"></a>HTML이란 무엇?</h1><p>우선 html이야기를 하기 이전에 웹 이야기를 빼놓을 수가 없군요.<br>우리는 웹을 항상 접하며 삽니다.<br>네이버 다음 이런것들이 웹사이트들이닌깐요.<br>그렇다면 이 웹은 어떻게 구성되어 있을까요?<br>먼저 frontend - backend로 나뉘는데요.<br>프론트엔드는 사용자경험을 위한 UI제공을 하고 백엔드는 서버나 디비를 다룹니다.<br>한마디로 프론트엔드는 사용자에게 보이는 부분을 다루고요!<br>백엔드는 보이지 않는 부분을 다루는 것이지요.<br>HTML은 이 프론트엔드에서 가장 중요한 웹사이트의 구조를 담고있습니다.<br>구조를 잘 쌓아야 튼튼한 프론트엔드영역이 완성되겠지요?</p>
-<h1 id="HTML5란-무엇"><a href="#HTML5란-무엇" class="headerlink" title="HTML5란 무엇?"></a>HTML5란 무엇?</h1><p>HTML5는 이런 html에서 가장 최신 버전의 문법입니다.<br>성능이 많이 발전해서 javascript와 힘을 합하면 멋진 게임도 만들어 낼 수 있습니다.<br>그리고 무엇보다 눈에 띄는 점은 역시 의미론적으로 변신했다는 것인데요!<br>HTML5가 의미론적으로 변하면서 구글검색엔진이나 네이버검색엔진 등이 효율적으로 우리의 웹문서를 읽게 되면서 많은 이득을 가져올 수 있게 되었습니다.<br>한마디로 웹을 우리의 입맛에 더 잘 맞게 개발할 수 있게 되었습니다!</p>
-<h1 id="어떻게-공부해야-빠르고-튼튼할까"><a href="#어떻게-공부해야-빠르고-튼튼할까" class="headerlink" title="어떻게 공부해야 빠르고 튼튼할까?"></a>어떻게 공부해야 빠르고 튼튼할까?</h1><p>우선 제가 가장 추천하는 방법은 생활코딩 강의를 듣는 것입니다.<br>opentutorials.org 이곳에서 HTML강좌를 무료로 진행합니다.<br>그리고는 w3schools.com 에서 튜토리얼을 한번 진행합니다.<br>그리고는 다음으로 css공부를 진행하는 것을 추천드립니다.<br>html로 구조를 짠 다음에는 css로 맛깔나게 꾸미는게 재밌거든요!<br>그럼 다음글로 css3의 추천 공부법을 알려드리도록 하겠습니다.</p>
+            <h1 id="MNIST란"><a href="#MNIST란" class="headerlink" title="MNIST란?"></a>MNIST란?</h1><p>MNIST는 간단한 컴퓨터 비전 데이터셋입니다.<br>이는 다음과 같이 손으로 쓰여진 이미지로 구성되어 있습니다.<br><img src="https://tensorflowkorea.gitbooks.io/tensorflow-kr/content/g3doc/images/MNIST.png" alt="MNIST"></p>
+<h1 id="MNIST로-무엇을-할까"><a href="#MNIST로-무엇을-할까" class="headerlink" title="MNIST로 무엇을 할까?"></a>MNIST로 무엇을 할까?</h1><p>컴퓨터 프로그래밍을 배운 사람이라면 HelloWorld를 화면에 출력해본 경험이 있을 것입니다.<br>MNIST는 머신러닝계의 HelloWorld라고 볼 수 있습니다.<br>저 손글씨들을 컴퓨터가 인식해서 숫자로 출력을 할 수 있게 한다면 성공이지요.<br>텐서플로우가 이것을 아주 간단하게 구현할 수 있도록 도와줍니다.<br>텐서플로우를 모르신다면 이전 포스팅을 보고와주세요.<br><a href="https://penglover.github.io/2017/01/19/tf-basic-usage/">https://penglover.github.io/2017/01/19/tf-basic-usage/</a></p>
+<h1 id="MNIST-실전코드"><a href="#MNIST-실전코드" class="headerlink" title="MNIST 실전코드"></a>MNIST 실전코드</h1><p>오늘 배울 코드는 아래와 같은데 세부적으로 하나씩 나누어 설명드리겠습니다.<br><figure class="highlight plain"><figcaption><span>MNIST.py</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">from tensorflow.examples.tutorials.mnist import input_data</div><div class="line">mnist = input_data.read_data_sets(&quot;MNIST_data/&quot;, one_hot=True)</div><div class="line">import tensorflow as tf</div><div class="line"></div><div class="line">W = tf.Variable(tf.zeros([784, 10]))</div><div class="line">b = tf.Variable(tf.zeros([10]))</div><div class="line">y = tf.nn.softmax(tf.matmul(x, W) + b)</div><div class="line">x = tf.placeholder(tf.float32, [None, 784])</div><div class="line">y_ = tf.placeholder(tf.float32, [None, 10])</div><div class="line"></div><div class="line">cross_entropy = tf.reduce_mean(-tf.reduce_sum(y_ * tf.log(y), reduction_indices=[1]))</div><div class="line">train_step = tf.train.GradientDescentOptimizer(0.5).minimize(cross_entropy)</div><div class="line">init = tf.global_variables_initializer()</div><div class="line">sess = tf.Session()</div><div class="line">sess.run(init)</div><div class="line">for i in range(1000):</div><div class="line">  batch_xs, batch_ys = mnist.train.next_batch(100)</div><div class="line">  sess.run(train_step, feed_dict=&#123;x: batch_xs, y_: batch_ys&#125;)</div><div class="line">correct_prediction = tf.equal(tf.argmax(y,1), tf.argmax(y_,1))</div><div class="line">accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))</div><div class="line">print(sess.run(accuracy, feed_dict=&#123;x: mnist.test.images, y_: mnist.test.labels&#125;))</div></pre></td></tr></table></figure></p>
+<h1 id="코드-분석"><a href="#코드-분석" class="headerlink" title="코드 분석"></a>코드 분석</h1><figure class="highlight plain"><figcaption><span>ex1.py</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">from tensorflow.examples.tutorials.mnist import input_data</div><div class="line">mnist = input_data.read_data_sets(&quot;MNIST_data/&quot;, one_hot=True)</div><div class="line">import tensorflow as tf</div></pre></td></tr></table></figure>
+<p>먼저 살펴볼 내용은 import 부분입니다.<br>tensorflow.examples.tutorials.mnist 에서 input_data를 가져왔습니다.<br>다운로드된 데이터는 55,000개의 학습 데이터(mnist.train), 10,000개의 테스트 데이터(mnist.text), 그리고 5,000개의 검증 데이터(mnist.validation) 이렇게 세 부분으로 나뉩니다.<br>원-핫 벡터는 단 하나의 차원에서만 1이고, 나머지 차원에서는 0인 벡터입니다.<br>이 경우, n번째 숫자는 n번째 차원이 1인 벡터로 표현될 것입니다.<br>예를 들어서, 3은 [0,0,0,1,0,0,0,0,0,0]입니다.<br>그리고 tensorflow를 tf라는 이름으로 가져왔습니다.<br>가져오는 코드이니 어려울것은 없을것입니다.</p>
+<figure class="highlight plain"><figcaption><span>ex2.py</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">W = tf.Variable(tf.zeros([784, 10]))</div><div class="line">b = tf.Variable(tf.zeros([10]))</div><div class="line">y = tf.nn.softmax(tf.matmul(x, W) + b)</div><div class="line">x = tf.placeholder(tf.float32, [None, 784])</div><div class="line">y_ = tf.placeholder(tf.float32, [None, 10])</div></pre></td></tr></table></figure>
+<p>여기서부턴 소프트맥스함수를 알아야합니다.<br><a href="https://penglover.github.io/2017/01/15/tensorflow-softmaxC/">https://penglover.github.io/2017/01/15/tensorflow-softmaxC/</a><br>위의 링크에 포스팅해 두었습니다.<br>W는 weight를 b는 bias를 표현하기 위해 만들어둔 것입니다.<br>MNIST가 28 * 28 의 크기를 갖으므로 W에서 784개의 행을 만들었습니다.<br>또 0~9까지의 결과를 갖으므로 10개의 열을 만들었습니다.<br>y는 softmax 함수를 행렬에 씌워준 것입니다.<br>이로서 우리는 각 노드별로 weight와 bias가 계산된 값을 시그모이드 함수에 씌워서 0~1 사이의 확률 값으로 받아볼 수 있습니다.<br>x와 y<em>는 placeholder를 사용하여 나중에 값을 넣어줄 것임을 알려주었습니다.<br>x에는 input이 들어가고 y</em>에는 실제 우리가 원하는 결과값이 들어갈 예정입니다.</p>
+<figure class="highlight plain"><figcaption><span>ex3.py</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cross_entropy = tf.reduce_mean(-tf.reduce_sum(y_ * tf.log(y), reduction_indices=[1]))</div><div class="line">train_step = tf.train.GradientDescentOptimizer(0.5).minimize(cross_entropy)</div></pre></td></tr></table></figure>
+<p>가장 중요한 핵심코드 부분입니다.<br>우리가 할일은 단 하나뿐입니다.<br>바로 cost 모델을 짜는 것입니다.<br>위에서 쓰인 cross_entropy의 의미를 모르겠다면 아래 링크의 맨 마지막 cost 동영상을 봐주세요.<br><a href="https://penglover.github.io/2017/01/15/tensorflow-softmaxC/">https://penglover.github.io/2017/01/15/tensorflow-softmaxC/</a><br>저렇게 cost 모델까지 다 짰다면 각 행별로 그 값을 합한 뒤에 열별로 평균을 취해줍니다.<br>우리는 이 cost를 최대한 줄이면서 weight와 bias를 업데이트시키는 것이 목적입니다.<br>여기에 최적화된 알고리즘이 backpropagation 알고리즘입니다.<br>참고 : <a href="https://penglover.github.io/2017/01/15/tensorflow-softmaxC/">https://penglover.github.io/2017/01/15/tensorflow-softmaxC/</a><br>텐서플로우에서는 이 함수를 자동으로 제공해줍니다.<br>tf.train.GradientDescentOptimizer(0.5).minimize(cross_entropy)<br>위의 코드 한줄만으로 cross_entropy가 최소화 되는 방향으로 GradientDescent 알고리즘을 적용시켜가면서 backpropagation을 통해 weight와 bias를 업데이트시키는 것입니다.</p>
+<figure class="highlight plain"><figcaption><span>ex4.py</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">init = tf.global_variables_initializer()</div><div class="line">sess = tf.Session()</div><div class="line">sess.run(init)</div><div class="line">for i in range(1000):</div><div class="line">  batch_xs, batch_ys = mnist.train.next_batch(100)</div><div class="line">  sess.run(train_step, feed_dict=&#123;x: batch_xs, y_: batch_ys&#125;)</div></pre></td></tr></table></figure>
+<p>모든 변수들을 초기화 해주었습니다.<br>그리고 텐서플로의 세션을 sess라는 변수에 주었습니다.<br>반복문 안쪽에도 별것은 없습니다.<br>mnist.train.next_batch(100) 에서 100개의 데이터별로 끊어서 784개의 MNIST정보를 batch_xs에 담게 하였고 원-핫 벡터로 이루어진 정답데이터는 batch_ys에 담아두었습니다.<br>그리고 이것을 x와 y에 주면서 train_step 함수에 넣어서 sess를 동작시켜서 트레이닝을 시켰습니다.</p>
+<figure class="highlight plain"><figcaption><span>ex4.py</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">correct_prediction = tf.equal(tf.argmax(y,1), tf.argmax(y_,1))</div><div class="line">accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))</div><div class="line">print(sess.run(accuracy, feed_dict=&#123;x: mnist.test.images, y_: mnist.test.labels&#125;))</div></pre></td></tr></table></figure>
+<p>이부분은 마지막 확인단계입니다.<br>correct<em>prediction에 기대값 y와 정답 y</em>가 같은지를 확인합니다.<br>그리고 평균을 내어서 출력해줍니다.<br>accuracy에 test 데이터를 넣어서 확인해 보았습니다.<br>위의 코드의 결과물입니다.<br>0.9165<br>즉 92퍼 정도의 정확도를 가지고 있다는 것입니다.<br>다음 글에서는 정확도를 더 높이는 방법을 연구해보겠습니다.</p>
 
         </div>
         <footer class="article-footer">
@@ -187,7 +200,7 @@ ga('send', 'pageview');
 
 
 
-    <a data-url="https://penglover.github.io/2017/01/18/HTML5-tutorial1/" data-id="ciy6xgaon00012lbnw26mzpfm" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://penglover.github.io/2017/01/21/hello-MNIST/" data-id="ciy6xgap5000e2lbnillic7xr" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -318,20 +331,10 @@ ga('send', 'pageview');
         
 <nav id="article-nav">
     
-        <a href="/2017/01/18/CSS3-tutorial1/" id="article-nav-newer" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">newer</strong>
-        <p class="article-nav-title">
-        
-            CSS3을 빠르고 효율적으로 공부하는 방법
-        
-        </p>
-        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
-    </a>
     
-    
-        <a href="/2017/01/17/why-hybrid-app/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2017/01/20/why-javascript/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">older</strong>
-        <p class="article-nav-title">하이브리드 웹앱은 왜 생겼을까?</p>
+        <p class="article-nav-title">왜 웹에서는 자바스크립트가 쓰일까?</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
@@ -535,7 +538,7 @@ ga('send', 'pageview');
     var disqus_shortname = 'miscellaneous';
     
     
-    var disqus_url = 'https://penglover.github.io/2017/01/18/HTML5-tutorial1/';
+    var disqus_url = 'https://penglover.github.io/2017/01/21/hello-MNIST/';
     
     (function() {
     var dsq = document.createElement('script');
